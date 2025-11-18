@@ -278,3 +278,348 @@
 2025-11-13 08:13:25,065 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 08:13:25] "GET / HTTP/1.1" 200 -
 2025-11-13 08:13:25,126 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 08:13:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2025-11-13 08:13:25,130 - werkzeug - INFO - 127.0.0.1 - - [13/Nov/2025 08:13:25] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:03:06,498 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-18 11:03:06,498 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-18 11:03:06,506 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 11:03:10,337 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 11:03:10,346 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 11:03:22,311 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:03:22] "GET / HTTP/1.1" 200 -
+2025-11-18 11:03:22,540 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:03:22] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-18 11:03:22,603 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:03:22] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-11-18 11:03:22,753 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:03:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-11-18 11:03:31,270 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:03:31] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 11:03:31,315 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:03:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:03:31,323 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:03:31] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:12:15,443 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-11-18 11:12:15,868 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 11:12:19,162 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 11:12:19,169 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 11:12:36,358 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\ml_analysis.py', reloading
+2025-11-18 11:12:36,673 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 11:12:39,503 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 11:12:39,525 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 11:12:44,336 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:12:44] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 11:12:44,583 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:12:44] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-18 11:12:44,589 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:12:44] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-11-18 11:12:51,903 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:12:51] "[32mPOST /delete-data HTTP/1.1[0m" 302 -
+2025-11-18 11:12:51,959 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:12:51] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 11:12:52,036 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:12:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:12:52,036 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:12:52] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:12:54,133 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:12:54] "GET /upload HTTP/1.1" 200 -
+2025-11-18 11:12:54,170 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:12:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:12:54,173 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:12:54] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:13:25,286 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:13:25] "[32mPOST /upload HTTP/1.1[0m" 302 -
+2025-11-18 11:13:25,315 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:13:25] "GET /upload HTTP/1.1" 200 -
+2025-11-18 11:13:25,379 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:13:25] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:13:25,389 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:13:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:13:28,787 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:13:28] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 11:13:28,833 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:13:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:13:28,833 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:13:28] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:13:54,593 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:13:54] "GET /upload HTTP/1.1" 200 -
+2025-11-18 11:13:54,629 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:13:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:13:54,633 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:13:54] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:14:02,833 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:14:02] "[32mPOST /upload HTTP/1.1[0m" 302 -
+2025-11-18 11:14:02,854 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:14:02] "GET /upload HTTP/1.1" 200 -
+2025-11-18 11:14:02,898 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:14:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:14:02,903 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:14:02] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:14:05,503 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:14:05] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 11:14:05,539 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:14:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:14:05,543 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:14:05] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:22:21,245 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-11-18 11:22:21,492 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 11:22:35,718 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 11:22:35,719 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 11:22:37,839 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:22:37] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 11:22:37,939 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:22:37] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-18 11:22:37,976 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:22:37] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-11-18 11:33:36,669 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\ml_analysis.py', reloading
+2025-11-18 11:33:36,904 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 11:33:40,402 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 11:33:40,409 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 11:33:50,582 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\chart_generator.py', reloading
+2025-11-18 11:33:50,811 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 11:33:53,030 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 11:33:53,033 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 11:39:20,359 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-11-18 11:39:20,639 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 11:39:23,580 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 11:39:23,591 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 11:39:39,361 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\ml_analysis.py', reloading
+2025-11-18 11:39:39,627 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 11:39:42,453 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 11:39:42,464 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 11:39:52,769 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\chart_generator.py', reloading
+2025-11-18 11:39:53,019 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 11:41:39,248 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-18 11:41:39,248 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-18 11:41:39,252 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 11:41:42,159 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 11:41:42,170 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 11:41:42,418 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:41:42] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 11:41:42,529 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:41:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:41:42,529 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:41:42] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:41:54,170 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:41:54] "GET /upload HTTP/1.1" 200 -
+2025-11-18 11:41:54,201 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:41:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:41:54,204 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:41:54] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:42:05,459 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:42:05] "[32mPOST /upload HTTP/1.1[0m" 302 -
+2025-11-18 11:42:05,486 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:42:05] "GET /upload HTTP/1.1" 200 -
+2025-11-18 11:42:05,532 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:42:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:42:05,533 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:42:05] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:42:06,606 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:42:06] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 11:42:06,652 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:42:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:42:06,655 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:42:06] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:42:20,786 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:42:20] "GET /upload HTTP/1.1" 200 -
+2025-11-18 11:42:20,819 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:42:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:42:20,821 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:42:20] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:42:30,547 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:42:30] "[32mPOST /upload HTTP/1.1[0m" 302 -
+2025-11-18 11:42:30,579 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:42:30] "GET /upload HTTP/1.1" 200 -
+2025-11-18 11:42:30,636 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:42:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:42:30,637 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:42:30] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:42:32,421 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:42:32] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 11:42:32,465 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:42:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:42:32,467 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:42:32] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:42:42,246 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:42:42] "GET /upload HTTP/1.1" 200 -
+2025-11-18 11:42:42,280 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:42:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:42:42,282 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:42:42] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:43:09,970 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:43:09] "[32mPOST /upload HTTP/1.1[0m" 302 -
+2025-11-18 11:43:10,004 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:43:10] "GET /upload HTTP/1.1" 200 -
+2025-11-18 11:43:10,059 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:43:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:43:10,060 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:43:10] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:43:29,388 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:43:29] "[32mPOST /upload HTTP/1.1[0m" 302 -
+2025-11-18 11:43:29,415 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:43:29] "GET /upload HTTP/1.1" 200 -
+2025-11-18 11:43:29,466 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:43:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:43:29,469 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:43:29] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:43:40,260 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:43:40] "[32mPOST /upload HTTP/1.1[0m" 302 -
+2025-11-18 11:43:40,291 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:43:40] "GET /upload HTTP/1.1" 200 -
+2025-11-18 11:43:40,352 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:43:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:43:40,352 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:43:40] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:43:42,379 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:43:42] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 11:43:42,416 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:43:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:43:42,419 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:43:42] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:45:58,911 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:45:58] "[33mGET /mahjong HTTP/1.1[0m" 404 -
+2025-11-18 11:45:58,972 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:45:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:45:58,973 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:45:58] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:46:02,854 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:46:02] "GET / HTTP/1.1" 200 -
+2025-11-18 11:46:02,882 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:46:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:46:02,884 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:46:02] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:46:04,675 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:46:04] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 11:46:04,705 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:46:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:46:04,709 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:46:04] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:49:26,199 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\ml_analysis.py', reloading
+2025-11-18 11:49:26,449 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 11:49:29,577 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 11:49:29,590 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 11:51:29,099 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:51:29] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 11:51:29,195 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:51:29] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-18 11:51:29,195 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:51:29] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-11-18 11:52:04,915 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:52:04] "[32mPOST /delete-data HTTP/1.1[0m" 302 -
+2025-11-18 11:52:04,939 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:52:04] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 11:52:05,001 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:52:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:52:05,003 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:52:05] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:52:06,902 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:52:06] "GET /upload HTTP/1.1" 200 -
+2025-11-18 11:52:06,932 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:52:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:52:06,936 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:52:06] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:52:19,365 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:52:19] "[32mPOST /upload HTTP/1.1[0m" 302 -
+2025-11-18 11:52:19,394 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:52:19] "GET /upload HTTP/1.1" 200 -
+2025-11-18 11:52:19,454 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:52:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:52:19,455 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:52:19] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:52:23,223 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:52:23] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 11:52:23,254 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:52:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:52:23,257 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:52:23] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:52:37,835 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:52:37] "GET /upload HTTP/1.1" 200 -
+2025-11-18 11:52:37,866 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:52:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:52:37,869 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:52:37] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:52:46,075 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:52:46] "[32mPOST /upload HTTP/1.1[0m" 302 -
+2025-11-18 11:52:46,102 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:52:46] "GET /upload HTTP/1.1" 200 -
+2025-11-18 11:52:46,145 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:52:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:52:46,152 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:52:46] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:52:48,971 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:52:48] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 11:52:49,009 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:52:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:52:49,010 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:52:49] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:54:13,020 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:54:13] "GET /upload HTTP/1.1" 200 -
+2025-11-18 11:54:13,052 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:54:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:54:13,057 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:54:13] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:54:16,271 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:54:16] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 11:54:16,307 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:54:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:54:16,311 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:54:16] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:54:21,368 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:54:21] "[32mPOST /delete-data HTTP/1.1[0m" 302 -
+2025-11-18 11:54:21,393 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:54:21] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 11:54:21,450 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:54:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:54:21,451 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:54:21] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:54:23,433 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:54:23] "GET /upload HTTP/1.1" 200 -
+2025-11-18 11:54:23,455 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:54:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:54:23,457 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:54:23] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:54:32,102 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:54:32] "[32mPOST /upload HTTP/1.1[0m" 302 -
+2025-11-18 11:54:32,126 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:54:32] "GET /upload HTTP/1.1" 200 -
+2025-11-18 11:54:32,182 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:54:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:54:32,183 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:54:32] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:54:36,027 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:54:36] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 11:54:36,062 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:54:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 11:54:36,064 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 11:54:36] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 11:59:48,476 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\ml_analysis.py', reloading
+2025-11-18 11:59:48,715 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 11:59:52,564 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 11:59:52,572 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 12:00:36,015 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\chart_generator.py', reloading
+2025-11-18 12:00:36,255 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 12:00:39,579 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 12:00:39,587 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 12:03:10,549 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:03:10] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 12:03:10,673 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:03:10] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-11-18 12:03:10,674 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:03:10] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-18 12:03:26,539 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-18 12:03:26,540 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-18 12:03:26,544 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 12:03:29,716 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 12:03:29,734 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 12:03:29,969 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:03:29] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 12:03:30,054 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:03:30] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-11-18 12:03:30,059 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:03:30] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-18 12:03:39,021 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:03:39] "GET /upload HTTP/1.1" 200 -
+2025-11-18 12:03:39,048 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:03:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 12:03:39,048 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:03:39] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 12:03:47,799 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:03:47] "[32mPOST /upload HTTP/1.1[0m" 302 -
+2025-11-18 12:03:47,829 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:03:47] "GET /upload HTTP/1.1" 200 -
+2025-11-18 12:03:47,890 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:03:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 12:03:47,891 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:03:47] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 12:03:50,701 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:03:50] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 12:03:50,729 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:03:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 12:03:50,731 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:03:50] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 12:04:03,257 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:04:03] "GET /upload HTTP/1.1" 200 -
+2025-11-18 12:04:03,294 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:04:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 12:04:03,297 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:04:03] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 12:04:14,819 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:04:14] "[32mPOST /upload HTTP/1.1[0m" 302 -
+2025-11-18 12:04:14,842 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:04:14] "GET /upload HTTP/1.1" 200 -
+2025-11-18 12:04:14,886 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:04:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 12:04:14,888 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:04:14] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 12:04:16,003 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:04:16] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 12:04:16,038 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:04:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 12:04:16,043 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:04:16] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 12:07:32,985 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\chart_generator.py', reloading
+2025-11-18 12:07:33,221 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 12:07:36,872 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 12:07:36,878 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 12:08:35,021 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:08:35] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 12:08:35,138 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:08:35] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-11-18 12:08:35,138 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:08:35] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-18 12:09:20,678 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-11-18 12:09:20,885 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 12:09:23,758 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 12:09:23,771 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 12:09:24,170 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:09:24] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 12:09:24,295 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:09:24] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-18 12:09:24,304 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:09:24] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-11-18 12:09:44,538 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-18 12:09:44,539 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-18 12:09:44,543 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 12:09:48,175 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 12:09:48,186 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 12:09:48,468 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:09:48] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 12:09:48,545 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:09:48] "GET / HTTP/1.1" 200 -
+2025-11-18 12:09:48,547 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:09:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 12:09:48,553 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:09:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 12:09:48,610 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:09:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 12:09:48,611 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:09:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 12:09:51,197 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:09:51] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 12:09:51,226 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:09:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 12:09:51,234 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:09:51] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 12:09:56,429 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:09:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 12:09:56,451 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:09:56] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-11-18 12:13:55,144 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\chart_generator.py', reloading
+2025-11-18 12:13:55,397 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 12:14:33,165 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-18 12:14:33,165 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-18 12:14:33,165 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 12:14:35,619 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 12:14:35,628 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 12:14:38,733 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:14:38] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 12:14:38,838 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:14:38] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-18 12:14:38,844 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:14:38] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-11-18 12:19:12,222 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-11-18 12:19:12,457 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 12:19:15,920 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 12:19:15,932 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 12:19:27,650 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:19:27] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 12:19:27,790 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:19:27] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-18 12:19:27,790 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:19:27] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-11-18 12:27:24,067 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-11-18 12:27:24,386 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 12:27:26,868 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 12:27:26,875 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 12:29:41,395 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\ml_analysis.py', reloading
+2025-11-18 12:29:41,676 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 12:29:44,884 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 12:29:44,892 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 12:31:04,638 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:31:04] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 12:31:04,749 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:31:04] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-18 12:31:10,772 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:31:10] "GET / HTTP/1.1" 200 -
+2025-11-18 12:31:10,805 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:31:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 12:31:10,806 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:31:10] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 12:31:12,588 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:31:12] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 12:31:12,615 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:31:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 12:34:59,258 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:34:59] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 12:34:59,289 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:34:59] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-18 12:34:59,291 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:34:59] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-11-18 12:53:09,176 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-11-18 12:53:09,675 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 12:53:15,363 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 12:53:15,371 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 12:58:06,700 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\ml_analysis.py', reloading
+2025-11-18 12:58:07,020 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 12:58:11,539 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 12:58:11,551 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 12:58:27,049 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\chart_generator.py', reloading
+2025-11-18 12:58:27,444 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 12:58:31,188 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 12:58:31,195 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 12:59:12,087 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-18 12:59:12,088 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-18 12:59:12,089 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 12:59:15,598 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 12:59:15,620 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 12:59:15,933 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:59:15] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 12:59:15,983 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:59:15] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-18 12:59:15,985 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:59:15] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-11-18 12:59:21,113 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 12:59:21] "GET /export-excel HTTP/1.1" 200 -
+2025-11-18 13:08:31,733 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-11-18 13:08:32,152 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 13:08:36,816 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 13:08:36,838 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 13:08:53,620 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:08:53] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 13:08:53,659 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:08:53] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-18 13:08:53,660 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:08:53] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-11-18 13:08:55,121 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-11-18 13:08:55,124 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-11-18 13:08:56,419 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-11-18 13:08:56,421 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-11-18 13:08:56,431 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-11-18 13:08:56,432 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-11-18 13:08:56,881 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:08:56] "GET /export-excel HTTP/1.1" 200 -
+2025-11-18 13:17:53,355 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:17:53] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 13:17:53,389 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:17:53] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-18 13:17:53,390 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:17:53] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-11-18 13:18:05,428 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-18 13:18:05,430 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-18 13:18:05,431 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 13:18:10,841 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 13:18:10,849 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 13:18:13,330 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:18:13] "GET / HTTP/1.1" 200 -
+2025-11-18 13:18:13,359 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:18:13] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-18 13:18:13,360 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:18:13] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-11-18 13:18:17,716 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:18:17] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 13:18:17,749 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:18:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 13:18:17,751 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:18:17] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 13:18:19,957 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-11-18 13:18:19,961 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-11-18 13:18:21,452 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-11-18 13:18:21,454 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-11-18 13:18:21,459 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-11-18 13:18:21,463 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-11-18 13:18:21,979 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:18:21] "GET /export-excel HTTP/1.1" 200 -

@@ -1,226 +1,8 @@
 {% extends "base.html" %} {% block title %}Dashboard - Pengelolaan Data
 Pariwisata Palembang{% endblock %} {% block scripts %}
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-      // Data dari Flask
-      const monthlyData = {{ charts_data.monthly_labels | tojson if charts_data.monthly_labels else [] }};
-      const monthlyValues = {{ charts_data.monthly_values | tojson if charts_data.monthly_values else [] }};
-
-      const yearlyLabels = {{ charts_data.yearly_labels | tojson if charts_data.yearly_labels else [] }};
-      const yearlyValues = {{ charts_data.yearly_values | tojson if charts_data.yearly_values else [] }};
-
-      // Chart 1: Monthly Visitors
-      if (monthlyData.length > 0) {
-          new Chart(document.getElementById('monthlyChart'), {
-              type: 'bar',
-              data: {
-                  labels: monthlyData,
-                  datasets: [{
-                      label: 'Rata-rata Pengunjung',
-                      data: monthlyValues,
-                      backgroundColor: 'rgba(59, 130, 246, 0.8)',
-                      borderColor: 'rgba(59, 130, 246, 1)',
-                      borderWidth: 2,
-                      borderRadius: 8
-                  }]
-              },
-              options: {
-                  responsive: true,
-                  plugins: {
-                      legend: {
-                          display: true,
-                          position: 'top',
-                      },
-                      title: {
-                          display: true,
-                          text: 'Rata-rata Pengunjung per Bulan'
-                      }
-                  },
-                  scales: {
-                      y: {
-                          beginAtZero: true,
-                          ticks: {
-                              callback: function(value) {
-                                  return value.toLocaleString('id-ID');
-                              }
-                          }
-                      }
-                  }
-              }
-          });
-      } else {
-          document.getElementById('monthlyChart').innerHTML = '<div class="no-data"><p>📊 Tidak ada data bulanan</p></div>';
-      }
-
-      // Chart 2: Yearly Trend
-      if (yearlyLabels.length > 0) {
-          new Chart(document.getElementById('yearlyChart'), {
-              type: 'line',
-              data: {
-                  labels: yearlyLabels,
-                  datasets: [{
-                      label: 'Total Pengunjung',
-                      data: yearlyValues,
-                      backgroundColor: 'rgba(6, 182, 212, 0.2)',
-                      borderColor: 'rgba(6, 182, 212, 1)',
-                      borderWidth: 3,
-                      tension: 0.4,
-                      fill: true
-                  }]
-              },
-              options: {
-                  responsive: true,
-                  plugins: {
-                      legend: {
-                          display: true,
-                          position: 'top',
-                      },
-                      title: {
-                          display: true,
-                          text: 'Trend Kunjungan Tahunan'
-                      }
-                  },
-                  scales: {
-                      y: {
-                          beginAtZero: true,
-                          ticks: {
-                              callback: function(value) {
-                                  return value.toLocaleString('id-ID');
-                              }
-                          }
-                      }
-                  }
-              }
-          });
-      } else {
-          document.getElementById('yearlyChart').innerHTML = '<div class="no-data"><p>📈 Tidak ada data tahunan</p></div>';
-      }
-
-      // Chart 3: Seasonal Distribution - FALLBACK
-      const seasonalCtx = document.getElementById('seasonalChart').getContext('2d');
-      new Chart(seasonalCtx, {
-          type: 'doughnut',
-          data: {
-              labels: ['High Season', 'Medium Season', 'Low Season'],
-              datasets: [{
-                  data: [40, 35, 25],
-                  backgroundColor: [
-                      'rgba(59, 130, 246, 0.8)',
-                      'rgba(6, 182, 212, 0.8)',
-                      'rgba(148, 163, 184, 0.8)'
-                  ],
-                  borderWidth: 2
-              }]
-          },
-          options: {
-              responsive: true,
-              plugins: {
-                  legend: {
-                      position: 'bottom'
-                  },
-                  title: {
-                      display: true,
-                      text: 'Distribusi Musim (Contoh)'
-                  }
-              }
-          }
-      });
-
-      // Chart 4: Year Comparison - FIXED
-      const comparisonCtx = document.getElementById('comparisonChart').getContext('2d');
-
-      if (yearlyLabels.length >= 2) {
-          // Create comparison from available yearly data
-          new Chart(comparisonCtx, {
-              type: 'bar',
-              data: {
-                  labels: yearlyLabels,
-                  datasets: [{
-                      label: 'Total Pengunjung',
-                      data: yearlyValues,
-                      backgroundColor: yearlyLabels.map((_, i) =>
-                          `hsl(${i * 60}, 70%, 60%)`
-                      ),
-                      borderColor: yearlyLabels.map((_, i) =>
-                          `hsl(${i * 60}, 70%, 50%)`
-                      ),
-                      borderWidth: 2,
-                      borderRadius: 8
-                  }]
-              },
-              options: {
-                  responsive: true,
-                  plugins: {
-                      legend: {
-                          display: true,
-                          position: 'top'
-                      },
-                      title: {
-                          display: true,
-                          text: 'Perbandingan Jumlah Pengunjung per Tahun'
-                      }
-                  },
-                  scales: {
-                      y: {
-                          beginAtZero: true,
-                          ticks: {
-                              callback: function(value) {
-                                  return value.toLocaleString('id-ID');
-                              }
-                          }
-                      }
-                  }
-              }
-          });
-      } else {
-          // Fallback comparison chart
-          new Chart(comparisonCtx, {
-              type: 'bar',
-              data: {
-                  labels: ['2022', '2023', '2024'],
-                  datasets: [{
-                      label: 'Contoh Data',
-                      data: [2500000, 3000000, 2800000],
-                      backgroundColor: [
-                          'rgba(59, 130, 246, 0.8)',
-                          'rgba(6, 182, 212, 0.8)',
-                          'rgba(30, 58, 138, 0.8)'
-                      ],
-                      borderWidth: 2,
-                      borderRadius: 8
-                  }]
-              },
-              options: {
-                  responsive: true,
-                  plugins: {
-                      legend: {
-                          display: true,
-                          position: 'top'
-                      },
-                      title: {
-                          display: true,
-                          text: 'Perbandingan Tahun (Contoh Data)'
-                      }
-                  },
-                  scales: {
-                      y: {
-                          beginAtZero: true,
-                          ticks: {
-                              callback: function(value) {
-                                  return value.toLocaleString('id-ID');
-                              }
-                          }
-                      }
-                  }
-              }
-          });
-      }
-  });
-</script>
 {% endblock %} {% block content %}
 <div class="container">
-  <!-- Flash Messages -->
   <div class="flash-messages">
     {% with messages = get_flashed_messages(with_categories=true) %} {% if
     messages %} {% for category, message in messages %}
@@ -239,7 +21,6 @@ Pariwisata Palembang{% endblock %} {% block scripts %}
     <p>Analisis data kunjungan wisatawan di Palembang</p>
   </div>
 
-  <!-- Action Buttons -->
   <div class="actions">
     <a href="{{ url_for('upload') }}" class="btn btn-primary">
       <span>📤</span> Upload Data Baru
@@ -257,6 +38,9 @@ Pariwisata Palembang{% endblock %} {% block scripts %}
         <span>🗑️</span> Hapus Semua Data
       </button>
     </form>
+    <a href="{{ url_for('export_excel') }}" class="btn btn-success">
+      <span>📊</span> Export ke Excel
+    </a>
   </div>
 
   {% if df_empty %}
@@ -268,7 +52,6 @@ Pariwisata Palembang{% endblock %} {% block scripts %}
     >
   </div>
   {% else %}
-  <!-- Statistics -->
   <div class="stats-grid">
     <div class="stat-card">
       <div class="stat-number">{{ db_stats.total_records }}</div>
@@ -292,56 +75,272 @@ Pariwisata Palembang{% endblock %} {% block scripts %}
     </div>
   </div>
 
-  <!-- Charts Section -->
   <h2>Visualisasi Data</h2>
   <div class="charts-grid">
-    <!-- Monthly Chart -->
     <div class="chart-container">
       <div class="chart-title">Rata-rata Pengunjung per Bulan</div>
       <canvas id="monthlyChart"></canvas>
     </div>
 
-    <!-- Yearly Chart -->
     <div class="chart-container">
       <div class="chart-title">Trend Tahunan</div>
       <canvas id="yearlyChart"></canvas>
     </div>
 
-    <!-- Seasonal Chart -->
     <div class="chart-container">
-      <div class="chart-title">Distribusi Musim</div>
+      <div class="chart-title">Distribusi Musim (ML Analysis)</div>
       <canvas id="seasonalChart"></canvas>
     </div>
 
-    <!-- Comparison Chart -->
+    <div class="chart-container">
+      <div class="chart-title">Performa Bulanan dengan Kategori Musim</div>
+      <canvas id="seasonalBarChart"></canvas>
+    </div>
+
     <div class="chart-container">
       <div class="chart-title">Perbandingan Tahun</div>
       <canvas id="comparisonChart"></canvas>
     </div>
   </div>
 
-  <!-- ML Analysis Suggestions -->
   <div class="suggestions-section">
     <h2>💡 Saran & Rekomendasi Machine Learning</h2>
-
     {% if ml_analysis and ml_analysis.suggestions %} {% for suggestion in
     ml_analysis.suggestions %}
-    <div class="suggestion-item">{{ suggestion|safe }}</div>
+    <div class="suggestion-item">{{ suggestion }}</div>
     {% endfor %} {% else %} {% for suggestion in suggestions %}
-    <div class="suggestion-item">{{ suggestion|safe }}</div>
-    {% endfor %} {% endif %} {% if not ml_analysis and not suggestions %}
-    <div class="suggestion-item">
-      <strong>📋 Data Analysis:</strong> Sistem sedang menganalisis pola
-      kunjungan wisata. Upload lebih banyak data untuk mendapatkan insight yang
-      lebih akurat.
-    </div>
-    <div class="suggestion-item">
-      <strong>💡 Tip:</strong> Pastikan data yang diupload mencakup periode
-      waktu yang cukup untuk analisis trend yang komprehensif.
-    </div>
-    {% endif %}
+    <div class="suggestion-item">{{ suggestion }}</div>
+    {% endfor %} {% endif %}
   </div>
-
   {% endif %}
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const monthlyData = {{ charts_data.monthly_labels | tojson | safe }};
+      const monthlyValues = {{ charts_data.monthly_values | tojson | safe }};
+      const yearlyLabels = {{ charts_data.yearly_labels | tojson | safe }};
+      const yearlyValues = {{ charts_data.yearly_values | tojson | safe }};
+
+      if (monthlyData.length > 0) {
+          new Chart(document.getElementById('monthlyChart'), {
+              type: 'bar',
+              data: {
+                  labels: monthlyData,
+                  datasets: [{
+                      label: 'Rata-rata Pengunjung',
+                      data: monthlyValues,
+                      backgroundColor: 'rgba(59, 130, 246, 0.8)',
+                      borderColor: 'rgba(59, 130, 246, 1)',
+                      borderWidth: 2,
+                      borderRadius: 8
+                  }]
+              },
+              options: {
+                  responsive: true,
+                  plugins: {
+                      title: { display: true, text: 'Rata-rata Pengunjung per Bulan' }
+                  },
+                  scales: {
+                      y: {
+                          beginAtZero: true,
+                          ticks: { callback: value => value.toLocaleString('id-ID') }
+                      }
+                  }
+              }
+          });
+      } else {
+          document.getElementById('monthlyChart').innerHTML = '<div class="no-data"><p>📊 Tidak ada data bulanan</p></div>';
+      }
+
+      if (yearlyLabels.length > 0) {
+          new Chart(document.getElementById('yearlyChart'), {
+              type: 'line',
+              data: {
+                  labels: yearlyLabels,
+                  datasets: [{
+                      label: 'Total Pengunjung',
+                      data: yearlyValues,
+                      backgroundColor: 'rgba(6, 182, 212, 0.2)',
+                      borderColor: 'rgba(6, 182, 212, 1)',
+                      borderWidth: 3,
+                      tension: 0.4,
+                      fill: true
+                  }]
+              },
+              options: {
+                  responsive: true,
+                  plugins: {
+                      title: { display: true, text: 'Trend Kunjungan Tahunan' }
+                  },
+                  scales: {
+                      y: {
+                          beginAtZero: true,
+                          ticks: { callback: value => value.toLocaleString('id-ID') }
+                      }
+                  }
+              }
+          });
+      } else {
+          document.getElementById('yearlyChart').innerHTML = '<div class="no-data"><p>📈 Tidak ada data tahunan</p></div>';
+      }
+
+      const seasonalCtx = document.getElementById('seasonalChart');
+      if (monthlyValues.length > 0) {
+          const values = monthlyValues.map(v => parseFloat(v));
+          const totalVisitors = values.reduce((a, b) => a + b, 0);
+
+          if (totalVisitors > 0) {
+              const sortedValues = [...values].sort((a, b) => a - b);
+              const highThreshold = sortedValues[Math.floor(sortedValues.length * 0.7)];
+              const lowThreshold = sortedValues[Math.floor(sortedValues.length * 0.3)];
+
+              let highSeasonVisitors = 0;
+              let mediumSeasonVisitors = 0;
+              let lowSeasonVisitors = 0;
+
+              values.forEach((value, index) => {
+                  if (value >= highThreshold) {
+                      highSeasonVisitors += value;
+                  } else if (value <= lowThreshold) {
+                      lowSeasonVisitors += value;
+                  } else {
+                      mediumSeasonVisitors += value;
+                  }
+              });
+
+              const highPercentage = Math.round((highSeasonVisitors / totalVisitors) * 100);
+              const mediumPercentage = Math.round((mediumSeasonVisitors / totalVisitors) * 100);
+              const lowPercentage = Math.round((lowSeasonVisitors / totalVisitors) * 100);
+
+              new Chart(seasonalCtx, {
+                  type: 'doughnut',
+                  data: {
+                      labels: [
+                          `High Season (${highPercentage}%)`,
+                          `Medium Season (${mediumPercentage}%)`,
+                          `Low Season (${lowPercentage}%)`
+                      ],
+                      datasets: [{
+                          data: [highPercentage, mediumPercentage, lowPercentage],
+                          backgroundColor: ['#FF6B6B', '#4ECDC4', '#45B7D1'],
+                          borderColor: '#FFFFFF',
+                          borderWidth: 2
+                      }]
+                  },
+                  options: {
+                      responsive: true,
+                      plugins: {
+                          title: {
+                              display: true,
+                              text: 'Distribusi Pengunjung Berdasarkan Musim (ML Analysis)'
+                          },
+                          legend: {
+                              position: 'bottom'
+                          },
+                          tooltip: {
+                              callbacks: {
+                                  label: function(context) {
+                                      const label = context.label || '';
+                                      const value = context.parsed;
+                                      return `${label}: ${value}% pengunjung`;
+                                  }
+                              }
+                          }
+                      }
+                  }
+              });
+          } else {
+              seasonalCtx.innerHTML = '<div class="no-data"><p>📊 Tidak ada data pengunjung</p></div>';
+          }
+      } else {
+          seasonalCtx.innerHTML = '<div class="no-data"><p>📊 Data musim tidak tersedia</p></div>';
+      }
+
+      const seasonalBarCtx = document.getElementById('seasonalBarChart');
+      if (monthlyData.length > 0 && monthlyValues.length > 0) {
+          const values = monthlyValues.map(v => parseFloat(v));
+          const sortedValues = [...values].sort((a, b) => a - b);
+          const highThreshold = sortedValues[Math.floor(sortedValues.length * 0.7)] || 0;
+          const lowThreshold = sortedValues[Math.floor(sortedValues.length * 0.3)] || 0;
+          const backgroundColors = values.map(value => {
+              if (value >= highThreshold) return '#FF6B6B';
+              if (value <= lowThreshold) return '#45B7D1';
+              return '#4ECDC4';
+          });
+
+          new Chart(seasonalBarCtx, {
+              type: 'bar',
+              data: {
+                  labels: monthlyData,
+                  datasets: [{
+                      label: 'Rata-rata Pengunjung per Bulan',
+                      data: values,
+                      backgroundColor: backgroundColors,
+                      borderColor: '#2C3E50',
+                      borderWidth: 1
+                  }]
+              },
+              options: {
+                  responsive: true,
+                  plugins: {
+                      title: {
+                          display: true,
+                          text: 'Performa Bulanan dengan Kategori Musim'
+                      },
+                      legend: {
+                          display: false
+                      }
+                  },
+                  scales: {
+                      y: {
+                          beginAtZero: true,
+                          title: {
+                              display: true,
+                              text: 'Jumlah Pengunjung'
+                          },
+                          ticks: {
+                              callback: value => value.toLocaleString('id-ID')
+                          }
+                      }
+                  }
+              }
+          });
+      } else {
+          seasonalBarCtx.innerHTML = '<div class="no-data"><p>📊 Data tidak tersedia</p></div>';
+      }
+
+      const comparisonCtx = document.getElementById('comparisonChart');
+      if (yearlyLabels.length >= 2) {
+          new Chart(comparisonCtx, {
+              type: 'bar',
+              data: {
+                  labels: yearlyLabels,
+                  datasets: [{
+                      label: 'Total Pengunjung',
+                      data: yearlyValues,
+                      backgroundColor: yearlyLabels.map((_, i) => `hsl(${i * 60}, 70%, 60%)`),
+                      borderColor: yearlyLabels.map((_, i) => `hsl(${i * 60}, 70%, 50%)`),
+                      borderWidth: 2,
+                      borderRadius: 8
+                  }]
+              },
+              options: {
+                  responsive: true,
+                  plugins: {
+                      title: { display: true, text: 'Perbandingan Jumlah Pengunjung per Tahun' }
+                  },
+                  scales: {
+                      y: {
+                          beginAtZero: true,
+                          ticks: { callback: value => value.toLocaleString('id-ID') }
+                      }
+                  }
+              }
+          });
+      } else {
+          comparisonCtx.innerHTML = '<div class="no-data"><p>📈 Data perbandingan minimal 2 tahun</p></div>';
+      }
+  });
+</script>
 {% endblock %}

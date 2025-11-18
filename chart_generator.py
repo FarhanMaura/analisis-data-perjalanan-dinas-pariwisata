@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import json
 from datetime import datetime
+from typing import Dict, Any, List, Optional, Union
 
 class ChartGenerator:
     def __init__(self, ml_analyzer=None):
@@ -19,7 +20,7 @@ class ChartGenerator:
                            'July', 'August', 'September', 'October', 'November', 'December']
         self.ml_analyzer = ml_analyzer
 
-    def _convert_to_json_serializable(self, obj):
+    def _convert_to_json_serializable(self, obj: Any) -> Any:
         if isinstance(obj, (np.integer, int)):
             return int(obj)
         elif isinstance(obj, (np.floating, float)):
@@ -37,7 +38,7 @@ class ChartGenerator:
         else:
             return str(obj)
 
-    def generate_seasonal_bar_data(self, df):
+    def generate_seasonal_bar_data(self, df: pd.DataFrame) -> Dict[str, Any]:
         if df.empty:
             return self._get_empty_chart_data("Bar")
 
@@ -51,11 +52,11 @@ class ChartGenerator:
         
         monthly_avg = monthly_avg.reindex(self.months_order)
         
+        background_colors = []
         if not monthly_avg.empty:
             high_threshold = monthly_avg.quantile(0.70)
             low_threshold = monthly_avg.quantile(0.30)
             
-            background_colors = []
             for month in self.months_order:
                 value = monthly_avg[month]
                 if value >= high_threshold:
@@ -105,7 +106,7 @@ class ChartGenerator:
         print("DEBUG: Simple seasonal bar chart data generated")
         return chart_data
 
-    def generate_monthly_chart_data(self, df):
+    def generate_monthly_chart_data(self, df: pd.DataFrame) -> Dict[str, Any]:
         if df.empty:
             return self._get_empty_chart_data("Bulanan")
 
@@ -142,7 +143,7 @@ class ChartGenerator:
 
         return self._convert_to_json_serializable(chart_data)
 
-    def generate_yearly_chart_data(self, df):
+    def generate_yearly_chart_data(self, df: pd.DataFrame) -> Dict[str, Any]:
         if df.empty:
             return self._get_empty_chart_data("Tahunan")
 
@@ -181,51 +182,52 @@ class ChartGenerator:
 
         return self._convert_to_json_serializable(chart_data)
 
-    def generate_seasonal_pie_data(self, df):
+    def generate_seasonal_pie_data(self, df: pd.DataFrame) -> Dict[str, Any]:
         if df.empty:
             return self._get_empty_chart_data("Pie")
 
         if self.ml_analyzer:
             try:
                 seasonal_data = self.ml_analyzer.get_seasonal_analysis_for_charts()
-                season_percentages = seasonal_data['season_percentages']
+                if isinstance(seasonal_data, dict) and 'season_percentages' in seasonal_data:
+                    season_percentages = seasonal_data['season_percentages']
 
-                labels = []
-                data = []
-                background_colors = []
+                    labels = []
+                    data = []
+                    background_colors = []
 
-                for season, percentage in season_percentages.items():
-                    if percentage > 0:
-                        labels.append(f'{season} Season ({percentage}%)')
-                        data.append(percentage)
-                        background_colors.append(self.color_scheme['seasonal'][season])
+                    for season, percentage in season_percentages.items():
+                        if percentage > 0:
+                            labels.append(f'{season} Season ({percentage}%)')
+                            data.append(percentage)
+                            background_colors.append(self.color_scheme['seasonal'][season])
 
-                chart_data = {
-                    'type': 'pie',
-                    'data': {
-                        'labels': labels,
-                        'datasets': [{
-                            'data': data,
-                            'backgroundColor': background_colors,
-                            'borderColor': '#FFFFFF',
-                            'borderWidth': 2
-                        }]
-                    },
-                    'options': {
-                        'responsive': True,
-                        'plugins': {
-                            'title': {
-                                'display': True,
-                                'text': 'Distribusi Pengunjung Berdasarkan Musim'
-                            },
-                            'legend': {
-                                'position': 'bottom'
+                    chart_data = {
+                        'type': 'pie',
+                        'data': {
+                            'labels': labels,
+                            'datasets': [{
+                                'data': data,
+                                'backgroundColor': background_colors,
+                                'borderColor': '#FFFFFF',
+                                'borderWidth': 2
+                            }]
+                        },
+                        'options': {
+                            'responsive': True,
+                            'plugins': {
+                                'title': {
+                                    'display': True,
+                                    'text': 'Distribusi Pengunjung Berdasarkan Musim'
+                                },
+                                'legend': {
+                                    'position': 'bottom'
+                                }
                             }
                         }
                     }
-                }
 
-                return self._convert_to_json_serializable(chart_data)
+                    return self._convert_to_json_serializable(chart_data)
 
             except Exception as e:
                 print(f"Error using ML analysis for pie chart: {e}")
@@ -262,7 +264,7 @@ class ChartGenerator:
 
         return self._convert_to_json_serializable(chart_data)
 
-    def generate_comparison_chart_data(self, df):
+    def generate_comparison_chart_data(self, df: pd.DataFrame) -> Dict[str, Any]:
         if df.empty:
             return self._get_empty_chart_data("Perbandingan")
 
@@ -323,7 +325,7 @@ class ChartGenerator:
 
         return self._convert_to_json_serializable(chart_data)
 
-    def _categorize_seasons(self, df):
+    def _categorize_seasons(self, df: pd.DataFrame) -> Dict[str, int]:
         if df.empty:
             return {'No Data': 1}
 
@@ -343,7 +345,7 @@ class ChartGenerator:
             'Low Season': int(low_season_count)
         }
 
-    def _get_empty_chart_data(self, chart_type):
+    def _get_empty_chart_data(self, chart_type: str) -> Dict[str, Any]:
         empty_data = {
             'type': 'bar' if chart_type != 'Pie' else 'pie',
             'data': {
@@ -367,7 +369,7 @@ class ChartGenerator:
 
         return empty_data
 
-    def generate_all_charts_data(self, df):
+    def generate_all_charts_data(self, df: pd.DataFrame) -> Dict[str, Any]:
         try:
             charts = {
                 'monthly': self.generate_monthly_chart_data(df),
@@ -382,7 +384,7 @@ class ChartGenerator:
             print(f"Error generating all charts: {e}")
             return {}
 
-    def generate_chart_data_for_export(self, df):
+    def generate_chart_data_for_export(self, df: pd.DataFrame) -> Dict[str, Any]:
         try:
             charts_data = self.generate_all_charts_data(df)
             
@@ -404,14 +406,15 @@ class ChartGenerator:
             print(f"Error generating chart data for export: {e}")
             return {}
 
-    def _get_seasonal_data_for_export(self, df):
+    def _get_seasonal_data_for_export(self, df: pd.DataFrame) -> Dict[str, Any]:
         if df.empty:
             return {}
         
         if self.ml_analyzer:
             try:
                 seasonal_data = self.ml_analyzer.get_seasonal_analysis_for_charts()
-                return seasonal_data
+                if isinstance(seasonal_data, dict):
+                    return seasonal_data
             except Exception as e:
                 print(f"Error using ML analyzer for seasonal data: {e}")
         

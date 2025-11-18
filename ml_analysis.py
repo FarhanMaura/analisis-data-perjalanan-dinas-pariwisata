@@ -6,6 +6,7 @@ from sklearn.metrics import silhouette_score
 import sqlite3
 from datetime import datetime
 import random
+from typing import Dict, Any, List, Optional, Union
 
 class TourismAnalyzer:
     def __init__(self, db_path='tourism.db'):
@@ -13,7 +14,7 @@ class TourismAnalyzer:
         self.scaler = StandardScaler()
         self.last_suggestions = []
 
-    def _convert_to_json_serializable(self, obj):
+    def _convert_to_json_serializable(self, obj: Any) -> Any:
         if isinstance(obj, (np.integer, int)):
             return int(obj)
         elif isinstance(obj, (np.floating, float)):
@@ -31,7 +32,7 @@ class TourismAnalyzer:
         else:
             return str(obj)
 
-    def get_tourism_data(self):
+    def get_tourism_data(self) -> pd.DataFrame:
         conn = sqlite3.connect(self.db_path)
         query = '''
             SELECT year, month, value 
@@ -56,7 +57,7 @@ class TourismAnalyzer:
         conn.close()
         return df
 
-    def analyze_seasonal_distribution(self, df):
+    def analyze_seasonal_distribution(self, df: pd.DataFrame) -> Dict[str, Any]:
         if df.empty:
             return {
                 'season_categories': {'High': 0, 'Medium': 0, 'Low': 0},
@@ -111,7 +112,7 @@ class TourismAnalyzer:
             'low_season_months': [month for month, cat in season_categories.items() if cat == 'Low']
         }
 
-    def analyze_patterns(self, df):
+    def analyze_patterns(self, df: pd.DataFrame) -> Dict[str, Any]:
         if df.empty:
             return {}
 
@@ -144,7 +145,7 @@ class TourismAnalyzer:
 
         return patterns
 
-    def get_suggestion_count_based_on_data(self, total_years, total_records):
+    def get_suggestion_count_based_on_data(self, total_years: int, total_records: int) -> int:
         if total_years == 0:
             return 1
         elif total_years == 1:
@@ -156,7 +157,7 @@ class TourismAnalyzer:
         else:
             return 1
 
-    def select_top_suggestions(self, potential_suggestions, max_suggestions=3):
+    def select_top_suggestions(self, potential_suggestions: List[str], max_suggestions: int = 3) -> List[str]:
         if not potential_suggestions:
             return []
 
@@ -168,7 +169,7 @@ class TourismAnalyzer:
         self.last_suggestions = selected
         return selected
 
-    def generate_focused_suggestions(self, patterns, total_years, total_records):
+    def generate_focused_suggestions(self, patterns: Dict[str, Any], total_years: int, total_records: int) -> List[str]:
         suggestions_pool = []
 
         if not patterns:
@@ -264,7 +265,7 @@ class TourismAnalyzer:
         suggestion_count = self.get_suggestion_count_based_on_data(total_years, total_records)
         return self.select_top_suggestions(suggestions_pool, suggestion_count)
 
-    def prepare_features(self, df):
+    def prepare_features(self, df: pd.DataFrame) -> pd.DataFrame:
         if df.empty:
             return pd.DataFrame()
 
@@ -282,7 +283,7 @@ class TourismAnalyzer:
 
         return pivot_df
 
-    def get_detailed_analysis(self):
+    def get_detailed_analysis(self) -> Dict[str, Any]:
         df = self.get_tourism_data()
 
         if df.empty:
@@ -319,7 +320,7 @@ class TourismAnalyzer:
 
         return self._convert_to_json_serializable(result)
 
-    def get_seasonal_analysis_for_charts(self):
+    def get_seasonal_analysis_for_charts(self) -> Dict[str, Any]:
         df = self.get_tourism_data()
         seasonal_data = self.analyze_seasonal_distribution(df)
 
@@ -329,7 +330,7 @@ class TourismAnalyzer:
             'monthly_performance': seasonal_data['monthly_performance']
         }
 
-    def get_analysis_for_export(self):
+    def get_analysis_for_export(self) -> Dict[str, Any]:
         """Get analysis data in format suitable for Excel export"""
         detailed_analysis = self.get_detailed_analysis()
         
@@ -345,7 +346,7 @@ class TourismAnalyzer:
         
         return self._convert_to_json_serializable(export_data)
 
-    def get_seasonal_categories(self, df):
+    def get_seasonal_categories(self, df: pd.DataFrame) -> Dict[str, Any]:
         """Get seasonal categories for export"""
         if df.empty:
             return {}

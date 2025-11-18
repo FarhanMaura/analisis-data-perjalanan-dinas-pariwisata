@@ -13,11 +13,13 @@ from config import Config
 import openpyxl
 from openpyxl.drawing.image import Image
 from openpyxl.styles import Font, PatternFill, Alignment
+from openpyxl.worksheet.worksheet import Worksheet
 import io
 import base64
 import matplotlib.pyplot as plt
 import matplotlib
-matplotlib.use('Agg')  # Important for generating images without GUI
+from typing import Optional, Dict, Any, List, Union
+matplotlib.use('Agg')
 
 app = Flask(__name__)
 app.secret_key = Config.SECRET_KEY
@@ -178,8 +180,11 @@ def analyze_data():
             })
     
     try:
-        ml_analysis = ml_analyzer.get_detailed_analysis()
-        suggestions = ml_analysis['suggestions'][:3]
+        ml_analysis_result = ml_analyzer.get_detailed_analysis()
+        if isinstance(ml_analysis_result, dict) and 'suggestions' in ml_analysis_result:
+            suggestions = ml_analysis_result['suggestions'][:3]
+        else:
+            suggestions = ["Sistem analisis sedang disempurnakan"]
     except Exception as e:
         suggestions = ["Sistem analisis sedang disempurnakan"]
     
@@ -216,11 +221,11 @@ def generate_monthly_chart_image(df):
         
         for value in monthly_avg:
             if value >= high_threshold:
-                colors.append('#FF6B6B')  # Red for High
+                colors.append('#FF6B6B')
             elif value <= low_threshold:
-                colors.append('#45B7D1')  # Blue for Low
+                colors.append('#45B7D1')
             else:
-                colors.append('#4ECDC4')  # Green for Medium
+                colors.append('#4ECDC4')
     
     bars = plt.bar(months_order, monthly_avg.values, color=colors, edgecolor='#2C3E50', linewidth=1)
     plt.title('Performa Bulanan dengan Kategori Musim', fontsize=14, fontweight='bold', pad=20)
@@ -229,7 +234,6 @@ def generate_monthly_chart_image(df):
     plt.xticks(rotation=45)
     plt.grid(axis='y', alpha=0.3)
     
-    # Add value labels on bars
     for bar in bars:
         height = bar.get_height()
         plt.text(bar.get_x() + bar.get_width()/2., height,
@@ -238,7 +242,6 @@ def generate_monthly_chart_image(df):
     
     plt.tight_layout()
     
-    # Save to bytes
     img_buffer = io.BytesIO()
     plt.savefig(img_buffer, format='png', dpi=150, bbox_inches='tight')
     img_buffer.seek(0)
@@ -265,7 +268,6 @@ def generate_yearly_chart_image(df):
     plt.ylabel('Total Pengunjung')
     plt.grid(True, alpha=0.3)
     
-    # Add value labels on points
     for i, (year, value) in enumerate(zip(yearly_totals['year'], yearly_totals['value'])):
         plt.annotate(f'{int(value):,}', (year, value), 
                     textcoords="offset points", xytext=(0,10), 
@@ -375,7 +377,7 @@ def generate_comparison_chart_image(df):
     
     return img_buffer
 
-def _create_raw_data_sheet(worksheet, df):
+def _create_raw_data_sheet(worksheet: Worksheet, df: pd.DataFrame):
     """Create raw data sheet"""
     headers = ['Tahun', 'Bulan', 'Jumlah Pengunjung']
     for col, header in enumerate(headers, 1):
@@ -390,19 +392,12 @@ def _create_raw_data_sheet(worksheet, df):
             worksheet.cell(row=row, column=2, value=data_row['month'])
             worksheet.cell(row=row, column=3, value=int(data_row['value']))
     
-    for column in worksheet.columns:
-        max_length = 0
-        column_letter = column[0].column_letter
-        for cell in column:
-            try:
-                if len(str(cell.value)) > max_length:
-                    max_length = len(str(cell.value))
-            except:
-                pass
-        adjusted_width = (max_length + 2)
-        worksheet.column_dimensions[column_letter].width = adjusted_width
+    # Set fixed column widths (lebih sederhana dan menghindari error)
+    worksheet.column_dimensions['A'].width = 12  # Tahun
+    worksheet.column_dimensions['B'].width = 15  # Bulan  
+    worksheet.column_dimensions['C'].width = 18  # Jumlah Pengunjung
 
-def _create_ml_analysis_sheet(worksheet, ml_analysis):
+def _create_ml_analysis_sheet(worksheet: Worksheet, ml_analysis: Dict[str, Any]):
     """Create ML analysis sheet"""
     worksheet.cell(row=1, column=1, value="Analisis Machine Learning - Pariwisata Palembang")
     worksheet.cell(row=1, column=1).font = Font(bold=True, size=14)
@@ -411,7 +406,7 @@ def _create_ml_analysis_sheet(worksheet, ml_analysis):
     worksheet.cell(row=3, column=1).font = Font(bold=True)
     
     row = 4
-    if 'suggestions' in ml_analysis and ml_analysis['suggestions']:
+    if ml_analysis and 'suggestions' in ml_analysis and ml_analysis['suggestions']:
         for suggestion in ml_analysis['suggestions']:
             worksheet.cell(row=row, column=1, value=f"• {suggestion}")
             row += 1
@@ -424,7 +419,7 @@ def _create_ml_analysis_sheet(worksheet, ml_analysis):
     worksheet.cell(row=row, column=1).font = Font(bold=True)
     row += 1
     
-    if 'patterns' in ml_analysis and ml_analysis['patterns']:
+    if ml_analysis and 'patterns' in ml_analysis and ml_analysis['patterns']:
         patterns = ml_analysis['patterns']
         if 'trends' in patterns and patterns['trends']:
             for trend in patterns['trends']:
@@ -442,7 +437,7 @@ def _create_ml_analysis_sheet(worksheet, ml_analysis):
                                  value=f"  {season}: {percentage}%")
                     row += 1
 
-def _create_charts_sheet(worksheet, df):
+def _create_charts_sheet(worksheet: Worksheet, df: pd.DataFrame):
     """Create charts visualization sheet with embedded images"""
     worksheet.cell(row=1, column=1, value="Visualisasi Data - Grafik dan Chart")
     worksheet.cell(row=1, column=1).font = Font(bold=True, size=14)
@@ -450,7 +445,6 @@ def _create_charts_sheet(worksheet, df):
     current_row = 3
     
     try:
-        # Generate and embed monthly chart
         monthly_img = generate_monthly_chart_image(df)
         if monthly_img:
             worksheet.cell(row=current_row, column=1, value="1. Grafik Rata-rata Bulanan dengan Kategori Musim")
@@ -461,9 +455,8 @@ def _create_charts_sheet(worksheet, df):
             img.width = 600
             img.height = 300
             worksheet.add_image(img, f'A{current_row}')
-            current_row += 20  # Move down for next chart
+            current_row += 20
         
-        # Generate and embed yearly chart
         yearly_img = generate_yearly_chart_image(df)
         if yearly_img:
             worksheet.cell(row=current_row, column=1, value="2. Trend Kunjungan Wisata Tahunan")
@@ -476,7 +469,6 @@ def _create_charts_sheet(worksheet, df):
             worksheet.add_image(img, f'A{current_row}')
             current_row += 20
         
-        # Generate and embed seasonal pie chart
         seasonal_img = generate_seasonal_pie_chart_image(df)
         if seasonal_img:
             worksheet.cell(row=current_row, column=1, value="3. Distribusi Pengunjung Berdasarkan Musim")
@@ -489,7 +481,6 @@ def _create_charts_sheet(worksheet, df):
             worksheet.add_image(img, f'A{current_row}')
             current_row += 25
         
-        # Generate and embed comparison chart
         comparison_img = generate_comparison_chart_image(df)
         if comparison_img:
             worksheet.cell(row=current_row, column=1, value="4. Perbandingan Tahun")
@@ -505,7 +496,7 @@ def _create_charts_sheet(worksheet, df):
         worksheet.cell(row=current_row, column=1, value=f"Error generating charts: {str(e)}")
         current_row += 1
 
-def _create_statistics_sheet(worksheet, df, ml_analysis):
+def _create_statistics_sheet(worksheet: Worksheet, df: pd.DataFrame, ml_analysis: Dict[str, Any]):
     """Create statistics summary sheet"""
     worksheet.cell(row=1, column=1, value="Statistik Summary - Data Pariwisata")
     worksheet.cell(row=1, column=1).font = Font(bold=True, size=14)
@@ -534,7 +525,7 @@ def _create_statistics_sheet(worksheet, df, ml_analysis):
     
     row += 1
     
-    if 'summary' in ml_analysis:
+    if ml_analysis and 'summary' in ml_analysis:
         worksheet.cell(row=row, column=1, value="Summary Analisis ML")
         worksheet.cell(row=row, column=1).font = Font(bold=True)
         row += 1
@@ -553,7 +544,7 @@ def _create_statistics_sheet(worksheet, df, ml_analysis):
             row += 1
     
     row += 1
-    if 'data_quality' in ml_analysis:
+    if ml_analysis and 'data_quality' in ml_analysis:
         worksheet.cell(row=row, column=1, value="Kualitas Data")
         worksheet.cell(row=row, column=1).font = Font(bold=True)
         row += 1
@@ -684,8 +675,18 @@ def dashboard():
     analysis_results = analyze_data()
     
     try:
-        ml_analysis = ml_analyzer.get_detailed_analysis()
-        ml_analysis['suggestions'] = ml_analysis['suggestions'][:3]
+        ml_analysis_result = ml_analyzer.get_detailed_analysis()
+        if isinstance(ml_analysis_result, dict):
+            ml_analysis = ml_analysis_result
+            if 'suggestions' in ml_analysis:
+                ml_analysis['suggestions'] = ml_analysis['suggestions'][:3]
+        else:
+            ml_analysis = {
+                'suggestions': ["ML Analysis sedang dalam perbaikan"],
+                'patterns': {},
+                'summary': {},
+                'data_quality': {'total_years': 0, 'total_records': 0}
+            }
     except Exception as e:
         ml_analysis = {
             'suggestions': ["ML Analysis sedang dalam perbaikan"],
@@ -754,10 +755,15 @@ def export_excel():
         df = pd.read_sql_query(query, conn)
         conn.close()
         
-        ml_analysis = ml_analyzer.get_detailed_analysis()
+        ml_analysis_result = ml_analyzer.get_detailed_analysis()
+        ml_analysis = ml_analysis_result if isinstance(ml_analysis_result, dict) else {}
         
         wb = openpyxl.Workbook()
-        wb.remove(wb.active)
+        
+        # Remove default sheet dengan type safety
+        default_sheet = wb.active
+        if default_sheet:
+            wb.remove(default_sheet)
         
         # Sheet 1: Data Mentah
         ws_raw = wb.create_sheet("Data Mentah")
@@ -814,7 +820,8 @@ def advanced_chart_data():
 def analysis_data():
     try:
         analysis_results = ml_analyzer.get_detailed_analysis()
-        analysis_results['suggestions'] = analysis_results['suggestions'][:3]
+        if isinstance(analysis_results, dict) and 'suggestions' in analysis_results:
+            analysis_results['suggestions'] = analysis_results['suggestions'][:3]
         return jsonify(analysis_results)
     except Exception as e:
         return jsonify({'error': str(e)})

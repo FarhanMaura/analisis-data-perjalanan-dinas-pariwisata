@@ -671,3 +671,19 @@
 2025-11-18 13:29:48,480 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:29:48] "GET /dashboard HTTP/1.1" 200 -
 2025-11-18 13:29:48,503 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:29:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2025-11-18 13:29:48,505 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:29:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 13:42:16,094 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-18 13:42:16,094 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-18 13:42:16,099 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 13:42:19,298 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 13:42:19,305 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 13:42:24,299 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:42:24] "GET / HTTP/1.1" 200 -
+2025-11-18 13:42:24,336 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:42:24] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-18 13:42:24,337 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:42:24] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-11-18 13:42:24,506 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:42:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-11-18 13:42:35,394 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:42:35] "GET /upload HTTP/1.1" 200 -
+2025-11-18 13:42:35,463 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:42:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 13:42:35,464 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:42:35] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 13:42:39,337 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:42:39] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 13:42:39,381 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:42:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 13:42:39,382 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:42:39] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -

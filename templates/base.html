@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{% block title %}Sistem Pariwisata Palembang{% endblock %}</title>
+    <title>{% block title %}Data Kunjungan Kota Palembang{% endblock %}</title>
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='css/style.css') }}"
@@ -18,7 +18,7 @@
         <div class="header-content">
           <a href="{{ url_for('homepage') }}" class="logo">
             <span class="logo-icon">🌴</span>
-            Sistem Pariwisata Palembang
+            Data Kunjungan Wisatawan
           </a>
           <button class="mobile-menu-btn">☰</button>
           <nav>
@@ -56,7 +56,7 @@
       <div class="container">
         <div class="footer-content">
           <p>
-            &copy; 2024 Sistem Pengelolaan Data Pariwisata Palembang. All rights
+            &copy; 2025 Data Kunjungan Wisatawan Kota Palembang. All rights
             reserved.
           </p>
           <p>Dinas Pariwisata Kota Palembang</p>
@@ -64,8 +64,6 @@
             <a href="{{ url_for('homepage') }}">Home</a>
             <a href="{{ url_for('upload') }}">Upload Data</a>
             <a href="{{ url_for('dashboard') }}">Dashboard</a>
-            <a href="#">Kebijakan Privasi</a>
-            <a href="#">Syarat & Ketentuan</a>
           </div>
         </div>
       </div>

@@ -623,3 +623,51 @@
 2025-11-18 13:18:21,459 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 2025-11-18 13:18:21,463 - matplotlib.category - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
 2025-11-18 13:18:21,979 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:18:21] "GET /export-excel HTTP/1.1" 200 -
+2025-11-18 13:23:39,753 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-11-18 13:23:39,754 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-18 13:23:39,757 - werkzeug - INFO -  * Restarting with stat
+2025-11-18 13:23:44,407 - werkzeug - WARNING -  * Debugger is active!
+2025-11-18 13:23:44,415 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-18 13:23:44,711 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:23:44] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 13:23:44,743 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:23:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 13:23:44,745 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:23:44] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 13:23:47,650 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:23:47] "GET / HTTP/1.1" 200 -
+2025-11-18 13:23:47,679 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:23:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 13:23:47,680 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:23:47] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 13:24:28,113 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:24:28] "GET / HTTP/1.1" 200 -
+2025-11-18 13:24:28,148 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:24:28] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-18 13:24:28,152 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:24:28] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-11-18 13:26:03,722 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:26:03] "GET / HTTP/1.1" 200 -
+2025-11-18 13:26:03,755 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:26:03] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-18 13:26:03,756 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:26:03] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-11-18 13:26:56,082 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:26:56] "GET / HTTP/1.1" 200 -
+2025-11-18 13:26:56,108 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:26:56] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-18 13:26:56,114 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:26:56] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-11-18 13:27:09,253 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:27:09] "GET / HTTP/1.1" 200 -
+2025-11-18 13:27:09,286 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:27:09] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-18 13:27:09,288 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:27:09] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-11-18 13:28:46,614 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:28:46] "GET / HTTP/1.1" 200 -
+2025-11-18 13:28:46,642 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:28:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 13:28:46,644 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:28:46] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 13:29:06,768 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:29:06] "GET / HTTP/1.1" 200 -
+2025-11-18 13:29:06,800 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:29:06] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-18 13:29:06,803 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:29:06] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-11-18 13:29:18,164 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:29:18] "GET /upload HTTP/1.1" 200 -
+2025-11-18 13:29:18,189 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:29:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 13:29:18,197 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:29:18] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 13:29:21,352 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:29:21] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 13:29:21,383 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:29:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 13:29:21,385 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:29:21] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 13:29:38,171 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:29:38] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 13:29:38,222 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:29:38] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-18 13:29:38,229 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:29:38] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-11-18 13:29:40,765 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:29:40] "GET / HTTP/1.1" 200 -
+2025-11-18 13:29:40,801 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:29:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 13:29:40,802 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:29:40] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 13:29:44,682 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:29:44] "GET /upload HTTP/1.1" 200 -
+2025-11-18 13:29:44,731 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:29:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 13:29:44,735 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:29:44] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-18 13:29:48,480 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:29:48] "GET /dashboard HTTP/1.1" 200 -
+2025-11-18 13:29:48,503 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:29:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-18 13:29:48,505 - werkzeug - INFO - 127.0.0.1 - - [18/Nov/2025 13:29:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -

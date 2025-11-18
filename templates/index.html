@@ -1,0 +1,105 @@
+{% extends "base.html" %} {% block title %}Home - Pengelolaan Data Pariwisata
+Palembang{% endblock %} {% block content %}
+<div class="hero">
+  <div class="container">
+    <h1>Selamat Datang di Sistem Pengelolaan Data Pariwisata Palembang</h1>
+    <p>
+      Platform cerdas untuk menganalisis dan mengoptimalkan potensi pariwisata
+      Kota Palembang dengan teknologi Machine Learning
+    </p>
+
+    <div class="cta-buttons">
+      <a href="{{ url_for('upload') }}" class="btn btn-primary">
+        <span>🚀</span> Mulai Upload Data
+      </a>
+      <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">
+        <span>📊</span> Lihat Dashboard
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <!-- Features Section -->
+  <section class="features">
+    <div class="feature-card">
+      <div class="feature-icon">📈</div>
+      <h3>Analisis Data Cerdas</h3>
+      <p>
+        Gunakan algoritma Machine Learning untuk menganalisis trend kunjungan
+        wisata dan memberikan insight berharga
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🤖</div>
+      <h3>Rekomendasi AI</h3>
+      <p>
+        Dapatkan saran strategis otomatis berdasarkan analisis data historis
+        untuk meningkatkan kunjungan wisata
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <h3>Visualisasi Interaktif</h3>
+      <p>
+        Dashboard dengan chart dan grafik interaktif untuk memahami data dengan
+        mudah
+      </p>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats">
+    <h2>Teknologi yang Digunakan</h2>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">Python</div>
+        <div class="stat-label">Backend</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">Flask</div>
+        <div class="stat-label">Web Framework</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">K-Means</div>
+        <div class="stat-label">Machine Learning</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">SQLite</div>
+        <div class="stat-label">Database</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="features">
+    <div class="feature-card">
+      <div class="feature-icon">1️⃣</div>
+      <h3>Upload Data</h3>
+      <p>
+        Upload file CSV berisi data kunjungan wisatawan dengan format yang telah
+        ditentukan
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">2️⃣</div>
+      <h3>Analisis Otomatis</h3>
+      <p>
+        Sistem akan memproses data dan melakukan analisis menggunakan algoritma
+        clustering
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">3️⃣</div>
+      <h3>Dapatkan Insight</h3>
+      <p>
+        Lihat hasil analisis dan rekomendasi strategis di dashboard interaktif
+      </p>
+    </div>
+  </section>
+</div>
+{% endblock %}

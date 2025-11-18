@@ -1,0 +1,347 @@
+{% extends "base.html" %} {% block title %}Dashboard - Pengelolaan Data
+Pariwisata Palembang{% endblock %} {% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Data dari Flask
+      const monthlyData = {{ charts_data.monthly_labels | tojson if charts_data.monthly_labels else [] }};
+      const monthlyValues = {{ charts_data.monthly_values | tojson if charts_data.monthly_values else [] }};
+
+      const yearlyLabels = {{ charts_data.yearly_labels | tojson if charts_data.yearly_labels else [] }};
+      const yearlyValues = {{ charts_data.yearly_values | tojson if charts_data.yearly_values else [] }};
+
+      // Chart 1: Monthly Visitors
+      if (monthlyData.length > 0) {
+          new Chart(document.getElementById('monthlyChart'), {
+              type: 'bar',
+              data: {
+                  labels: monthlyData,
+                  datasets: [{
+                      label: 'Rata-rata Pengunjung',
+                      data: monthlyValues,
+                      backgroundColor: 'rgba(59, 130, 246, 0.8)',
+                      borderColor: 'rgba(59, 130, 246, 1)',
+                      borderWidth: 2,
+                      borderRadius: 8
+                  }]
+              },
+              options: {
+                  responsive: true,
+                  plugins: {
+                      legend: {
+                          display: true,
+                          position: 'top',
+                      },
+                      title: {
+                          display: true,
+                          text: 'Rata-rata Pengunjung per Bulan'
+                      }
+                  },
+                  scales: {
+                      y: {
+                          beginAtZero: true,
+                          ticks: {
+                              callback: function(value) {
+                                  return value.toLocaleString('id-ID');
+                              }
+                          }
+                      }
+                  }
+              }
+          });
+      } else {
+          document.getElementById('monthlyChart').innerHTML = '<div class="no-data"><p>📊 Tidak ada data bulanan</p></div>';
+      }
+
+      // Chart 2: Yearly Trend
+      if (yearlyLabels.length > 0) {
+          new Chart(document.getElementById('yearlyChart'), {
+              type: 'line',
+              data: {
+                  labels: yearlyLabels,
+                  datasets: [{
+                      label: 'Total Pengunjung',
+                      data: yearlyValues,
+                      backgroundColor: 'rgba(6, 182, 212, 0.2)',
+                      borderColor: 'rgba(6, 182, 212, 1)',
+                      borderWidth: 3,
+                      tension: 0.4,
+                      fill: true
+                  }]
+              },
+              options: {
+                  responsive: true,
+                  plugins: {
+                      legend: {
+                          display: true,
+                          position: 'top',
+                      },
+                      title: {
+                          display: true,
+                          text: 'Trend Kunjungan Tahunan'
+                      }
+                  },
+                  scales: {
+                      y: {
+                          beginAtZero: true,
+                          ticks: {
+                              callback: function(value) {
+                                  return value.toLocaleString('id-ID');
+                              }
+                          }
+                      }
+                  }
+              }
+          });
+      } else {
+          document.getElementById('yearlyChart').innerHTML = '<div class="no-data"><p>📈 Tidak ada data tahunan</p></div>';
+      }
+
+      // Chart 3: Seasonal Distribution - FALLBACK
+      const seasonalCtx = document.getElementById('seasonalChart').getContext('2d');
+      new Chart(seasonalCtx, {
+          type: 'doughnut',
+          data: {
+              labels: ['High Season', 'Medium Season', 'Low Season'],
+              datasets: [{
+                  data: [40, 35, 25],
+                  backgroundColor: [
+                      'rgba(59, 130, 246, 0.8)',
+                      'rgba(6, 182, 212, 0.8)',
+                      'rgba(148, 163, 184, 0.8)'
+                  ],
+                  borderWidth: 2
+              }]
+          },
+          options: {
+              responsive: true,
+              plugins: {
+                  legend: {
+                      position: 'bottom'
+                  },
+                  title: {
+                      display: true,
+                      text: 'Distribusi Musim (Contoh)'
+                  }
+              }
+          }
+      });
+
+      // Chart 4: Year Comparison - FIXED
+      const comparisonCtx = document.getElementById('comparisonChart').getContext('2d');
+
+      if (yearlyLabels.length >= 2) {
+          // Create comparison from available yearly data
+          new Chart(comparisonCtx, {
+              type: 'bar',
+              data: {
+                  labels: yearlyLabels,
+                  datasets: [{
+                      label: 'Total Pengunjung',
+                      data: yearlyValues,
+                      backgroundColor: yearlyLabels.map((_, i) =>
+                          `hsl(${i * 60}, 70%, 60%)`
+                      ),
+                      borderColor: yearlyLabels.map((_, i) =>
+                          `hsl(${i * 60}, 70%, 50%)`
+                      ),
+                      borderWidth: 2,
+                      borderRadius: 8
+                  }]
+              },
+              options: {
+                  responsive: true,
+                  plugins: {
+                      legend: {
+                          display: true,
+                          position: 'top'
+                      },
+                      title: {
+                          display: true,
+                          text: 'Perbandingan Jumlah Pengunjung per Tahun'
+                      }
+                  },
+                  scales: {
+                      y: {
+                          beginAtZero: true,
+                          ticks: {
+                              callback: function(value) {
+                                  return value.toLocaleString('id-ID');
+                              }
+                          }
+                      }
+                  }
+              }
+          });
+      } else {
+          // Fallback comparison chart
+          new Chart(comparisonCtx, {
+              type: 'bar',
+              data: {
+                  labels: ['2022', '2023', '2024'],
+                  datasets: [{
+                      label: 'Contoh Data',
+                      data: [2500000, 3000000, 2800000],
+                      backgroundColor: [
+                          'rgba(59, 130, 246, 0.8)',
+                          'rgba(6, 182, 212, 0.8)',
+                          'rgba(30, 58, 138, 0.8)'
+                      ],
+                      borderWidth: 2,
+                      borderRadius: 8
+                  }]
+              },
+              options: {
+                  responsive: true,
+                  plugins: {
+                      legend: {
+                          display: true,
+                          position: 'top'
+                      },
+                      title: {
+                          display: true,
+                          text: 'Perbandingan Tahun (Contoh Data)'
+                      }
+                  },
+                  scales: {
+                      y: {
+                          beginAtZero: true,
+                          ticks: {
+                              callback: function(value) {
+                                  return value.toLocaleString('id-ID');
+                              }
+                          }
+                      }
+                  }
+              }
+          });
+      }
+  });
+</script>
+{% endblock %} {% block content %}
+<div class="container">
+  <!-- Flash Messages -->
+  <div class="flash-messages">
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %}
+    <div class="flash-message flash-{{ category }}">
+      <i>
+        {% if category == 'success' %}✅ {% elif category == 'error' %}❌ {%
+        elif category == 'warning' %}⚠️ {% else %}ℹ️{% endif %}
+      </i>
+      <span>{{ message }}</span>
+    </div>
+    {% endfor %} {% endif %} {% endwith %}
+  </div>
+
+  <div class="dashboard-header">
+    <h1>Dashboard Analisis Data Pariwisata</h1>
+    <p>Analisis data kunjungan wisatawan di Palembang</p>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="actions">
+    <a href="{{ url_for('upload') }}" class="btn btn-primary">
+      <span>📤</span> Upload Data Baru
+    </a>
+    <form
+      action="{{ url_for('delete_data') }}"
+      method="POST"
+      style="display: inline"
+    >
+      <button
+        type="submit"
+        class="btn btn-danger"
+        onclick="return confirm('Yakin hapus semua data?')"
+      >
+        <span>🗑️</span> Hapus Semua Data
+      </button>
+    </form>
+  </div>
+
+  {% if df_empty %}
+  <div class="no-data">
+    <h2>📊 Belum Ada Data</h2>
+    <p>Upload data CSV terlebih dahulu untuk melihat analisis</p>
+    <a href="{{ url_for('upload') }}" class="btn btn-primary"
+      >Upload Data Pertama</a
+    >
+  </div>
+  {% else %}
+  <!-- Statistics -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-number">{{ db_stats.total_records }}</div>
+      <div class="stat-label">Total Data Bulanan</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">{{ db_stats.years_available|length }}</div>
+      <div class="stat-label">Tahun Tersedia</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">{{ db_stats.total_files }}</div>
+      <div class="stat-label">File Diupload</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">
+        {% if db_stats.total_records and db_stats.years_available|length %} {{
+        (db_stats.total_records / db_stats.years_available|length)|round|int }}
+        {% else %} 0 {% endif %}
+      </div>
+      <div class="stat-label">Rata-rata Data per Tahun</div>
+    </div>
+  </div>
+
+  <!-- Charts Section -->
+  <h2>Visualisasi Data</h2>
+  <div class="charts-grid">
+    <!-- Monthly Chart -->
+    <div class="chart-container">
+      <div class="chart-title">Rata-rata Pengunjung per Bulan</div>
+      <canvas id="monthlyChart"></canvas>
+    </div>
+
+    <!-- Yearly Chart -->
+    <div class="chart-container">
+      <div class="chart-title">Trend Tahunan</div>
+      <canvas id="yearlyChart"></canvas>
+    </div>
+
+    <!-- Seasonal Chart -->
+    <div class="chart-container">
+      <div class="chart-title">Distribusi Musim</div>
+      <canvas id="seasonalChart"></canvas>
+    </div>
+
+    <!-- Comparison Chart -->
+    <div class="chart-container">
+      <div class="chart-title">Perbandingan Tahun</div>
+      <canvas id="comparisonChart"></canvas>
+    </div>
+  </div>
+
+  <!-- ML Analysis Suggestions -->
+  <div class="suggestions-section">
+    <h2>💡 Saran & Rekomendasi Machine Learning</h2>
+
+    {% if ml_analysis and ml_analysis.suggestions %} {% for suggestion in
+    ml_analysis.suggestions %}
+    <div class="suggestion-item">{{ suggestion|safe }}</div>
+    {% endfor %} {% else %} {% for suggestion in suggestions %}
+    <div class="suggestion-item">{{ suggestion|safe }}</div>
+    {% endfor %} {% endif %} {% if not ml_analysis and not suggestions %}
+    <div class="suggestion-item">
+      <strong>📋 Data Analysis:</strong> Sistem sedang menganalisis pola
+      kunjungan wisata. Upload lebih banyak data untuk mendapatkan insight yang
+      lebih akurat.
+    </div>
+    <div class="suggestion-item">
+      <strong>💡 Tip:</strong> Pastikan data yang diupload mencakup periode
+      waktu yang cukup untuk analisis trend yang komprehensif.
+    </div>
+    {% endif %}
+  </div>
+
+  {% endif %}
+</div>
+{% endblock %}

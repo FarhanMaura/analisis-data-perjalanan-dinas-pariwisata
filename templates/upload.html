@@ -1,0 +1,219 @@
+{% extends "base.html" %} {% block title %}Upload Data - Pengelolaan Data
+Pariwisata Palembang{% endblock %} {% block content %}
+<div class="container">
+  <!-- Flash Messages -->
+  <div class="flash-messages">
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %}
+    <div class="flash-message flash-{{ category }}">
+      <i>
+        {% if category == 'success' %}✅ {% elif category == 'error' %}❌ {%
+        elif category == 'warning' %}⚠️ {% else %}ℹ️{% endif %}
+      </i>
+      <span>{{ message }}</span>
+    </div>
+    {% endfor %} {% endif %} {% endwith %}
+  </div>
+
+  <h1>Upload Data CSV</h1>
+  <p>Upload file data kunjungan wisatawan dalam format CSV</p>
+
+  <!-- Statistics -->
+  {% if db_stats %}
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-number">{{ db_stats.total_records }}</div>
+      <div class="stat-label">Data Bulanan</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">{{ db_stats.years_available|length }}</div>
+      <div class="stat-label">Tahun Tersedia</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">{{ db_stats.total_files }}</div>
+      <div class="stat-label">File Diupload</div>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Upload Form -->
+  <div class="upload-section">
+    <form class="upload-form" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="year">Tahun Data:</label>
+        <input
+          type="number"
+          id="year"
+          name="year"
+          min="2000"
+          max="2030"
+          required
+          placeholder="Contoh: 2023"
+          value="{{ request.form.year if request.form.year }}"
+        />
+      </div>
+
+      <div class="form-group">
+        <label>File CSV:</label>
+        <div
+          class="file-input"
+          onclick="document.getElementById('csv_file').click()"
+        >
+          <input
+            type="file"
+            id="csv_file"
+            name="csv_file"
+            accept=".csv"
+            required
+          />
+          <label for="csv_file" class="file-label">
+            📁 Klik untuk memilih file CSV
+          </label>
+          <p style="margin-top: 10px; color: #666; font-size: 14px">
+            Format: CSV dengan data kunjungan wisatawan
+          </p>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">
+        <span>📤</span> Upload & Proses Data
+      </button>
+    </form>
+  </div>
+
+  <!-- Information Section -->
+  <div class="info-section">
+    <h3>📋 Informasi Format File CSV</h3>
+    <p><strong>Struktur file harus mengikuti format:</strong></p>
+    <ul style="margin: 10px 0 10px 20px">
+      <li>Baris pertama: Header "Regency/Municipality 17"</li>
+      <li>Baris kedua: Header "Jumlah Perjalanan Wisatawan..."</li>
+      <li>Baris ketiga: Tahun data (contoh: "2023")</li>
+      <li>Baris keempat: Nama bulan (January sampai December)</li>
+      <li>Data harus mengandung baris "Palembang"</li>
+    </ul>
+    <p><strong>Contoh format yang didukung:</strong></p>
+    <pre
+      style="
+        background: white;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 10px 0;
+        font-size: 12px;
+        overflow-x: auto;
+        border: 1px solid #e2e8f0;
+      "
+    >
+Regency/Municipality 17,,,,,,,,,,,,,
+,Jumlah Perjalanan Wisatawan Nusantara Menurut Kabupaten/Kota Asal di Sumatera Selatan (Perjalanan),,,,,,,,,,,,
+,2023,,,,,,,,,,,,
+,January,February,March,April,May,June,July,August,September,October,November,December,Annually
+Palembang,224828,193266,193751,231332,244565,273398,302330,245851,240262,255150,232082,380360,3017175
+...</pre
+    >
+  </div>
+
+  <!-- Uploaded Files List -->
+  <div class="file-list">
+    <h3>📂 File yang Telah Diupload</h3>
+    {% if uploaded_files %} {% for file in uploaded_files %}
+    <div class="file-item">
+      <div class="file-name">{{ file.filename }}</div>
+      <div class="file-year">Tahun {{ file.year }}</div>
+    </div>
+    {% endfor %} {% else %}
+    <div class="no-files">
+      <p>Belum ada file yang diupload</p>
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- Action Buttons -->
+  <div style="text-align: center; margin: 30px 0">
+    <a
+      href="{{ url_for('dashboard') }}"
+      class="btn btn-secondary"
+      style="margin-right: 10px"
+    >
+      <span>📊</span> Lihat Dashboard
+    </a>
+    <a href="{{ url_for('homepage') }}" class="btn btn-secondary">
+      <span>🏠</span> Kembali ke Home
+    </a>
+  </div>
+</div>
+
+<script>
+  // Update file input display
+  document.getElementById("csv_file").addEventListener("change", function (e) {
+    const fileName = e.target.files[0]
+      ? e.target.files[0].name
+      : "Klik untuk memilih file CSV";
+    document.querySelector(".file-label").textContent = "📁 " + fileName;
+
+    // Tambahkan animasi feedback
+    const fileInput = document.querySelector(".file-input");
+    fileInput.style.animation = "none";
+    setTimeout(() => {
+      fileInput.style.animation = "pulse 0.5s ease";
+    }, 10);
+  });
+
+  // Form validation dengan feedback yang lebih baik
+  document.querySelector("form").addEventListener("submit", function (e) {
+    const year = document.getElementById("year").value;
+    const file = document.getElementById("csv_file").files[0];
+    let isValid = true;
+
+    // Clear previous errors
+    document.querySelectorAll(".field-error").forEach((el) => el.remove());
+    document.querySelectorAll(".form-group input").forEach((input) => {
+      input.style.borderColor = "";
+    });
+
+    if (!year || year < 2000 || year > 2030) {
+      showFieldError(
+        document.getElementById("year"),
+        "Tahun harus antara 2000 dan 2030"
+      );
+      isValid = false;
+    }
+
+    if (!file) {
+      showFieldError(
+        document.querySelector(".file-input"),
+        "Pilih file CSV terlebih dahulu"
+      );
+      isValid = false;
+    } else if (!file.name.toLowerCase().endsWith(".csv")) {
+      showFieldError(
+        document.querySelector(".file-input"),
+        "File harus berformat CSV"
+      );
+      isValid = false;
+    }
+
+    if (!isValid) {
+      e.preventDefault();
+      // Scroll ke error pertama
+      document.querySelector(".field-error").scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  });
+
+  function showFieldError(field, message) {
+    field.style.borderColor = "#ef4444";
+
+    const errorElement = document.createElement("div");
+    errorElement.className = "field-error";
+    errorElement.style.color = "#ef4444";
+    errorElement.style.fontSize = "0.875rem";
+    errorElement.style.marginTop = "5px";
+    errorElement.textContent = message;
+
+    field.parentNode.appendChild(errorElement);
+  }
+</script>
+{% endblock %}

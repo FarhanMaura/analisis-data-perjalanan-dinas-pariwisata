@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block title %}Halaman Tidak Ditemukan - Pariwisata
+Palembang{% endblock %} {% block content %}
+<div class="error-container">
+  <div class="error-content">
+    <div class="error-code">404</div>
+    <div class="error-message">Halaman Tidak Ditemukan</div>
+    <div class="error-description">
+      Maaf, halaman yang Anda cari tidak ditemukan. Mungkin halaman telah
+      dipindahkan atau alamat URL tidak tepat.
+    </div>
+    <div
+      style="
+        margin-top: 30px;
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+      "
+    >
+      <a href="{{ url_for('homepage') }}" class="btn btn-primary">
+        <span>🏠</span> Kembali ke Home
+      </a>
+      <a href="{{ url_for('dashboard') }}" class="btn btn-secondary">
+        <span>📊</span> Ke Dashboard
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}

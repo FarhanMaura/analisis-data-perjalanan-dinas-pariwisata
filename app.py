@@ -8,6 +8,7 @@ import json
 from ml_analysis import TourismAnalyzer
 from data_processor import DataProcessor
 from chart_generator import ChartGenerator
+from pdf_processor import PDFProcessor
 from utils import setup_logging, create_response, validate_year
 from config import Config
 import openpyxl
@@ -17,6 +18,7 @@ import io
 import base64
 import matplotlib.pyplot as plt
 import matplotlib
+from datetime import datetime
 matplotlib.use('Agg')  # Important for generating images without GUI
 
 app = Flask(__name__)
@@ -28,6 +30,7 @@ app.config['MAX_CONTENT_LENGTH'] = Config.MAX_CONTENT_LENGTH
 data_processor = DataProcessor(Config.DATABASE)
 ml_analyzer = TourismAnalyzer(Config.DATABASE)
 chart_generator = ChartGenerator(ml_analyzer)
+pdf_processor = PDFProcessor()
 
 setup_logging()
 
@@ -656,6 +659,111 @@ def upload():
                          db_stats=db_stats, 
                          uploaded_files=uploaded_files)
 
+@app.route('/upload-pdf', methods=['GET', 'POST'])
+def upload_pdf():
+    if request.method == 'POST':
+        if 'pdf_file' not in request.files:
+            flash('Tidak ada file PDF yang dipilih', 'error')
+            return redirect(request.url)
+        
+        file = request.files['pdf_file']
+        year = request.form.get('year')
+        
+        if file.filename == '':
+            flash('Tidak ada file yang dipilih', 'error')
+            return redirect(request.url)
+        
+        if file.filename and not file.filename.lower().endswith('.pdf'):
+            flash('File harus berformat PDF', 'error')
+            return redirect(request.url)
+        
+        if year and not validate_year(year):
+            flash('Tahun harus antara 2000 dan tahun depan', 'error')
+            return redirect(request.url)
+        
+        try:
+            year_int = int(year) if year else None
+        except ValueError:
+            flash('Tahun harus berupa angka', 'error')
+            return redirect(request.url)
+        
+        filename = f"tourism_pdf_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf"
+        filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        file.save(filepath)
+        
+        try:
+            success, message = pdf_processor.process_pdf_for_database(filepath, year_int)
+            
+            if success:
+                conn = get_db_connection()
+                conn.execute(
+                    'INSERT INTO uploaded_files (filename, year) VALUES (?, ?)',
+                    (filename, year_int if year_int else datetime.now().year)
+                )
+                conn.commit()
+                conn.close()
+                
+                flash(f'PDF berhasil diproses: {message}', 'success')
+            else:
+                flash(f'Error processing PDF: {message}', 'error')
+            
+            if os.path.exists(filepath):
+                os.remove(filepath)
+                
+        except Exception as e:
+            flash(f'Error processing PDF: {str(e)}', 'error')
+            if os.path.exists(filepath):
+                os.remove(filepath)
+        
+        return redirect(url_for('upload_pdf'))
+    
+    db_stats = data_processor.get_database_stats()
+    uploaded_files = data_processor.get_uploaded_files_info()
+    current_year = datetime.now().year  # TAMBAHKAN INI
+    
+    return render_template('upload_pdf.html', 
+                         db_stats=db_stats, 
+                         uploaded_files=uploaded_files,
+                         current_year=current_year)  # TAMBAHKAN INI
+
+@app.route('/convert-pdf-to-csv', methods=['POST'])
+def convert_pdf_to_csv():
+    if 'pdf_file' not in request.files:
+        return jsonify({'success': False, 'message': 'No file provided'})
+    
+    file = request.files['pdf_file']
+    if file.filename == '':
+        return jsonify({'success': False, 'message': 'No file selected'})
+    
+    if not file.filename.lower().endswith('.pdf'):
+        return jsonify({'success': False, 'message': 'File must be PDF'})
+    
+    temp_pdf = os.path.join(app.config['UPLOAD_FOLDER'], f"temp_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf")
+    file.save(temp_pdf)
+    
+    try:
+        output_csv = temp_pdf.replace('.pdf', '.csv')
+        success, message = pdf_processor.pdf_to_csv(temp_pdf, output_csv)
+        
+        if success:
+            return send_file(
+                output_csv,
+                as_attachment=True,
+                download_name=f"converted_data_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
+                mimetype='text/csv'
+            )
+        else:
+            return jsonify({'success': False, 'message': message})
+    
+    except Exception as e:
+        return jsonify({'success': False, 'message': str(e)})
+    
+    finally:
+        if os.path.exists(temp_pdf):
+            os.remove(temp_pdf)
+        if os.path.exists(output_csv):
+            os.remove(output_csv)
+
 @app.route('/dashboard')
 def dashboard():
     conn = get_db_connection()
@@ -729,7 +837,6 @@ def delete_data():
 
 @app.route('/export-excel')
 def export_excel():
-    """Export data analisis ke file Excel dengan multiple sheets dan gambar chart"""
     try:
         conn = get_db_connection()
         query = '''
@@ -759,19 +866,15 @@ def export_excel():
         wb = openpyxl.Workbook()
         wb.remove(wb.active)
         
-        # Sheet 1: Data Mentah
         ws_raw = wb.create_sheet("Data Mentah")
         _create_raw_data_sheet(ws_raw, df)
         
-        # Sheet 2: Analisis ML
         ws_ml = wb.create_sheet("Analisis ML")
         _create_ml_analysis_sheet(ws_ml, ml_analysis)
         
-        # Sheet 3: Visualisasi (dengan gambar chart)
         ws_charts = wb.create_sheet("Visualisasi")
         _create_charts_sheet(ws_charts, df)
         
-        # Sheet 4: Statistik
         ws_stats = wb.create_sheet("Statistik")
         _create_statistics_sheet(ws_stats, df, ml_analysis)
         
@@ -845,6 +948,7 @@ if __name__ == '__main__':
     print("Routes available:")
     print("  /              - Homepage")
     print("  /upload        - Upload CSV data")
+    print("  /upload-pdf    - Upload PDF data")
     print("  /dashboard     - Analytics dashboard")
     print("  /export-excel  - Export to Excel")
     print("  /api/*         - Various API endpoints")

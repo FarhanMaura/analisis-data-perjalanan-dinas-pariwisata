@@ -1,0 +1,384 @@
+{% extends "base.html" %} {% block title %}Upload PDF - Pengelolaan Data
+Pariwisata Palembang{% endblock %} {% block content %}
+<div class="container">
+  <!-- Flash Messages -->
+  <div class="flash-messages">
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %}
+    <div class="flash-message flash-{{ category }}">
+      <i>
+        {% if category == 'success' %}✅ {% elif category == 'error' %}❌ {%
+        elif category == 'warning' %}⚠️ {% else %}ℹ️{% endif %}
+      </i>
+      <span>{{ message }}</span>
+    </div>
+    {% endfor %} {% endif %} {% endwith %}
+  </div>
+
+  <h1>Upload Data PDF</h1>
+  <p>Upload file data kunjungan wisatawan dalam format PDF</p>
+
+  <!-- Statistics -->
+  {% if db_stats %}
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-number">{{ db_stats.total_records }}</div>
+      <div class="stat-label">Data Bulanan</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">{{ db_stats.years_available|length }}</div>
+      <div class="stat-label">Tahun Tersedia</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">{{ db_stats.total_files }}</div>
+      <div class="stat-label">File Diupload</div>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Upload Form -->
+  <div class="upload-section">
+    <form class="upload-form" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="year">Tahun Data (Opsional):</label>
+        <input
+          type="number"
+          id="year"
+          name="year"
+          min="2000"
+          max="2030"
+          placeholder="Contoh: 2023 - Biarkan kosong untuk auto-detect"
+          value="{{ request.form.year if request.form.year }}"
+        />
+        <small
+          style="color: #666; font-size: 12px; display: block; margin-top: 5px"
+        >
+          Biarkan kosong untuk auto-detect tahun dari file PDF
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label>File PDF:</label>
+        <div
+          class="file-input"
+          onclick="document.getElementById('pdf_file').click()"
+        >
+          <input
+            type="file"
+            id="pdf_file"
+            name="pdf_file"
+            accept=".pdf"
+            required
+          />
+          <label for="pdf_file" class="file-label">
+            📄 Klik untuk memilih file PDF
+          </label>
+          <p style="margin-top: 10px; color: #666; font-size: 14px">
+            Format: PDF dengan tabel data kunjungan wisatawan
+          </p>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 10px; flex-wrap: wrap">
+        <button type="submit" class="btn btn-primary">
+          <span>📤</span> Upload & Simpan ke Database
+        </button>
+
+        <button type="button" class="btn btn-secondary" id="convertBtn">
+          <span>🔄</span> Convert ke CSV Saja
+        </button>
+
+        <a href="{{ url_for('upload') }}" class="btn btn-secondary">
+          <span>📁</span> Upload CSV Instead
+        </a>
+      </div>
+    </form>
+  </div>
+
+  <!-- Information Section -->
+  <div class="info-section">
+    <h3>📋 Informasi Format File PDF</h3>
+    <p><strong>Struktur file PDF harus mengikuti format:</strong></p>
+    <ul style="margin: 10px 0 10px 20px">
+      <li>Tabel dengan kolom: Bulan, Nusantara, Manca Negara, Total</li>
+      <li>Nama bulan dalam bahasa Indonesia (Januari, Februari, dst)</li>
+      <li>Format angka dengan titik (contoh: 102.005)</li>
+      <li>Sistem akan otomatis mendeteksi tahun dari file PDF</li>
+    </ul>
+    <p><strong>Contoh format yang didukung:</strong></p>
+    <div
+      style="
+        background: white;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 10px 0;
+        border: 1px solid #e2e8f0;
+      "
+    >
+      <table style="width: 100%; border-collapse: collapse; font-size: 14px">
+        <thead style="background-color: #f8f9fa">
+          <tr>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Bulan
+            </th>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Nusantara
+            </th>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Manca Negara
+            </th>
+            <th style="border: 1px solid #ddd; padding: 8px; text-align: left">
+              Total
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px">Januari</td>
+            <td style="border: 1px solid #ddd; padding: 8px">102.005</td>
+            <td style="border: 1px solid #ddd; padding: 8px">335</td>
+            <td style="border: 1px solid #ddd; padding: 8px">102.340</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px">Februari</td>
+            <td style="border: 1px solid #ddd; padding: 8px">118.895</td>
+            <td style="border: 1px solid #ddd; padding: 8px">597</td>
+            <td style="border: 1px solid #ddd; padding: 8px">119.492</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #ddd; padding: 8px">Maret</td>
+            <td style="border: 1px solid #ddd; padding: 8px">108.739</td>
+            <td style="border: 1px solid #ddd; padding: 8px">1.090</td>
+            <td style="border: 1px solid #ddd; padding: 8px">109.829</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Uploaded Files List -->
+  <div class="file-list">
+    <h3>📂 File yang Telah Diupload</h3>
+    {% if uploaded_files %} {% for file in uploaded_files %}
+    <div class="file-item">
+      <div class="file-name">
+        {% if 'pdf' in file.filename.lower() %} 📄 {{ file.filename }} {% else
+        %} 📁 {{ file.filename }} {% endif %}
+      </div>
+      <div class="file-year">Tahun {{ file.year }}</div>
+      <div class="file-date">{{ file.upload_date }}</div>
+    </div>
+    {% endfor %} {% else %}
+    <div class="no-files">
+      <p>Belum ada file yang diupload</p>
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- Action Buttons -->
+  <div style="text-align: center; margin: 30px 0">
+    <a
+      href="{{ url_for('dashboard') }}"
+      class="btn btn-secondary"
+      style="margin-right: 10px"
+    >
+      <span>📊</span> Lihat Dashboard
+    </a>
+    <a href="{{ url_for('homepage') }}" class="btn btn-secondary">
+      <span>🏠</span> Kembali ke Home
+    </a>
+  </div>
+</div>
+
+<script>
+  // Update file input display
+  document.getElementById("pdf_file").addEventListener("change", function (e) {
+    const fileName = e.target.files[0]
+      ? e.target.files[0].name
+      : "Klik untuk memilih file PDF";
+    document.querySelector(".file-label").textContent = "📄 " + fileName;
+
+    // Tambahkan animasi feedback
+    const fileInput = document.querySelector(".file-input");
+    fileInput.style.animation = "none";
+    setTimeout(() => {
+      fileInput.style.animation = "pulse 0.5s ease";
+    }, 10);
+  });
+
+  // Form validation dengan feedback yang lebih baik
+  document.querySelector("form").addEventListener("submit", function (e) {
+    const file = document.getElementById("pdf_file").files[0];
+    let isValid = true;
+
+    // Clear previous errors
+    document.querySelectorAll(".field-error").forEach((el) => el.remove());
+    document.querySelectorAll(".form-group input").forEach((input) => {
+      input.style.borderColor = "";
+    });
+
+    if (!file) {
+      showFieldError(
+        document.querySelector(".file-input"),
+        "Pilih file PDF terlebih dahulu"
+      );
+      isValid = false;
+    } else if (!file.name.toLowerCase().endsWith(".pdf")) {
+      showFieldError(
+        document.querySelector(".file-input"),
+        "File harus berformat PDF"
+      );
+      isValid = false;
+    }
+
+    if (!isValid) {
+      e.preventDefault();
+      // Scroll ke error pertama
+      document.querySelector(".field-error").scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  });
+
+  // Convert to CSV button handler
+  document.getElementById("convertBtn").addEventListener("click", function () {
+    const fileInput = document.getElementById("pdf_file");
+    const file = fileInput.files[0];
+
+    if (!file) {
+      alert("Pilih file PDF terlebih dahulu!");
+      return;
+    }
+
+    if (!file.name.toLowerCase().endsWith(".pdf")) {
+      alert("File harus berformat PDF!");
+      return;
+    }
+
+    const convertBtn = this;
+    const originalText = convertBtn.innerHTML;
+
+    convertBtn.disabled = true;
+    convertBtn.innerHTML = "<span>⏳</span> Converting...";
+
+    const formData = new FormData();
+    formData.append("pdf_file", file);
+
+    fetch("/convert-pdf-to-csv", {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.blob();
+        } else {
+          return response.json().then((data) => {
+            throw new Error(data.message || "Error converting PDF");
+          });
+        }
+      })
+      .then((blob) => {
+        // Create download link
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.style.display = "none";
+        a.href = url;
+        a.download =
+          "converted_data_" + new Date().toISOString().slice(0, 10) + ".csv";
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+
+        alert("PDF berhasil dikonversi ke CSV! File akan didownload otomatis.");
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert("Error: " + error.message);
+      })
+      .finally(() => {
+        convertBtn.disabled = false;
+        convertBtn.innerHTML = originalText;
+      });
+  });
+
+  function showFieldError(field, message) {
+    field.style.borderColor = "#ef4444";
+
+    const errorElement = document.createElement("div");
+    errorElement.className = "field-error";
+    errorElement.style.color = "#ef4444";
+    errorElement.style.fontSize = "0.875rem";
+    errorElement.style.marginTop = "5px";
+    errorElement.textContent = message;
+
+    field.parentNode.appendChild(errorElement);
+  }
+</script>
+
+<style>
+  .file-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    background: white;
+  }
+
+  .file-name {
+    flex: 2;
+    font-weight: 500;
+  }
+
+  .file-year {
+    flex: 1;
+    text-align: center;
+    color: #666;
+  }
+
+  .file-date {
+    flex: 1;
+    text-align: right;
+    color: #888;
+    font-size: 0.875rem;
+  }
+
+  .btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+  }
+
+  .btn-secondary {
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+</style>
+{% endblock %}

@@ -15,8 +15,8 @@ Pariwisata Palembang{% endblock %} {% block content %}
     {% endfor %} {% endif %} {% endwith %}
   </div>
 
-  <h1>Upload Data CSV</h1>
-  <p>Upload file data kunjungan wisatawan dalam format CSV</p>
+  <h1>Upload Data</h1>
+  <p>Upload file data kunjungan wisatawan dalam format CSV atau PDF</p>
 
   <!-- Statistics -->
   {% if db_stats %}
@@ -36,8 +36,34 @@ Pariwisata Palembang{% endblock %} {% block content %}
   </div>
   {% endif %}
 
-  <!-- Upload Form -->
-  <div class="upload-section">
+  <!-- Upload Options -->
+  <div style="text-align: center; margin: 30px 0">
+    <div
+      style="
+        display: inline-flex;
+        gap: 20px;
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      "
+    >
+      <button class="upload-option active" data-format="csv">
+        <span>📁</span>
+        <div>Upload CSV</div>
+        <small>Format data standar</small>
+      </button>
+
+      <button class="upload-option" data-format="pdf">
+        <span>📄</span>
+        <div>Upload PDF</div>
+        <small>Konversi otomatis</small>
+      </button>
+    </div>
+  </div>
+
+  <!-- CSV Upload Form -->
+  <div class="upload-section" id="csvSection">
     <form class="upload-form" method="POST" enctype="multipart/form-data">
       <div class="form-group">
         <label for="year">Tahun Data:</label>
@@ -76,41 +102,151 @@ Pariwisata Palembang{% endblock %} {% block content %}
       </div>
 
       <button type="submit" class="btn btn-primary">
-        <span>📤</span> Upload & Proses Data
+        <span>📤</span> Upload & Proses Data CSV
       </button>
     </form>
   </div>
 
-  <!-- Information Section -->
-  <div class="info-section">
-    <h3>📋 Informasi Format File CSV</h3>
-    <p><strong>Struktur file harus mengikuti format:</strong></p>
-    <ul style="margin: 10px 0 10px 20px">
-      <li>Baris pertama: Header "Regency/Municipality 17"</li>
-      <li>Baris kedua: Header "Jumlah Perjalanan Wisatawan..."</li>
-      <li>Baris ketiga: Tahun data (contoh: "2023")</li>
-      <li>Baris keempat: Nama bulan (January sampai December)</li>
-      <li>Data harus mengandung baris "Palembang"</li>
-    </ul>
-    <p><strong>Contoh format yang didukung:</strong></p>
-    <pre
+  <!-- PDF Upload Section (Hidden by default) -->
+  <div class="upload-section" id="pdfSection" style="display: none">
+    <div style="text-align: center; margin-bottom: 20px">
+      <h3 style="color: #1e293b">Upload Data PDF</h3>
+      <p style="color: #666">File PDF akan otomatis dikonversi ke CSV</p>
+    </div>
+
+    <div style="text-align: center">
+      <a
+        href="{{ url_for('upload_pdf') }}"
+        class="btn btn-pdf"
+        style="padding: 15px 30px; font-size: 16px"
+      >
+        <span>📄</span> Buka Halaman Upload PDF
+      </a>
+    </div>
+
+    <div
       style="
-        background: white;
+        margin-top: 20px;
         padding: 15px;
-        border-radius: 5px;
-        margin: 10px 0;
-        font-size: 12px;
-        overflow-x: auto;
-        border: 1px solid #e2e8f0;
+        background: #fff3cd;
+        border-radius: 8px;
+        border: 1px solid #ffeaa7;
       "
     >
+      <h4 style="color: #856404; margin-bottom: 10px">💡 Info Upload PDF</h4>
+      <ul style="color: #856404; margin-left: 20px">
+        <li>Klik tombol di atas untuk membuka halaman upload PDF</li>
+        <li>File PDF akan otomatis dikonversi ke format CSV</li>
+        <li>Data akan disimpan langsung ke database</li>
+        <li>
+          Support format tabel dengan kolom: Bulan, Nusantara, Manca Negara,
+          Total
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Information Section -->
+  <div class="info-section">
+    <h3>📋 Informasi Format File</h3>
+
+    <div style="display: flex; gap: 20px; margin-bottom: 20px">
+      <button class="format-tab active" data-tab="csv">Format CSV</button>
+      <button class="format-tab" data-tab="pdf">Format PDF</button>
+    </div>
+
+    <!-- CSV Format Info -->
+    <div id="csvFormat" class="format-content">
+      <p><strong>Struktur file CSV harus mengikuti format:</strong></p>
+      <ul style="margin: 10px 0 10px 20px">
+        <li>Baris pertama: Header "Regency/Municipality 17"</li>
+        <li>Baris kedua: Header "Jumlah Perjalanan Wisatawan..."</li>
+        <li>Baris ketiga: Tahun data (contoh: "2023")</li>
+        <li>Baris keempat: Nama bulan (January sampai December)</li>
+        <li>Data harus mengandung baris "Palembang"</li>
+      </ul>
+      <p><strong>Contoh format yang didukung:</strong></p>
+      <pre
+        style="
+          background: white;
+          padding: 15px;
+          border-radius: 5px;
+          margin: 10px 0;
+          font-size: 12px;
+          overflow-x: auto;
+          border: 1px solid #e2e8f0;
+        "
+      >
 Regency/Municipality 17,,,,,,,,,,,,,
 ,Jumlah Perjalanan Wisatawan Nusantara Menurut Kabupaten/Kota Asal di Sumatera Selatan (Perjalanan),,,,,,,,,,,,
 ,2023,,,,,,,,,,,,
 ,January,February,March,April,May,June,July,August,September,October,November,December,Annually
 Palembang,224828,193266,193751,231332,244565,273398,302330,245851,240262,255150,232082,380360,3017175
 ...</pre
-    >
+      >
+    </div>
+
+    <!-- PDF Format Info -->
+    <div id="pdfFormat" class="format-content" style="display: none">
+      <p><strong>Struktur file PDF harus mengikuti format:</strong></p>
+      <ul style="margin: 10px 0 10px 20px">
+        <li>Tabel dengan kolom: Bulan, Nusantara, Manca Negara, Total</li>
+        <li>Nama bulan dalam bahasa Indonesia (Januari, Februari, dst)</li>
+        <li>Format angka dengan titik (contoh: 102.005)</li>
+        <li>Sistem akan otomatis mendeteksi tahun dari file PDF</li>
+      </ul>
+      <p><strong>Contoh format yang didukung:</strong></p>
+      <div
+        style="
+          background: white;
+          padding: 15px;
+          border-radius: 5px;
+          margin: 10px 0;
+          border: 1px solid #e2e8f0;
+        "
+      >
+        <table style="width: 100%; border-collapse: collapse; font-size: 14px">
+          <thead style="background-color: #f8f9fa">
+            <tr>
+              <th
+                style="border: 1px solid #ddd; padding: 8px; text-align: left"
+              >
+                Bulan
+              </th>
+              <th
+                style="border: 1px solid #ddd; padding: 8px; text-align: left"
+              >
+                Nusantara
+              </th>
+              <th
+                style="border: 1px solid #ddd; padding: 8px; text-align: left"
+              >
+                Manca Negara
+              </th>
+              <th
+                style="border: 1px solid #ddd; padding: 8px; text-align: left"
+              >
+                Total
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border: 1px solid #ddd; padding: 8px">Januari</td>
+              <td style="border: 1px solid #ddd; padding: 8px">102.005</td>
+              <td style="border: 1px solid #ddd; padding: 8px">335</td>
+              <td style="border: 1px solid #ddd; padding: 8px">102.340</td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #ddd; padding: 8px">Februari</td>
+              <td style="border: 1px solid #ddd; padding: 8px">118.895</td>
+              <td style="border: 1px solid #ddd; padding: 8px">597</td>
+              <td style="border: 1px solid #ddd; padding: 8px">119.492</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 
   <!-- Uploaded Files List -->
@@ -118,8 +254,12 @@ Palembang,224828,193266,193751,231332,244565,273398,302330,245851,240262,255150,
     <h3>📂 File yang Telah Diupload</h3>
     {% if uploaded_files %} {% for file in uploaded_files %}
     <div class="file-item">
-      <div class="file-name">{{ file.filename }}</div>
+      <div class="file-name">
+        {% if 'pdf' in file.filename.lower() %} 📄 {{ file.filename }} {% else
+        %} 📁 {{ file.filename }} {% endif %}
+      </div>
       <div class="file-year">Tahun {{ file.year }}</div>
+      <div class="file-date">{{ file.upload_date }}</div>
     </div>
     {% endfor %} {% else %}
     <div class="no-files">
@@ -144,6 +284,52 @@ Palembang,224828,193266,193751,231332,244565,273398,302330,245851,240262,255150,
 </div>
 
 <script>
+  // Tab functionality for upload options
+  document.querySelectorAll(".upload-option").forEach((button) => {
+    button.addEventListener("click", function () {
+      // Remove active class from all buttons
+      document.querySelectorAll(".upload-option").forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      // Add active class to clicked button
+      this.classList.add("active");
+
+      const format = this.dataset.format;
+
+      // Show/hide sections
+      if (format === "csv") {
+        document.getElementById("csvSection").style.display = "block";
+        document.getElementById("pdfSection").style.display = "none";
+      } else {
+        document.getElementById("csvSection").style.display = "none";
+        document.getElementById("pdfSection").style.display = "block";
+      }
+    });
+  });
+
+  // Tab functionality for format info
+  document.querySelectorAll(".format-tab").forEach((tab) => {
+    tab.addEventListener("click", function () {
+      // Remove active class from all tabs
+      document.querySelectorAll(".format-tab").forEach((t) => {
+        t.classList.remove("active");
+      });
+
+      // Add active class to clicked tab
+      this.classList.add("active");
+
+      const tabName = this.dataset.tab;
+
+      // Show/hide format content
+      document.querySelectorAll(".format-content").forEach((content) => {
+        content.style.display = "none";
+      });
+
+      document.getElementById(tabName + "Format").style.display = "block";
+    });
+  });
+
   // Update file input display
   document.getElementById("csv_file").addEventListener("change", function (e) {
     const fileName = e.target.files[0]
@@ -216,4 +402,145 @@ Palembang,224828,193266,193751,231332,244565,273398,302330,245851,240262,255150,
     field.parentNode.appendChild(errorElement);
   }
 </script>
+
+<style>
+  .upload-option {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: 150px;
+  }
+
+  .upload-option.active {
+    border-color: #667eea;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  }
+
+  .upload-option:hover:not(.active) {
+    border-color: #667eea;
+    transform: translateY(-1px);
+  }
+
+  .upload-option span {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .upload-option div {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+
+  .upload-option small {
+    font-size: 0.8rem;
+    opacity: 0.8;
+  }
+
+  .format-tab {
+    background: #f1f5f9;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    color: #475569;
+  }
+
+  .format-tab.active {
+    background: #667eea;
+    color: white;
+  }
+
+  .format-tab:hover:not(.active) {
+    background: #e2e8f0;
+  }
+
+  .btn-pdf {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-pdf:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+    color: white;
+  }
+
+  .file-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    background: white;
+  }
+
+  .file-name {
+    flex: 2;
+    font-weight: 500;
+  }
+
+  .file-year {
+    flex: 1;
+    text-align: center;
+    color: #666;
+  }
+
+  .file-date {
+    flex: 1;
+    text-align: right;
+    color: #888;
+    font-size: 0.875rem;
+  }
+
+  .btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+  }
+
+  .btn-secondary {
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+</style>
 {% endblock %}

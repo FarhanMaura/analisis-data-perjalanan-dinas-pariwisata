@@ -10,16 +10,12 @@ class DataProcessor:
         self.db_path = db_path
     
     def validate_csv_structure(self, filepath):
-        """Validasi struktur file CSV - DIPERBAIKI"""
         try:
-            # Coba baca CSV dengan berbagai cara
             df = None
             
-            # Coba baca dengan multi-header
             try:
                 df = pd.read_csv(filepath, header=[0,1,2])
             except:
-                # Jika gagal, coba baca dengan header biasa
                 try:
                     df = pd.read_csv(filepath)
                 except Exception as e:
@@ -28,14 +24,11 @@ class DataProcessor:
             if df is None or df.empty:
                 return False, "File CSV kosong atau tidak bisa dibaca"
             
-            # Validasi header bulan - DIPERBAIKI
             expected_months = ['January', 'February', 'March', 'April', 'May', 'June',
                              'July', 'August', 'September', 'October', 'November', 'December']
             
-            # Cek apakah ada data Palembang
             palembang_found = False
             for index, row in df.iterrows():
-                # Cek di semua kolom pertama untuk string "Palembang"
                 first_col_value = str(row.iloc[0]) if len(row) > 0 else ""
                 if 'Palembang' in first_col_value:
                     palembang_found = True
@@ -44,7 +37,6 @@ class DataProcessor:
             if not palembang_found:
                 return False, "Data untuk Palembang tidak ditemukan dalam file CSV"
             
-            # Cek struktur kolom bulan - lebih fleksibel
             month_columns_found = 0
             for col in df.columns:
                 col_str = str(col).lower()
@@ -53,7 +45,7 @@ class DataProcessor:
                         month_columns_found += 1
                         break
             
-            if month_columns_found >= 10:  # Minimal 10 bulan terdeteksi
+            if month_columns_found >= 10:
                 return True, "Struktur CSV valid"
             else:
                 return False, f"Hanya {month_columns_found} bulan yang terdeteksi. Pastikan ada kolom Jan-Des"
@@ -62,14 +54,11 @@ class DataProcessor:
             return False, f"Error validasi CSV: {str(e)}"
     
     def extract_year_from_filename(self, filename):
-        """Extract tahun dari filename"""
         try:
-            # Pattern: tourism_2023_20231125_143022.csv
             match = re.search(r'tourism_(\d{4})_', filename)
             if match:
                 return int(match.group(1))
             
-            # Pattern lain: 2023_data.csv, data_2023.csv, dll
             matches = re.findall(r'\b(20\d{2})\b', filename)
             if matches:
                 return int(matches[0])
@@ -79,7 +68,6 @@ class DataProcessor:
             return None
     
     def clean_numeric_value(self, value):
-        """Bersihkan nilai numerik dari string"""
         if pd.isna(value) or value == '':
             return 0
         
@@ -87,22 +75,18 @@ class DataProcessor:
             return int(value)
         
         if isinstance(value, str):
-            # Hapus karakter non-numeric
             cleaned = re.sub(r'[^\d]', '', str(value))
             return int(cleaned) if cleaned else 0
         
         return 0
     
     def process_csv_data(self, filepath, year):
-        """Process data CSV dan simpan ke database - DIPERBAIKI"""
         try:
-            # Coba baca dengan multi-header, jika gagal coba header biasa
             try:
                 df = pd.read_csv(filepath, header=[0,1,2])
             except:
                 df = pd.read_csv(filepath)
             
-            # Cari baris Palembang
             palembang_data = None
             palembang_index = -1
             
@@ -116,14 +100,12 @@ class DataProcessor:
             if palembang_data is None:
                 return False, "Data Palembang tidak ditemukan"
             
-            # Extract data bulanan - DIPERBAIKI untuk handle berbagai format
             months = ['January', 'February', 'March', 'April', 'May', 'June', 
                      'July', 'August', 'September', 'October', 'November', 'December']
             
             monthly_data = {}
             
             for i, month in enumerate(months):
-                # Cari kolom yang mengandung nama bulan
                 col_index = -1
                 for j, col in enumerate(df.columns):
                     col_str = str(col).lower()
@@ -136,16 +118,13 @@ class DataProcessor:
                     cleaned_value = self.clean_numeric_value(value)
                     monthly_data[month] = cleaned_value
                 else:
-                    monthly_data[month] = 0  # Default value jika kolom tidak ditemukan
+                    monthly_data[month] = 0
             
-            # Simpan ke database
             conn = sqlite3.connect(self.db_path)
             cursor = conn.cursor()
             
-            # Hapus data existing untuk tahun yang sama
             cursor.execute('DELETE FROM tourism_data WHERE year = ?', (year,))
             
-            # Insert data baru
             for month, value in monthly_data.items():
                 cursor.execute(
                     'INSERT INTO tourism_data (year, month, value) VALUES (?, ?, ?)',
@@ -161,8 +140,16 @@ class DataProcessor:
         except Exception as e:
             return False, f"Error processing CSV: {str(e)}"
     
+    def process_pdf_data(self, filepath, year=None):
+        try:
+            from pdf_processor import PDFProcessor
+            pdf_processor = PDFProcessor()
+            success, message = pdf_processor.process_pdf_for_database(filepath, year)
+            return success, message
+        except Exception as e:
+            return False, f"Error processing PDF: {str(e)}"
+    
     def get_uploaded_files_info(self):
-        """Dapatkan informasi file yang sudah diupload"""
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
         
@@ -186,23 +173,18 @@ class DataProcessor:
         return result
     
     def get_database_stats(self):
-        """Dapatkan statistik database"""
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
         
-        # Total records
         cursor.execute('SELECT COUNT(*) FROM tourism_data')
         total_records = cursor.fetchone()[0]
         
-        # Years available
         cursor.execute('SELECT DISTINCT year FROM tourism_data ORDER BY year')
         years = [row[0] for row in cursor.fetchall()]
         
-        # Total files uploaded
         cursor.execute('SELECT COUNT(*) FROM uploaded_files')
         total_files = cursor.fetchone()[0]
         
-        # Latest update
         cursor.execute('SELECT MAX(upload_date) FROM uploaded_files')
         latest_update = cursor.fetchone()[0]
         
@@ -217,7 +199,6 @@ class DataProcessor:
         }
     
     def export_analysis_data(self, format='json'):
-        """Export data untuk analisis external"""
         conn = sqlite3.connect(self.db_path)
         
         query = '''

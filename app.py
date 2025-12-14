@@ -444,6 +444,24 @@ def _create_ml_analysis_sheet(worksheet, ml_analysis):
                     worksheet.cell(row=row, column=1, 
                                  value=f"  {season}: {percentage}%")
                     row += 1
+            
+            # [NEW] Add Clustering Metrics Section
+            if 'clustering_metrics' in seasonal:
+                row += 1
+                metrics = seasonal['clustering_metrics']
+                worksheet.cell(row=row, column=1, value="Validasi Model Clustering:")
+                worksheet.cell(row=row, column=1).font = Font(bold=True)
+                row += 1
+                
+                if 'silhouette_score' in metrics:
+                    score = metrics['silhouette_score']
+                    eval_text = "Good" if score > 0.5 else "Moderate" if score > 0.25 else "Weak"
+                    worksheet.cell(row=row, column=1, value=f"- Silhouette Score: {score} ({eval_text})")
+                    row += 1
+                
+                if 'method' in metrics:
+                    worksheet.cell(row=row, column=1, value=f"- Metode: {metrics['method']}")
+                    row += 1
 
 def _create_charts_sheet(worksheet, df):
     """Create charts visualization sheet with embedded images"""

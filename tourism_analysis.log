@@ -862,3 +862,99 @@
 2025-11-30 21:34:11,548 - werkzeug - INFO -  * Restarting with stat
 2025-11-30 21:34:17,247 - werkzeug - WARNING -  * Debugger is active!
 2025-11-30 21:34:17,262 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-30 22:03:39,816 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.5:5000
+2025-11-30 22:03:39,816 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-11-30 22:03:39,816 - werkzeug - INFO -  * Restarting with stat
+2025-11-30 22:03:46,565 - werkzeug - WARNING -  * Debugger is active!
+2025-11-30 22:03:46,588 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-11-30 22:03:48,746 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:03:48] "GET / HTTP/1.1" 200 -
+2025-11-30 22:03:48,850 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:03:48] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-11-30 22:03:48,955 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:03:48] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-11-30 22:03:49,186 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:03:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-11-30 22:03:54,297 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:03:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-30 22:03:54,480 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:03:54] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-11-30 22:04:04,927 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:04:04] "GET /upload HTTP/1.1" 200 -
+2025-11-30 22:04:05,049 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:04:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-30 22:04:05,051 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:04:05] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-30 22:04:05,051 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:04:05] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-11-30 22:04:28,065 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:04:28] "GET /dashboard HTTP/1.1" 200 -
+2025-11-30 22:04:28,147 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:04:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-30 22:04:28,182 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:04:28] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-30 22:04:28,197 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:04:28] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-11-30 22:04:37,353 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:04:37] "GET / HTTP/1.1" 200 -
+2025-11-30 22:04:37,450 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:04:37] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-11-30 22:04:37,480 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:04:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-30 22:04:37,485 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:04:37] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-30 22:06:50,052 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:06:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-30 22:06:50,083 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:06:50] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-11-30 22:07:16,801 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:07:16] "GET /upload HTTP/1.1" 200 -
+2025-11-30 22:07:16,926 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:07:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-30 22:07:16,955 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:07:16] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-11-30 22:07:16,962 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:07:16] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-30 22:07:30,651 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:07:30] "GET /dashboard HTTP/1.1" 200 -
+2025-11-30 22:07:30,760 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:07:30] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-11-30 22:07:30,765 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:07:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-30 22:07:30,766 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:07:30] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-30 22:08:04,147 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:08:04] "GET / HTTP/1.1" 200 -
+2025-11-30 22:08:04,286 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:08:04] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-11-30 22:08:04,288 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:08:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-30 22:08:08,381 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:08:08] "GET /dashboard HTTP/1.1" 200 -
+2025-11-30 22:08:08,488 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:08:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-11-30 22:08:08,490 - werkzeug - INFO - 127.0.0.1 - - [30/Nov/2025 22:08:08] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-01 18:22:30,725 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.5:5000
+2025-12-01 18:22:30,726 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-01 18:22:30,730 - werkzeug - INFO -  * Restarting with stat
+2025-12-01 18:22:34,804 - werkzeug - WARNING -  * Debugger is active!
+2025-12-01 18:22:34,815 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-01 18:23:12,294 - werkzeug - INFO - 127.0.0.1 - - [01/Dec/2025 18:23:12] "GET / HTTP/1.1" 200 -
+2025-12-01 18:23:12,361 - werkzeug - INFO - 127.0.0.1 - - [01/Dec/2025 18:23:12] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-01 18:23:12,427 - werkzeug - INFO - 127.0.0.1 - - [01/Dec/2025 18:23:12] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-01 18:23:12,603 - werkzeug - INFO - 127.0.0.1 - - [01/Dec/2025 18:23:12] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-01 18:23:34,329 - werkzeug - INFO - 127.0.0.1 - - [01/Dec/2025 18:23:34] "GET /upload HTTP/1.1" 200 -
+2025-12-01 18:23:34,378 - werkzeug - INFO - 127.0.0.1 - - [01/Dec/2025 18:23:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-01 18:23:34,379 - werkzeug - INFO - 127.0.0.1 - - [01/Dec/2025 18:23:34] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-01 18:24:15,379 - werkzeug - INFO - 127.0.0.1 - - [01/Dec/2025 18:24:15] "GET /dashboard HTTP/1.1" 200 -
+2025-12-01 18:24:15,430 - werkzeug - INFO - 127.0.0.1 - - [01/Dec/2025 18:24:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-01 18:24:15,431 - werkzeug - INFO - 127.0.0.1 - - [01/Dec/2025 18:24:15] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-01 18:24:37,231 - werkzeug - INFO - 127.0.0.1 - - [01/Dec/2025 18:24:37] "GET /upload HTTP/1.1" 200 -
+2025-12-01 18:24:37,265 - werkzeug - INFO - 127.0.0.1 - - [01/Dec/2025 18:24:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-01 18:24:37,266 - werkzeug - INFO - 127.0.0.1 - - [01/Dec/2025 18:24:37] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-01 18:24:40,697 - werkzeug - INFO - 127.0.0.1 - - [01/Dec/2025 18:24:40] "GET /upload-pdf HTTP/1.1" 200 -
+2025-12-01 18:24:40,737 - werkzeug - INFO - 127.0.0.1 - - [01/Dec/2025 18:24:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-01 18:24:40,744 - werkzeug - INFO - 127.0.0.1 - - [01/Dec/2025 18:24:40] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-01 18:24:52,559 - werkzeug - INFO - 127.0.0.1 - - [01/Dec/2025 18:24:52] "GET / HTTP/1.1" 200 -
+2025-12-01 18:24:52,611 - werkzeug - INFO - 127.0.0.1 - - [01/Dec/2025 18:24:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-01 18:24:52,614 - werkzeug - INFO - 127.0.0.1 - - [01/Dec/2025 18:24:52] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-10 15:54:51,657 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.5:5000
+2025-12-10 15:54:51,660 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-10 15:54:51,666 - werkzeug - INFO -  * Restarting with stat
+2025-12-10 15:54:58,053 - werkzeug - WARNING -  * Debugger is active!
+2025-12-10 15:54:58,059 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-10 15:54:58,654 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:54:58] "GET / HTTP/1.1" 200 -
+2025-12-10 15:54:58,731 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:54:58] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-10 15:54:58,766 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:54:58] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-10 15:54:59,007 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:54:59] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-10 15:55:12,142 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:55:12] "GET /upload HTTP/1.1" 200 -
+2025-12-10 15:55:12,192 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:55:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-10 15:55:12,192 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:55:12] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-10 15:55:18,978 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:55:18] "GET /dashboard HTTP/1.1" 200 -
+2025-12-10 15:55:19,034 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:55:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-10 15:55:19,035 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:55:19] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-10 15:56:00,797 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:56:00] "GET /upload HTTP/1.1" 200 -
+2025-12-10 15:56:00,841 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:56:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-10 15:56:00,843 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:56:00] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-10 15:56:05,232 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:56:05] "GET /upload-pdf HTTP/1.1" 200 -
+2025-12-10 15:56:05,272 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:56:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-10 15:56:05,274 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:56:05] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-10 15:56:08,648 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:56:08] "GET / HTTP/1.1" 200 -
+2025-12-10 15:56:08,698 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:56:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-10 15:56:08,700 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:56:08] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -

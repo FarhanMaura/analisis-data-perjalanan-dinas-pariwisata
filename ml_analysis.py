@@ -62,34 +62,77 @@ class TourismAnalyzer:
                 'season_categories': {'High': 0, 'Medium': 0, 'Low': 0},
                 'monthly_performance': {},
                 'season_percentages': {'High': 0, 'Medium': 0, 'Low': 0},
-                'total_visitors': 0
+                'total_visitors': 0,
+                'clustering_metrics': {'silhouette_score': 0, 'inertia': 0}
             }
 
+        # 1. Prepare Data
         monthly_avg = df.groupby('month')['value'].mean()
         months_order = ['January', 'February', 'March', 'April', 'May', 'June',
                        'July', 'August', 'September', 'October', 'November', 'December']
-        monthly_avg = monthly_avg.reindex(months_order)
-        total_visitors = monthly_avg.sum()
-        high_threshold = monthly_avg.quantile(0.70)
-        low_threshold = monthly_avg.quantile(0.30)
+        monthly_avg = monthly_avg.reindex(months_order).fillna(0)
+        
+        # Reshape for sklearn (n_samples, n_features)
+        X = monthly_avg.values.reshape(-1, 1)
+        
+        # 2. Apply K-Means Clustering
+        # We use 3 clusters for Low, Medium, High seasons
+        try:
+            # Check if we have enough variance/data points for 3 clusters
+            n_unique = len(np.unique(X))
+            n_clusters = min(3, n_unique) if n_unique > 0 else 1
+            
+            if n_clusters < 2:
+                 # Fallback if data is too uniform (rare case)
+                 kmeans_labels = np.zeros(len(X), dtype=int)
+                 centroids = np.array([[np.mean(X)]])
+                 silhouette = 0
+            else:
+                kmeans = KMeans(n_clusters=n_clusters, random_state=42, n_init=10)
+                kmeans_labels = kmeans.fit_predict(X)
+                centroids = kmeans.cluster_centers_
+                try:
+                    silhouette = silhouette_score(X, kmeans_labels)
+                except:
+                    silhouette = 0 # Can happen if all points are nearly identical
+        except Exception as e:
+            # Severe fallback
+            print(f"KMeans Error: {e}")
+            return self._fallback_quantile_analysis(df)
 
+        # 3. Map Clusters to High/Medium/Low based on Centroid values
+        # Sort cluster indices by their centroid value (ascending)
+        sorted_indices = np.argsort(centroids.flatten())
+        
+        # Map sorted index to meaningful label
+        # If we have 3 clusters: 0=Low, 1=Medium, 2=High
+        # If we have 2 clusters: 0=Low, 1=High
+        label_map = {}
+        if n_clusters == 3:
+            label_map = {sorted_indices[0]: 'Low', sorted_indices[1]: 'Medium', sorted_indices[2]: 'High'}
+        elif n_clusters == 2:
+            label_map = {sorted_indices[0]: 'Low', sorted_indices[1]: 'High'}
+        else:
+            label_map = {0: 'Medium'}
+
+        # 4. Generate Results
         season_categories = {}
         monthly_performance = {}
-
-        for month in months_order:
-            value = monthly_avg[month]
-            monthly_performance[month] = float(value)
-
-            if value >= high_threshold:
-                season_categories[month] = 'High'
-            elif value <= low_threshold:
-                season_categories[month] = 'Low'
-            else:
-                season_categories[month] = 'Medium'
-
-        high_season_visitors = monthly_avg[monthly_avg >= high_threshold].sum()
-        low_season_visitors = monthly_avg[monthly_avg <= low_threshold].sum()
-        medium_season_visitors = total_visitors - high_season_visitors - low_season_visitors
+        season_counts = {'High': 0, 'Medium': 0, 'Low': 0}
+        
+        for i, month in enumerate(months_order):
+            original_val = monthly_avg[month]
+            monthly_performance[month] = float(original_val)
+            
+            cluster_id = kmeans_labels[i]
+            category = label_map.get(cluster_id, 'Medium')
+            season_categories[month] = category
+            
+        # Calculate Volume per Season
+        total_visitors = monthly_avg.sum()
+        high_season_visitors = monthly_avg[[m for m, c in season_categories.items() if c == 'High']].sum()
+        medium_season_visitors = monthly_avg[[m for m, c in season_categories.items() if c == 'Medium']].sum()
+        low_season_visitors = monthly_avg[[m for m, c in season_categories.items() if c == 'Low']].sum()
 
         if total_visitors > 0:
             high_percentage = (high_season_visitors / total_visitors) * 100
@@ -108,7 +151,47 @@ class TourismAnalyzer:
             },
             'total_visitors': float(total_visitors),
             'high_season_months': [month for month, cat in season_categories.items() if cat == 'High'],
-            'low_season_months': [month for month, cat in season_categories.items() if cat == 'Low']
+            'low_season_months': [month for month, cat in season_categories.items() if cat == 'Low'],
+            'clustering_metrics': {
+                'silhouette_score': round(float(silhouette), 3),
+                'n_clusters': n_clusters,
+                'method': 'K-Means Clustering'
+            }
+        }
+
+    def _fallback_quantile_analysis(self, df):
+        # Original logic as fallback
+        monthly_avg = df.groupby('month')['value'].mean()
+        months_order = ['January', 'February', 'March', 'April', 'May', 'June',
+                       'July', 'August', 'September', 'October', 'November', 'December']
+        monthly_avg = monthly_avg.reindex(months_order).fillna(0)
+        total_visitors = monthly_avg.sum()
+        high_threshold = monthly_avg.quantile(0.70)
+        low_threshold = monthly_avg.quantile(0.30)
+
+        season_categories = {}
+        monthly_performance = {}
+
+        for month in months_order:
+            value = monthly_avg[month]
+            monthly_performance[month] = float(value)
+
+            if value >= high_threshold:
+                season_categories[month] = 'High'
+            elif value <= low_threshold:
+                season_categories[month] = 'Low'
+            else:
+                season_categories[month] = 'Medium'
+                
+        # ... simplified return for fallback ...
+        return {
+            'season_categories': season_categories,
+            'monthly_performance': monthly_performance,
+            'season_percentages': {'High': 0, 'Medium': 0, 'Low': 0}, # Dummy
+            'total_visitors': float(total_visitors),
+            'high_season_months': [],
+            'low_season_months': [],
+            'clustering_metrics': {'method': 'Quantile (Fallback)'}
         }
 
     def analyze_patterns(self, df):

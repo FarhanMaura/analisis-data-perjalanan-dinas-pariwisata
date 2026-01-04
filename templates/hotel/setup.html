@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}Setup Hotel - Data Kunjungan Wisatawan Palembang{% endblock %}
+
+{% block content %}
+<div class="container" style="padding: 50px 20px;">
+  <div class="dashboard-header">
+    <h1>🏨 Setup Hotel</h1>
+    <p>Konfigurasi awal hotel Anda</p>
+  </div>
+
+  <div class="upload-section" style="max-width: 600px; margin: 0 auto;">
+    <form method="POST" action="{{ url_for('hotel_setup') }}" class="upload-form">
+      <div class="form-group">
+        <label for="hotel_name">
+          <span class="label-icon">🏨</span>
+          Nama Hotel
+        </label>
+        <input
+          type="text"
+          id="hotel_name"
+          name="hotel_name"
+          required
+          placeholder="Masukkan nama hotel"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="total_rooms">
+          <span class="label-icon">🛏️</span>
+          Jumlah Kamar Total
+        </label>
+        <input
+          type="number"
+          id="total_rooms"
+          name="total_rooms"
+          required
+          min="1"
+          placeholder="Masukkan jumlah kamar"
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">
+        <span>✅</span>
+        Simpan Konfigurasi
+      </button>
+    </form>
+
+    <div class="info-section" style="margin-top: 30px;">
+      <h3>ℹ️ Informasi</h3>
+      <p>Konfigurasi ini hanya dilakukan sekali. Jika ingin mengubah, hubungi admin.</p>
+    </div>
+  </div>
+</div>
+
+<style>
+.label-icon {
+  font-size: 1.2rem;
+}
+
+.btn-block {
+  width: 100%;
+  margin-top: 10px;
+}
+</style>
+{% endblock %}

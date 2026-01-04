@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+{% block title %}Dashboard Hotel - Data Kunjungan Wisatawan Palembang{% endblock %}
+
+{% block content %}
+<div class="container" style="padding: 50px 20px;">
+  <div class="dashboard-header">
+    <h1>📊 Dashboard Hotel</h1>
+    <p>{{ hotel_info.hotel_name }} - Total Kamar: {{ hotel_info.total_rooms }}</p>
+  </div>
+
+  <div class="actions" style="margin: 30px 0; text-align: center;">
+    <a href="{{ url_for('hotel_input') }}" class="btn btn-primary">
+      <span>📝</span> Input Data Baru
+    </a>
+    {% if data %}
+    <a href="{{ url_for('hotel_export', format='excel') }}" class="btn btn-success">
+      <span>📊</span> Export Excel
+    </a>
+    <a href="{{ url_for('hotel_export', format='csv') }}" class="btn btn-success">
+      <span>📄</span> Export CSV
+    </a>
+    <a href="{{ url_for('hotel_export', format='pdf') }}" class="btn btn-success">
+      <span>📕</span> Export PDF
+    </a>
+    {% endif %}
+    <a href="{{ url_for('hotel_home') }}" class="btn btn-secondary">
+      <span>🏠</span> Kembali ke Home
+    </a>
+  </div>
+
+  {% if data %}
+  <div class="upload-section">
+    <h2>📈 Data Kunjungan Hotel</h2>
+    
+    <div style="overflow-x: auto;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Tanggal</th>
+            <th>Kamar Terisi</th>
+            <th>Persentase (%)</th>
+            <th>Jumlah Tamu</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% set total_guests = namespace(value=0) %}
+          {% for item in data %}
+          <tr>
+            <td>{{ item.date }}</td>
+            <td>
+              <form method="POST" action="{{ url_for('hotel_edit', data_id=item.id) }}" style="display: inline;">
+                <input type="number" name="occupied_rooms" value="{{ item.occupied_rooms }}" 
+                       min="0" max="{{ hotel_info.total_rooms }}" 
+                       style="width: 80px; padding: 5px; border: 1px solid #ddd; border-radius: 6px;">
+              </form>
+            </td>
+            <td>{{ "%.1f"|format((item.occupied_rooms / hotel_info.total_rooms * 100)) }}%</td>
+            <td>{{ item.guest_count }}</td>
+            <td>
+              <button onclick="this.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.querySelector('form').submit()" 
+                      class="btn-edit">
+                💾 Update
+              </button>
+            </td>
+          </tr>
+          {% set total_guests.value = total_guests.value + item.guest_count %}
+          {% endfor %}
+          <tr class="total-row">
+            <td colspan="3"><strong>TOTAL PENGUNJUNG</strong></td>
+            <td><strong>{{ total_guests.value }}</strong></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="info-section" style="margin-top: 30px;">
+      <h3>ℹ️ Informasi</h3>
+      <p>Total data: {{ data|length }} hari</p>
+      <p>Total pengunjung: {{ total_guests.value }} orang</p>
+      <p>Edit jumlah kamar terisi langsung di tabel, lalu klik "Update"</p>
+    </div>
+  </div>
+  {% else %}
+  <div class="no-data">
+    <h2>📊 Belum Ada Data</h2>
+    <p>Silakan input data harian terlebih dahulu</p>
+    <a href="{{ url_for('hotel_input') }}" class="btn btn-primary">Input Data Pertama</a>
+  </div>
+  {% endif %}
+</div>
+
+<style>
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.data-table thead {
+  background: var(--gradient-primary);
+  color: white;
+}
+
+.data-table th,
+.data-table td {
+  padding: 15px 20px;
+  text-align: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.data-table th {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.data-table tbody tr:hover {
+  background: var(--light-blue);
+  transition: var(--transition);
+}
+
+.total-row {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe) !important;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.total-row td {
+  border-bottom: none;
+}
+
+.btn-edit {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-edit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+}
+
+.no-data {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(219, 234, 254, 0.9) 100%
+  );
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.no-data h2 {
+  font-size: 2.5rem;
+  color: var(--primary-blue);
+  margin-bottom: 20px;
+}
+
+.no-data p {
+  font-size: 1.3rem;
+  color: var(--text-light);
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .data-table th,
+  .data-table td {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .actions .btn {
+    flex: 1 1 auto;
+    min-width: 120px;
+  }
+}
+</style>
+{% endblock %}

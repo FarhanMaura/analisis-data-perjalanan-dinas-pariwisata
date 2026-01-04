@@ -1,0 +1,257 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard - Data Kunjungan Wisatawan Palembang{% endblock %}
+
+{% block content %}
+<div class="container" style="padding: 50px 20px;">
+  <div class="dashboard-header">
+    <h1>🎯 Dashboard Admin</h1>
+    <p>Selamat datang, <strong>{{ current_user.username }}</strong>!</p>
+  </div>
+
+  <div class="flash-messages">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="flash-message flash-{{ category }}">
+            <i>
+              {% if category == 'success' %}✅
+              {% elif category == 'error' %}❌
+              {% elif category == 'warning' %}⚠️
+              {% else %}ℹ️{% endif %}
+            </i>
+            <span>{{ message }}</span>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+  </div>
+
+  <!-- Statistics Cards -->
+  <div class="stats-grid" style="margin: 40px 0;">
+    <div class="stat-card">
+      <div class="stat-icon">👥</div>
+      <div class="stat-number">{{ total_users }}</div>
+      <div class="stat-label">Total Users</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🏨</div>
+      <div class="stat-number">{{ total_hotel_data }}</div>
+      <div class="stat-label">Data Hotel</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">🌴</div>
+      <div class="stat-number">{{ total_tourism_data }}</div>
+      <div class="stat-label">Data Wisata</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">📊</div>
+      <div class="stat-number">{{ total_ml_data }}</div>
+      <div class="stat-label">Data ML Analysis</div>
+    </div>
+  </div>
+
+  <!-- Quick Actions -->
+  <div class="features" style="margin: 60px 0;">
+    <div class="feature-card">
+      <div class="feature-icon">👥</div>
+      <h3>Kelola User</h3>
+      <p>Tambah, edit, atau hapus user dengan role yang berbeda</p>
+      <a href="{{ url_for('admin_users') }}" class="btn btn-primary" style="margin-top: 20px;">
+        <span>⚙️</span> Kelola User
+      </a>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🏨</div>
+      <h3>Data Hotel</h3>
+      <p>Lihat semua data dari petugas hotel dan export laporan</p>
+      <a href="{{ url_for('admin_hotel_data') }}" class="btn btn-primary" style="margin-top: 20px;">
+        <span>📊</span> Lihat Data Hotel
+      </a>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🌴</div>
+      <h3>Data Wisata</h3>
+      <p>Lihat semua data dari petugas wisata dan export laporan</p>
+      <a href="{{ url_for('admin_tourism_data') }}" class="btn btn-primary" style="margin-top: 20px;">
+        <span>📊</span> Lihat Data Wisata
+      </a>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">📤</div>
+      <h3>Upload Data CSV/PDF</h3>
+      <p>Upload data pariwisata dari file CSV atau PDF</p>
+      <a href="{{ url_for('upload') }}" class="btn btn-primary" style="margin-top: 20px;">
+        <span>📤</span> Upload Data
+      </a>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🤖</div>
+      <h3>Analisis ML</h3>
+      <p>Dashboard analisis machine learning untuk data pariwisata</p>
+      <a href="{{ url_for('dashboard') }}" class="btn btn-primary" style="margin-top: 20px;">
+        <span>📈</span> Dashboard ML
+      </a>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🚪</div>
+      <h3>Logout</h3>
+      <p>Keluar dari sistem dan kembali ke halaman login</p>
+      <a href="{{ url_for('logout') }}" class="btn btn-danger" style="margin-top: 20px;">
+        <span>🔒</span> Logout
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.dashboard-header h1 {
+  font-size: 3rem;
+  color: var(--primary-blue);
+  margin-bottom: 15px;
+}
+
+.dashboard-header p {
+  font-size: 1.3rem;
+  color: var(--text-light);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.stat-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(219, 234, 254, 0.9) 100%
+  );
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(30, 58, 138, 0.15);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  transition: var(--transition);
+  animation: fadeInUp 0.6s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(30, 58, 138, 0.25);
+}
+
+.stat-icon {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  animation: bounce 2s infinite;
+}
+
+.stat-number {
+  font-size: 3.5rem;
+  font-weight: bold;
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+.flash-messages {
+  margin-bottom: 30px;
+}
+
+.flash-message {
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  animation: slideDown 0.4s ease;
+}
+
+.flash-message i {
+  font-size: 1.5rem;
+  font-style: normal;
+}
+
+.flash-success {
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+  color: #065f46;
+  border: 1px solid #6ee7b7;
+}
+
+.flash-error {
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.flash-warning {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  color: #92400e;
+  border: 1px solid #fcd34d;
+}
+
+.flash-info {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  color: #1e40af;
+  border: 1px solid #93c5fd;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+}
+</style>
+{% endblock %}

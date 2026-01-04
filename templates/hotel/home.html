@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% block title %}Hotel Dashboard - Data Kunjungan Wisatawan Palembang{% endblock %}
+
+{% block content %}
+<div class="container" style="padding: 50px 20px;">
+  <div class="dashboard-header">
+    <h1>🏨 Dashboard Petugas Hotel</h1>
+    <p>Selamat datang, <strong>{{ current_user.username }}</strong>!</p>
+    {% if hotel_info %}
+      <p style="font-size: 1.1rem; margin-top: 10px;">
+        Hotel: <strong>{{ hotel_info.hotel_name }}</strong> | 
+        Total Kamar: <strong>{{ hotel_info.total_rooms }}</strong>
+      </p>
+    {% endif %}
+  </div>
+
+  <div class="flash-messages">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="flash-message flash-{{ category }}">
+            <i>
+              {% if category == 'success' %}✅
+              {% elif category == 'error' %}❌
+              {% elif category == 'warning' %}⚠️
+              {% else %}ℹ️{% endif %}
+            </i>
+            <span>{{ message }}</span>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+  </div>
+
+  <!-- Quick Actions -->
+  <div class="features" style="margin: 60px 0;">
+    <div class="feature-card">
+      <div class="feature-icon">📝</div>
+      <h3>Input Data Harian</h3>
+      <p>Input jumlah kamar terisi untuk hari ini</p>
+      <a href="{{ url_for('hotel_input') }}" class="btn btn-primary" style="margin-top: 20px;">
+        <span>✏️</span> Input Data
+      </a>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <h3>Dashboard Data</h3>
+      <p>Lihat semua data dan statistik hotel Anda</p>
+      <a href="{{ url_for('hotel_dashboard') }}" class="btn btn-primary" style="margin-top: 20px;">
+        <span>📈</span> Lihat Dashboard
+      </a>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🚪</div>
+      <h3>Logout</h3>
+      <p>Keluar dari sistem</p>
+      <a href="{{ url_for('logout') }}" class="btn btn-danger" style="margin-top: 20px;">
+        <span>🔒</span> Logout
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeInUp 0.6s ease;
+}
+
+.dashboard-header h1 {
+  font-size: 3rem;
+  color: var(--primary-blue);
+  margin-bottom: 15px;
+}
+
+.dashboard-header p {
+  font-size: 1.3rem;
+  color: var(--text-light);
+}
+
+.flash-messages {
+  margin-bottom: 30px;
+}
+
+.flash-message {
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  animation: slideDown 0.4s ease;
+}
+
+.flash-message i {
+  font-size: 1.5rem;
+  font-style: normal;
+}
+
+.flash-success {
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+  color: #065f46;
+  border: 1px solid #6ee7b7;
+}
+
+.flash-error {
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.flash-warning {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  color: #92400e;
+  border: 1px solid #fcd34d;
+}
+
+.flash-info {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  color: #1e40af;
+  border: 1px solid #93c5fd;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-header h1 {
+    font-size: 2.2rem;
+  }
+}
+</style>
+{% endblock %}

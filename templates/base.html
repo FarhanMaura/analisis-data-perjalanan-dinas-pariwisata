@@ -16,34 +16,90 @@
     <header>
       <div class="container">
         <div class="header-content">
-          <a href="{{ url_for('homepage') }}" class="logo">
+          <a href="{% if current_user.is_authenticated %}{{ url_for('homepage') }}{% else %}{{ url_for('login') }}{% endif %}" class="logo">
             <span class="logo-icon">🌴</span>
-            Data Kunjungan Wisatawan
+            Data Wisatawan
           </a>
           <button class="mobile-menu-btn">☰</button>
           <nav>
             <ul>
-              <li>
-                <a
-                  href="{{ url_for('homepage') }}"
-                  class="{% if request.endpoint == 'homepage' %}active{% endif %}"
-                  >Home</a
-                >
-              </li>
-              <li>
-                <a
-                  href="{{ url_for('upload') }}"
-                  class="{% if request.endpoint == 'upload' %}active{% endif %}"
-                  >Upload Data</a
-                >
-              </li>
-              <li>
-                <a
-                  href="{{ url_for('dashboard') }}"
-                  class="{% if request.endpoint == 'dashboard' %}active{% endif %}"
-                  >Dashboard</a
-                >
-              </li>
+              {% if current_user.is_authenticated %}
+                {% if current_user.role == 'admin' %}
+                  <li>
+                    <a href="{{ url_for('admin_home') }}" class="{% if request.endpoint == 'admin_home' %}active{% endif %}">
+                      🏠 Home
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('admin_users') }}" class="{% if request.endpoint in ['admin_users', 'admin_create_user'] %}active{% endif %}">
+                      👥 Users
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('upload') }}" class="{% if request.endpoint == 'upload' %}active{% endif %}">
+                      📤 Upload
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('dashboard') }}" class="{% if request.endpoint == 'dashboard' %}active{% endif %}">
+                      📊 Dashboard
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('logout') }}" class="logout-btn">
+                      🚪 Logout
+                    </a>
+                  </li>
+                {% elif current_user.role == 'hotel' %}
+                  <li>
+                    <a href="{{ url_for('hotel_home') }}" class="{% if request.endpoint == 'hotel_home' %}active{% endif %}">
+                      🏠 Home
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('hotel_input') }}" class="{% if request.endpoint == 'hotel_input' %}active{% endif %}">
+                      📝 Input
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('hotel_dashboard') }}" class="{% if request.endpoint == 'hotel_dashboard' %}active{% endif %}">
+                      📊 Data
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('logout') }}" class="logout-btn">
+                      🚪 Logout
+                    </a>
+                  </li>
+                {% elif current_user.role == 'tourism' %}
+                  <li>
+                    <a href="{{ url_for('tourism_home') }}" class="{% if request.endpoint == 'tourism_home' %}active{% endif %}">
+                      🏠 Home
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('tourism_input') }}" class="{% if request.endpoint == 'tourism_input' %}active{% endif %}">
+                      📝 Input
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('tourism_dashboard') }}" class="{% if request.endpoint == 'tourism_dashboard' %}active{% endif %}">
+                      📊 Data
+                    </a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('logout') }}" class="logout-btn">
+                      🚪 Logout
+                    </a>
+                  </li>
+                {% endif %}
+              {% else %}
+                <li>
+                  <a href="{{ url_for('login') }}" class="{% if request.endpoint == 'login' %}active{% endif %}">
+                    🔐 Login
+                  </a>
+                </li>
+              {% endif %}
             </ul>
           </nav>
         </div>

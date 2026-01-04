@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import sqlite3
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 import json
 from ml_analysis import TourismAnalyzer
 from data_processor import DataProcessor
@@ -21,11 +21,34 @@ import matplotlib
 from datetime import datetime
 matplotlib.use('Agg')  # Important for generating images without GUI
 
+# Authentication imports
+from flask_login import LoginManager, login_user, logout_user, login_required, current_user
+from werkzeug.security import generate_password_hash, check_password_hash
+from models import User, HotelData, TourismData
+from decorators import role_required
+from export_utils import (
+    export_hotel_to_excel, export_hotel_to_csv, export_hotel_to_pdf,
+    export_tourism_to_excel, export_tourism_to_csv, export_tourism_to_pdf
+)
+import random
+
 app = Flask(__name__)
 app.secret_key = Config.SECRET_KEY
 app.config['UPLOAD_FOLDER'] = Config.UPLOAD_FOLDER
 app.config['DATABASE'] = Config.DATABASE
 app.config['MAX_CONTENT_LENGTH'] = Config.MAX_CONTENT_LENGTH
+app.config['PERMANENT_SESSION_LIFETIME'] = timedelta(hours=2)
+
+# Flask-Login setup
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = 'login'
+login_manager.login_message = 'Silakan login terlebih dahulu'
+login_manager.login_message_category = 'error'
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.get_by_id(Config.DATABASE, int(user_id))
 
 data_processor = DataProcessor(Config.DATABASE)
 ml_analyzer = TourismAnalyzer(Config.DATABASE)
@@ -40,6 +63,8 @@ if not os.path.exists(app.config['UPLOAD_FOLDER']):
 def init_db():
     conn = sqlite3.connect(app.config['DATABASE'])
     cursor = conn.cursor()
+    
+    # Existing tourism_data table
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS tourism_data (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -49,6 +74,8 @@ def init_db():
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
     ''')
+    
+    # Existing uploaded_files table
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS uploaded_files (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -57,7 +84,80 @@ def init_db():
             upload_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
     ''')
+    
+    # New users table
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            username TEXT UNIQUE NOT NULL,
+            password_hash TEXT NOT NULL,
+            role TEXT NOT NULL,
+            email TEXT,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    ''')
+    
+    # New hotel_info table (stores hotel name and total rooms)
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS hotel_info (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            hotel_name TEXT NOT NULL,
+            total_rooms INTEGER NOT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (user_id) REFERENCES users(id)
+        )
+    ''')
+    
+    # New hotel_data table (daily hotel data)
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS hotel_data (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            date TEXT NOT NULL,
+            occupied_rooms INTEGER NOT NULL,
+            guest_count INTEGER NOT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (user_id) REFERENCES users(id)
+        )
+    ''')
+    
+    # New tourism_site_data table (renamed from tourism_data to avoid conflict)
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS tourism_site_data (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            date TEXT NOT NULL,
+            origin TEXT NOT NULL,
+            total_visitors INTEGER NOT NULL,
+            male_adult INTEGER NOT NULL,
+            female_adult INTEGER NOT NULL,
+            male_child INTEGER NOT NULL,
+            female_child INTEGER NOT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (user_id) REFERENCES users(id)
+        )
+    ''')
+    
     conn.commit()
+    conn.close()
+
+def create_default_admin():
+    """Create default admin user if not exists"""
+    conn = sqlite3.connect(app.config['DATABASE'])
+    cursor = conn.cursor()
+    
+    # Check if admin exists
+    cursor.execute('SELECT id FROM users WHERE username = ?', ('admin',))
+    if not cursor.fetchone():
+        password_hash = generate_password_hash('admin123')
+        cursor.execute('''
+            INSERT INTO users (username, password_hash, role, email)
+            VALUES (?, ?, ?, ?)
+        ''', ('admin', password_hash, 'admin', 'admin@pariwisata.go.id'))
+        conn.commit()
+        print("✅ Default admin user created (username: admin, password: admin123)")
+    
     conn.close()
 
 def get_db_connection():
@@ -591,11 +691,588 @@ def _create_statistics_sheet(worksheet, df, ml_analysis):
             worksheet.cell(row=row, column=2, value=stat_value)
             row += 1
 
+# ===== HELPER FUNCTIONS =====
+def calculate_guest_count(occupied_rooms):
+    """
+    Calculate random guest count for occupied rooms
+    Probability: 1 person=20%, 2 persons=40%, 3 persons=40%, 4 persons=10%
+    """
+    total_guests = 0
+    for _ in range(occupied_rooms):
+        rand = random.random()
+        if rand < 0.20:
+            guests = 1
+        elif rand < 0.60:  # 20% + 40% = 60%
+            guests = 2
+        elif rand < 0.90:  # 60% + 30% = 90% (adjusted to make 3 persons 30%)
+            guests = 3
+        else:
+            guests = 4
+        total_guests += guests
+    return total_guests
+
+def calculate_children(male, female):
+    """
+    Calculate random children count (10-20% of adults)
+    Returns (male_child, female_child)
+    """
+    # Random percentage between 10-20%
+    percentage = random.uniform(0.10, 0.20)
+    
+    male_child = int(male * percentage)
+    female_child = int(female * percentage)
+    
+    return male_child, female_child
+
+# ===== AUTHENTICATION ROUTES =====
 @app.route('/')
 def homepage():
-    return render_template('index.html')
+    """Homepage - redirect based on authentication status"""
+    if current_user.is_authenticated:
+        # Redirect based on role
+        if current_user.role == 'admin':
+            return redirect(url_for('admin_home'))
+        elif current_user.role == 'hotel':
+            return redirect(url_for('hotel_home'))
+        elif current_user.role == 'tourism':
+            return redirect(url_for('tourism_home'))
+    return redirect(url_for('login'))
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    """Login page"""
+    if current_user.is_authenticated:
+        # Already logged in, redirect to appropriate home
+        if current_user.role == 'admin':
+            return redirect(url_for('admin_home'))
+        elif current_user.role == 'hotel':
+            return redirect(url_for('hotel_home'))
+        elif current_user.role == 'tourism':
+            return redirect(url_for('tourism_home'))
+    
+    if request.method == 'POST':
+        username = request.form.get('username')
+        password = request.form.get('password')
+        
+        if not username or not password:
+            flash('Username dan password harus diisi', 'error')
+            return redirect(url_for('login'))
+        
+        user = User.get_by_username(app.config['DATABASE'], username)
+        
+        if user and user.check_password(password):
+            login_user(user)
+            flash(f'Selamat datang, {user.username}!', 'success')
+            
+            # Redirect based on role
+            if user.role == 'admin':
+                return redirect(url_for('admin_home'))
+            elif user.role == 'hotel':
+                return redirect(url_for('hotel_home'))
+            elif user.role == 'tourism':
+                return redirect(url_for('tourism_home'))
+        else:
+            flash('Username atau password salah', 'error')
+            return redirect(url_for('login'))
+    
+    return render_template('login.html')
+
+@app.route('/logout')
+@login_required
+def logout():
+    """Logout user"""
+    logout_user()
+    flash('Anda telah logout', 'success')
+    return redirect(url_for('login'))
+
+# ===== ADMIN ROUTES =====
+@app.route('/admin/home')
+@login_required
+@role_required('admin')
+def admin_home():
+    """Admin homepage"""
+    # Get statistics
+    conn = get_db_connection()
+    
+    cursor = conn.execute('SELECT COUNT(*) as count FROM users')
+    total_users = cursor.fetchone()['count']
+    
+    cursor = conn.execute('SELECT COUNT(*) as count FROM hotel_data')
+    total_hotel_data = cursor.fetchone()['count']
+    
+    cursor = conn.execute('SELECT COUNT(*) as count FROM tourism_site_data')
+    total_tourism_data = cursor.fetchone()['count']
+    
+    cursor = conn.execute('SELECT COUNT(*) as count FROM tourism_data')
+    total_ml_data = cursor.fetchone()['count']
+    
+    conn.close()
+    
+    return render_template('admin/home.html',
+                         total_users=total_users,
+                         total_hotel_data=total_hotel_data,
+                         total_tourism_data=total_tourism_data,
+                         total_ml_data=total_ml_data)
+
+@app.route('/admin/users')
+@login_required
+@role_required('admin')
+def admin_users():
+    """Admin user management - list all users"""
+    users = User.get_all(app.config['DATABASE'])
+    return render_template('admin/users.html', users=users)
+
+@app.route('/admin/users/create', methods=['GET', 'POST'])
+@login_required
+@role_required('admin')
+def admin_create_user():
+    """Admin create new user"""
+    if request.method == 'POST':
+        username = request.form.get('username')
+        email = request.form.get('email')
+        password = request.form.get('password')
+        role = request.form.get('role')
+        
+        if not all([username, email, password, role]):
+            flash('Semua field harus diisi', 'error')
+            return redirect(url_for('admin_create_user'))
+        
+        # Validate role
+        if role not in ['hotel', 'tourism']:
+            flash('Role harus hotel atau tourism', 'error')
+            return redirect(url_for('admin_create_user'))
+        
+        # Check if username exists
+        existing_user = User.get_by_username(app.config['DATABASE'], username)
+        if existing_user:
+            flash('Username sudah digunakan', 'error')
+            return redirect(url_for('admin_create_user'))
+        
+        # Create user
+        try:
+            User.create(app.config['DATABASE'], username, password, role, email)
+            flash(f'User {username} berhasil dibuat dengan role {role}!', 'success')
+            return redirect(url_for('admin_users'))
+        except Exception as e:
+            flash(f'Error membuat user: {str(e)}', 'error')
+            return redirect(url_for('admin_create_user'))
+    
+    return render_template('admin/create_user.html')
+
+@app.route('/admin/hotel-data')
+@login_required
+@role_required('admin')
+def admin_hotel_data():
+    """Admin view all hotel data from all users"""
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    
+    # Get all hotel data with user and hotel info
+    cursor.execute('''
+        SELECT 
+            hd.id,
+            hd.date,
+            hd.occupied_rooms,
+            hd.guest_count,
+            hi.hotel_name,
+            hi.total_rooms,
+            u.username,
+            hd.created_at
+        FROM hotel_data hd
+        JOIN hotel_info hi ON hd.user_id = hi.user_id
+        JOIN users u ON hd.user_id = u.id
+        ORDER BY hd.date DESC
+    ''')
+    
+    rows = cursor.fetchall()
+    conn.close()
+    
+    data = []
+    for row in rows:
+        occupancy_rate = (row['occupied_rooms'] / row['total_rooms'] * 100) if row['total_rooms'] > 0 else 0
+        data.append({
+            'id': row['id'],
+            'date': row['date'],
+            'hotel_name': row['hotel_name'],
+            'username': row['username'],
+            'occupied_rooms': row['occupied_rooms'],
+            'total_rooms': row['total_rooms'],
+            'guest_count': row['guest_count'],
+            'occupancy_rate': round(occupancy_rate, 1),
+            'created_at': row['created_at']
+        })
+    
+    return render_template('admin/hotel_data.html', data=data)
+
+@app.route('/admin/tourism-data')
+@login_required
+@role_required('admin')
+def admin_tourism_data():
+    """Admin view all tourism data from all users"""
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    
+    # Get all tourism data with user info
+    cursor.execute('''
+        SELECT 
+            td.id,
+            td.date,
+            td.origin,
+            td.total_visitors,
+            td.male_adult,
+            td.female_adult,
+            td.male_child,
+            td.female_child,
+            u.username,
+            td.created_at
+        FROM tourism_site_data td
+        JOIN users u ON td.user_id = u.id
+        ORDER BY td.date DESC
+    ''')
+    
+    rows = cursor.fetchall()
+    conn.close()
+    
+    data = []
+    for row in rows:
+        total_adults = row['male_adult'] + row['female_adult']
+        total_children = row['male_child'] + row['female_child']
+        data.append({
+            'id': row['id'],
+            'date': row['date'],
+            'origin': row['origin'],
+            'username': row['username'],
+            'total_visitors': row['total_visitors'],
+            'male_adult': row['male_adult'],
+            'female_adult': row['female_adult'],
+            'male_child': row['male_child'],
+            'female_child': row['female_child'],
+            'total_adults': total_adults,
+            'total_children': total_children,
+            'created_at': row['created_at']
+        })
+    
+    return render_template('admin/tourism_data.html', data=data)
+
+@app.route('/admin/hotel-data/export/<format>')
+@login_required
+@role_required('admin')
+def admin_export_hotel_data(format):
+    """Admin export all hotel data"""
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    
+    # Get all hotel data
+    cursor.execute('''
+        SELECT 
+            hd.date,
+            hi.hotel_name,
+            u.username,
+            hd.occupied_rooms,
+            hi.total_rooms,
+            hd.guest_count,
+            hd.created_at
+        FROM hotel_data hd
+        JOIN hotel_info hi ON hd.user_id = hi.user_id
+        JOIN users u ON hd.user_id = u.id
+        ORDER BY hd.date DESC
+    ''')
+    
+    rows = cursor.fetchall()
+    conn.close()
+    
+    # Prepare data
+    data = []
+    for row in rows:
+        occupancy_rate = (row['occupied_rooms'] / row['total_rooms'] * 100) if row['total_rooms'] > 0 else 0
+        data.append({
+            'Tanggal': row['date'],
+            'Hotel': row['hotel_name'],
+            'Petugas': row['username'],
+            'Kamar Terisi': row['occupied_rooms'],
+            'Total Kamar': row['total_rooms'],
+            'Tingkat Okupansi (%)': round(occupancy_rate, 1),
+            'Jumlah Tamu': row['guest_count']
+        })
+    
+    # Generate filename
+    timestamp = datetime.now().strftime('%Y%m%d')
+    filename = f"admin_hotel_data_{timestamp}"
+    
+    # Create DataFrame for export
+    df = pd.DataFrame(data)
+    
+    # Export based on format
+    if format == 'excel':
+        output = io.BytesIO()
+        with pd.ExcelWriter(output, engine='openpyxl') as writer:
+            df.to_excel(writer, index=False, sheet_name='Data Hotel')
+        output.seek(0)
+        mimetype = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        filename += '.xlsx'
+    elif format == 'csv':
+        output = io.BytesIO()
+        df.to_csv(output, index=False, encoding='utf-8-sig')
+        output.seek(0)
+        mimetype = 'text/csv; charset=utf-8'
+        filename += '.csv'
+    elif format == 'pdf':
+        # For PDF, use ReportLab
+        from reportlab.lib.pagesizes import A4, landscape
+        from reportlab.lib import colors
+        from reportlab.lib.units import inch
+        from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer
+        from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+        
+        output = io.BytesIO()
+        doc = SimpleDocTemplate(output, pagesize=landscape(A4))
+        elements = []
+        
+        styles = getSampleStyleSheet()
+        title_style = ParagraphStyle(
+            'CustomTitle',
+            parent=styles['Heading1'],
+            fontSize=16,
+            textColor=colors.HexColor('#1e3a8a'),
+            spaceAfter=20,
+            alignment=1
+        )
+        
+        title = Paragraph("Laporan Data Hotel - Admin", title_style)
+        elements.append(title)
+        elements.append(Spacer(1, 0.2*inch))
+        
+        info_text = f"Tanggal Export: {datetime.now().strftime('%d/%m/%Y %H:%M')}"
+        info = Paragraph(info_text, styles['Normal'])
+        elements.append(info)
+        elements.append(Spacer(1, 0.3*inch))
+        
+        # Table data
+        table_data = [list(df.columns)]
+        for _, row in df.iterrows():
+            table_data.append(list(row))
+        
+        table = Table(table_data, colWidths=[1*inch, 1.5*inch, 1*inch, 1*inch, 1*inch, 1.2*inch, 1*inch])
+        table.setStyle(TableStyle([
+            ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#1e3a8a')),
+            ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+            ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+            ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+            ('FONTSIZE', (0, 0), (-1, 0), 10),
+            ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+            ('GRID', (0, 0), (-1, -1), 1, colors.grey),
+            ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, colors.HexColor('#f8fafc')]),
+            ('FONTSIZE', (0, 1), (-1, -1), 8)
+        ]))
+        
+        elements.append(table)
+        doc.build(elements)
+        output.seek(0)
+        mimetype = 'application/pdf'
+        filename += '.pdf'
+    else:
+        flash('Format tidak valid', 'error')
+        return redirect(url_for('admin_hotel_data'))
+    
+    return send_file(
+        output,
+        as_attachment=True,
+        download_name=filename,
+        mimetype=mimetype
+    )
+
+@app.route('/admin/tourism-data/export/<format>')
+@login_required
+@role_required('admin')
+def admin_export_tourism_data(format):
+    """Admin export all tourism data"""
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    
+    # Get all tourism data
+    cursor.execute('''
+        SELECT 
+            td.date,
+            td.origin,
+            u.username,
+            td.total_visitors,
+            td.male_adult,
+            td.female_adult,
+            td.male_child,
+            td.female_child,
+            td.created_at
+        FROM tourism_site_data td
+        JOIN users u ON td.user_id = u.id
+        ORDER BY td.date DESC
+    ''')
+    
+    rows = cursor.fetchall()
+    conn.close()
+    
+    # Prepare data
+    data = []
+    for row in rows:
+        data.append({
+            'Tanggal': row['date'],
+            'Asal': row['origin'],
+            'Petugas': row['username'],
+            'Total Pengunjung': row['total_visitors'],
+            'Dewasa Laki-laki': row['male_adult'],
+            'Dewasa Perempuan': row['female_adult'],
+            'Anak Laki-laki': row['male_child'],
+            'Anak Perempuan': row['female_child']
+        })
+    
+    # Generate filename
+    timestamp = datetime.now().strftime('%Y%m%d')
+    filename = f"admin_tourism_data_{timestamp}"
+    
+    # Create DataFrame for export
+    df = pd.DataFrame(data)
+    
+    # Export based on format
+    if format == 'excel':
+        output = io.BytesIO()
+        with pd.ExcelWriter(output, engine='openpyxl') as writer:
+            df.to_excel(writer, index=False, sheet_name='Data Wisata')
+        output.seek(0)
+        mimetype = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        filename += '.xlsx'
+    elif format == 'csv':
+        output = io.BytesIO()
+        df.to_csv(output, index=False, encoding='utf-8-sig')
+        output.seek(0)
+        mimetype = 'text/csv; charset=utf-8'
+        filename += '.csv'
+    elif format == 'pdf':
+        # For PDF, use ReportLab
+        from reportlab.lib.pagesizes import A4, landscape
+        from reportlab.lib import colors
+        from reportlab.lib.units import inch
+        from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer
+        from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
+        
+        output = io.BytesIO()
+        doc = SimpleDocTemplate(output, pagesize=landscape(A4))
+        elements = []
+        
+        styles = getSampleStyleSheet()
+        title_style = ParagraphStyle(
+            'CustomTitle',
+            parent=styles['Heading1'],
+            fontSize=16,
+            textColor=colors.HexColor('#1e3a8a'),
+            spaceAfter=20,
+            alignment=1
+        )
+        
+        title = Paragraph("Laporan Data Wisata - Admin", title_style)
+        elements.append(title)
+        elements.append(Spacer(1, 0.2*inch))
+        
+        info_text = f"Tanggal Export: {datetime.now().strftime('%d/%m/%Y %H:%M')}"
+        info = Paragraph(info_text, styles['Normal'])
+        elements.append(info)
+        elements.append(Spacer(1, 0.3*inch))
+        
+        # Table data
+        table_data = [list(df.columns)]
+        for _, row in df.iterrows():
+            table_data.append(list(row))
+        
+        table = Table(table_data, colWidths=[1*inch, 1*inch, 1*inch, 1*inch, 1*inch, 1*inch, 0.9*inch, 0.9*inch])
+        table.setStyle(TableStyle([
+            ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#1e3a8a')),
+            ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+            ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+            ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+            ('FONTSIZE', (0, 0), (-1, 0), 10),
+            ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+            ('GRID', (0, 0), (-1, -1), 1, colors.grey),
+            ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, colors.HexColor('#f8fafc')]),
+            ('FONTSIZE', (0, 1), (-1, -1), 8)
+        ]))
+        
+        elements.append(table)
+        doc.build(elements)
+        output.seek(0)
+        mimetype = 'application/pdf'
+        filename += '.pdf'
+    else:
+        flash('Format tidak valid', 'error')
+        return redirect(url_for('admin_tourism_data'))
+    
+    return send_file(
+        output,
+        as_attachment=True,
+        download_name=filename,
+        mimetype=mimetype
+    )
+
+@app.route('/admin/users/edit/<int:user_id>', methods=['GET', 'POST'])
+@login_required
+@role_required('admin')
+def admin_edit_user(user_id):
+    """Admin edit user"""
+    if request.method == 'POST':
+        username = request.form.get('username')
+        email = request.form.get('email')
+        role = request.form.get('role')
+        password = request.form.get('password')
+        
+        # Get current user to check if username changed
+        current_user_data = User.get_by_id(app.config['DATABASE'], user_id)
+        if not current_user_data:
+            flash('User tidak ditemukan', 'error')
+            return redirect(url_for('admin_users'))
+        
+        # Validate inputs
+        if not username or not email or not role:
+            flash('Username, email, dan role harus diisi', 'error')
+            return redirect(url_for('admin_edit_user', user_id=user_id))
+        
+        # Validate role
+        if role not in ['admin', 'hotel', 'tourism']:
+            flash('Role tidak valid', 'error')
+            return redirect(url_for('admin_edit_user', user_id=user_id))
+        
+        # Check if username changed and if new username exists
+        if username != current_user_data.username:
+            existing_user = User.get_by_username(app.config['DATABASE'], username)
+            if existing_user:
+                flash('Username sudah digunakan', 'error')
+                return redirect(url_for('admin_edit_user', user_id=user_id))
+        
+        # Update user
+        try:
+            User.update(
+                app.config['DATABASE'],
+                user_id,
+                username=username,
+                email=email,
+                role=role,
+                password=password if password else None
+            )
+            flash(f'User {username} berhasil diupdate!', 'success')
+            return redirect(url_for('admin_users'))
+        except Exception as e:
+            flash(f'Error mengupdate user: {str(e)}', 'error')
+            return redirect(url_for('admin_edit_user', user_id=user_id))
+    
+    # GET request - show edit form
+    user = User.get_by_id(app.config['DATABASE'], user_id)
+    if not user:
+        flash('User tidak ditemukan', 'error')
+        return redirect(url_for('admin_users'))
+    
+    return render_template('admin/edit_user.html', user=user)
+
+
+
+# ===== EXISTING ROUTES (NOW PROTECTED FOR ADMIN ONLY) =====
 @app.route('/upload', methods=['GET', 'POST'])
+@login_required
+@role_required('admin')
 def upload():
     if request.method == 'POST':
         if 'csv_file' not in request.files:
@@ -678,6 +1355,8 @@ def upload():
                          uploaded_files=uploaded_files)
 
 @app.route('/upload-pdf', methods=['GET', 'POST'])
+@login_required
+@role_required('admin')
 def upload_pdf():
     if request.method == 'POST':
         if 'pdf_file' not in request.files:
@@ -783,6 +1462,8 @@ def convert_pdf_to_csv():
             os.remove(output_csv)
 
 @app.route('/dashboard')
+@login_required
+@role_required('admin')
 def dashboard():
     conn = get_db_connection()
     query = '''
@@ -905,7 +1586,7 @@ def export_excel():
         return send_file(
             excel_buffer,
             as_attachment=True,
-            download_name=filename,
+            attachment_filename=filename,
             mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
         )
         
@@ -955,19 +1636,450 @@ def internal_error(error):
     flash('Terjadi error internal server. Silakan coba lagi.', 'error')
     return redirect(url_for('homepage'))
 
-@app.errorhandler(404)
 def not_found(error):
     return render_template('404.html'), 404
 
+# ===== HOTEL STAFF ROUTES =====
+@app.route('/hotel/home')
+@login_required
+@role_required('hotel')
+def hotel_home():
+    """Hotel staff homepage"""
+    hotel_info = HotelData.get_hotel_info(app.config['DATABASE'], current_user.id)
+    return render_template('hotel/home.html', hotel_info=hotel_info)
+
+@app.route('/hotel/setup', methods=['GET', 'POST'])
+@login_required
+@role_required('hotel')
+def hotel_setup():
+    """Hotel setup - first time configuration"""
+    # Check if already setup
+    hotel_info = HotelData.get_hotel_info(app.config['DATABASE'], current_user.id)
+    if hotel_info:
+        flash('Hotel sudah dikonfigurasi. Hubungi admin untuk mengubah.', 'warning')
+        return redirect(url_for('hotel_home'))
+    
+    if request.method == 'POST':
+        hotel_name = request.form.get('hotel_name')
+        total_rooms = request.form.get('total_rooms')
+        
+        if not hotel_name or not total_rooms:
+            flash('Semua field harus diisi', 'error')
+            return redirect(url_for('hotel_setup'))
+        
+        try:
+            total_rooms = int(total_rooms)
+            if total_rooms <= 0:
+                flash('Jumlah kamar harus lebih dari 0', 'error')
+                return redirect(url_for('hotel_setup'))
+        except ValueError:
+            flash('Jumlah kamar harus berupa angka', 'error')
+            return redirect(url_for('hotel_setup'))
+        
+        HotelData.set_hotel_info(app.config['DATABASE'], current_user.id, hotel_name, total_rooms)
+        flash(f'Hotel {hotel_name} berhasil dikonfigurasi!', 'success')
+        return redirect(url_for('hotel_home'))
+    
+    return render_template('hotel/setup.html')
+
+@app.route('/hotel/input', methods=['GET', 'POST'])
+@login_required
+@role_required('hotel')
+def hotel_input():
+    """Hotel daily data input"""
+    hotel_info = HotelData.get_hotel_info(app.config['DATABASE'], current_user.id)
+    
+    if not hotel_info:
+        flash('Silakan setup hotel terlebih dahulu', 'warning')
+        return redirect(url_for('hotel_setup'))
+    
+    if request.method == 'POST':
+        date = request.form.get('date')
+        occupied_rooms = request.form.get('occupied_rooms')
+        
+        if not date or not occupied_rooms:
+            flash('Semua field harus diisi', 'error')
+            return redirect(url_for('hotel_input'))
+        
+        try:
+            occupied_rooms = int(occupied_rooms)
+            if occupied_rooms < 0:
+                flash('Jumlah kamar terisi tidak boleh negatif', 'error')
+                return redirect(url_for('hotel_input'))
+            if occupied_rooms > hotel_info['total_rooms']:
+                flash(f'Jumlah kamar terisi tidak boleh lebih dari total kamar ({hotel_info["total_rooms"]})', 'error')
+                return redirect(url_for('hotel_input'))
+        except ValueError:
+            flash('Jumlah kamar terisi harus berupa angka', 'error')
+            return redirect(url_for('hotel_input'))
+        
+        # Check if date already exists
+        if HotelData.check_date_exists(app.config['DATABASE'], current_user.id, date):
+            flash(f'Data untuk tanggal {date} sudah ada. Silakan edit di dashboard.', 'warning')
+            return redirect(url_for('hotel_input'))
+        
+        # Calculate guest count
+        guest_count = calculate_guest_count(occupied_rooms)
+        
+        # Save to database
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute('''
+            INSERT INTO hotel_data (user_id, date, occupied_rooms, guest_count)
+            VALUES (?, ?, ?, ?)
+        ''', (current_user.id, date, occupied_rooms, guest_count))
+        conn.commit()
+        conn.close()
+        
+        flash(f'Data berhasil disimpan! Jumlah tamu: {guest_count} orang', 'success')
+        return redirect(url_for('hotel_dashboard'))
+    
+    return render_template('hotel/input.html', hotel_info=hotel_info)
+
+@app.route('/hotel/dashboard')
+@login_required
+@role_required('hotel')
+def hotel_dashboard():
+    """Hotel dashboard with data table"""
+    hotel_info = HotelData.get_hotel_info(app.config['DATABASE'], current_user.id)
+    
+    if not hotel_info:
+        flash('Silakan setup hotel terlebih dahulu', 'warning')
+        return redirect(url_for('hotel_setup'))
+    
+    data = HotelData.get_all_data(app.config['DATABASE'], current_user.id)
+    
+    return render_template('hotel/dashboard.html', 
+                         hotel_info=hotel_info,
+                         data=data)
+
+@app.route('/hotel/edit/<int:data_id>', methods=['POST'])
+@login_required
+@role_required('hotel')
+def hotel_edit(data_id):
+    """Edit hotel data - only occupied_rooms"""
+    occupied_rooms = request.form.get('occupied_rooms')
+    
+    if not occupied_rooms:
+        flash('Jumlah kamar terisi harus diisi', 'error')
+        return redirect(url_for('hotel_dashboard'))
+    
+    try:
+        occupied_rooms = int(occupied_rooms)
+        hotel_info = HotelData.get_hotel_info(app.config['DATABASE'], current_user.id)
+        
+        if occupied_rooms < 0:
+            flash('Jumlah kamar terisi tidak boleh negatif', 'error')
+            return redirect(url_for('hotel_dashboard'))
+        
+        if occupied_rooms > hotel_info['total_rooms']:
+            flash(f'Jumlah kamar terisi tidak boleh lebih dari total kamar ({hotel_info["total_rooms"]})', 'error')
+            return redirect(url_for('hotel_dashboard'))
+        
+        # Recalculate guest count
+        guest_count = calculate_guest_count(occupied_rooms)
+        
+        # Update database
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute('''
+            UPDATE hotel_data 
+            SET occupied_rooms = ?, guest_count = ?
+            WHERE id = ? AND user_id = ?
+        ''', (occupied_rooms, guest_count, data_id, current_user.id))
+        conn.commit()
+        conn.close()
+        
+        flash('Data berhasil diupdate!', 'success')
+    except ValueError:
+        flash('Jumlah kamar terisi harus berupa angka', 'error')
+    
+    return redirect(url_for('hotel_dashboard'))
+
+@app.route('/hotel/export/<format>')
+@login_required
+@role_required('hotel')
+def hotel_export(format):
+    """Export hotel data to Excel, CSV, or PDF"""
+    hotel_info = HotelData.get_hotel_info(app.config['DATABASE'], current_user.id)
+    if not hotel_info:
+        flash('Silakan setup hotel terlebih dahulu', 'warning')
+        return redirect(url_for('hotel_setup'))
+    
+    data = HotelData.get_all_data(app.config['DATABASE'], current_user.id)
+    
+    if not data:
+        flash('Tidak ada data untuk diexport', 'warning')
+        return redirect(url_for('hotel_dashboard'))
+    
+    try:
+        if format == 'excel':
+            output = export_hotel_to_excel(data, hotel_info['hotel_name'], hotel_info['total_rooms'])
+            mimetype = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+            filename = f"hotel_{hotel_info['hotel_name']}_{datetime.now().strftime('%Y%m%d')}.xlsx"
+        elif format == 'csv':
+            output = export_hotel_to_csv(data, hotel_info['hotel_name'], hotel_info['total_rooms'])
+            mimetype = 'text/csv'
+            filename = f"hotel_{hotel_info['hotel_name']}_{datetime.now().strftime('%Y%m%d')}.csv"
+        elif format == 'pdf':
+            output = export_hotel_to_pdf(data, hotel_info['hotel_name'], hotel_info['total_rooms'])
+            mimetype = 'application/pdf'
+            filename = f"hotel_{hotel_info['hotel_name']}_{datetime.now().strftime('%Y%m%d')}.pdf"
+        else:
+            flash('Format tidak valid', 'error')
+            return redirect(url_for('hotel_dashboard'))
+        
+        if output:
+            return send_file(
+                output,
+                as_attachment=True,
+                download_name=filename,
+                mimetype=mimetype
+            )
+        else:
+            flash('Gagal membuat file export', 'error')
+            return redirect(url_for('hotel_dashboard'))
+    except Exception as e:
+        flash(f'Error export: {str(e)}', 'error')
+        return redirect(url_for('hotel_dashboard'))
+
+# ===== TOURISM STAFF ROUTES =====
+@app.route('/tourism/home')
+@login_required
+@role_required('tourism')
+def tourism_home():
+    """Tourism staff homepage"""
+    return render_template('tourism/home.html')
+
+@app.route('/tourism/input', methods=['GET', 'POST'])
+@login_required
+@role_required('tourism')
+def tourism_input():
+    """Tourism daily data input"""
+    if request.method == 'POST':
+        date = request.form.get('date')
+        origin = request.form.get('origin')
+        total_visitors = request.form.get('total_visitors')
+        male = request.form.get('male')
+        female = request.form.get('female')
+        male_child_input = request.form.get('male_child', '').strip()
+        female_child_input = request.form.get('female_child', '').strip()
+        
+        if not all([date, origin, total_visitors, male, female]):
+            flash('Field tanggal, asal, total, laki-laki, dan perempuan harus diisi', 'error')
+            return redirect(url_for('tourism_input'))
+        
+        try:
+            total_visitors = int(total_visitors)
+            male = int(male)
+            female = int(female)
+            
+            if total_visitors < 0 or male < 0 or female < 0:
+                flash('Jumlah pengunjung tidak boleh negatif', 'error')
+                return redirect(url_for('tourism_input'))
+            
+            # Calculate children if not provided
+            if male_child_input and female_child_input:
+                male_child = int(male_child_input)
+                female_child = int(female_child_input)
+            else:
+                male_child, female_child = calculate_children(male, female)
+            
+            # Validate total
+            total_calculated = male + female
+            if total_calculated > total_visitors:
+                flash('Jumlah laki-laki + perempuan tidak boleh lebih dari total pengunjung', 'error')
+                return redirect(url_for('tourism_input'))
+            
+        except ValueError:
+            flash('Semua field angka harus berupa angka valid', 'error')
+            return redirect(url_for('tourism_input'))
+        
+        # Check if date already exists
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute('''
+            SELECT id FROM tourism_site_data 
+            WHERE user_id = ? AND date = ?
+        ''', (current_user.id, date))
+        
+        if cursor.fetchone():
+            conn.close()
+            flash(f'Data untuk tanggal {date} sudah ada. Silakan edit di dashboard.', 'warning')
+            return redirect(url_for('tourism_input'))
+        
+        # Calculate adults (subtract children)
+        male_adult = male - male_child
+        female_adult = female - female_child
+        
+        # Save to database
+        cursor.execute('''
+            INSERT INTO tourism_site_data 
+            (user_id, date, origin, total_visitors, male_adult, female_adult, male_child, female_child)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        ''', (current_user.id, date, origin, total_visitors, male_adult, female_adult, male_child, female_child))
+        conn.commit()
+        conn.close()
+        
+        flash('Data berhasil disimpan!', 'success')
+        return redirect(url_for('tourism_dashboard'))
+    
+    return render_template('tourism/input.html')
+
+@app.route('/tourism/dashboard')
+@login_required
+@role_required('tourism')
+def tourism_dashboard():
+    """Tourism dashboard with data table"""
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute('''
+        SELECT * FROM tourism_site_data 
+        WHERE user_id = ?
+        ORDER BY date DESC
+    ''', (current_user.id,))
+    
+    rows = cursor.fetchall()
+    conn.close()
+    
+    data = []
+    for row in rows:
+        data.append({
+            'id': row['id'],
+            'date': row['date'],
+            'origin': row['origin'],
+            'total_visitors': row['total_visitors'],
+            'male_adult': row['male_adult'],
+            'female_adult': row['female_adult'],
+            'male_child': row['male_child'],
+            'female_child': row['female_child'],
+            'created_at': row['created_at']
+        })
+    
+    return render_template('tourism/dashboard.html', data=data)
+
+@app.route('/tourism/edit/<int:data_id>', methods=['POST'])
+@login_required
+@role_required('tourism')
+def tourism_edit(data_id):
+    """Edit tourism data"""
+    origin = request.form.get('origin')
+    total_visitors = request.form.get('total_visitors')
+    male_adult = request.form.get('male_adult')
+    female_adult = request.form.get('female_adult')
+    male_child = request.form.get('male_child')
+    female_child = request.form.get('female_child')
+    
+    if not all([origin, total_visitors, male_adult, female_adult, male_child, female_child]):
+        flash('Semua field harus diisi', 'error')
+        return redirect(url_for('tourism_dashboard'))
+    
+    try:
+        total_visitors = int(total_visitors)
+        male_adult = int(male_adult)
+        female_adult = int(female_adult)
+        male_child = int(male_child)
+        female_child = int(female_child)
+        
+        if any(x < 0 for x in [total_visitors, male_adult, female_adult, male_child, female_child]):
+            flash('Jumlah pengunjung tidak boleh negatif', 'error')
+            return redirect(url_for('tourism_dashboard'))
+        
+        # Update database
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute('''
+            UPDATE tourism_site_data 
+            SET origin = ?, total_visitors = ?, male_adult = ?, female_adult = ?, male_child = ?, female_child = ?
+            WHERE id = ? AND user_id = ?
+        ''', (origin, total_visitors, male_adult, female_adult, male_child, female_child, data_id, current_user.id))
+        conn.commit()
+        conn.close()
+        
+        flash('Data berhasil diupdate!', 'success')
+    except ValueError:
+        flash('Semua field angka harus berupa angka valid', 'error')
+    
+    return redirect(url_for('tourism_dashboard'))
+
+@app.route('/tourism/export/<format>')
+@login_required
+@role_required('tourism')
+def tourism_export(format):
+    """Export tourism data to Excel, CSV, or PDF"""
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute('''
+        SELECT * FROM tourism_site_data 
+        WHERE user_id = ?
+        ORDER BY date DESC
+    ''', (current_user.id,))
+    
+    rows = cursor.fetchall()
+    conn.close()
+    
+    if not rows:
+        flash('Tidak ada data untuk diexport', 'warning')
+        return redirect(url_for('tourism_dashboard'))
+    
+    data = []
+    for row in rows:
+        data.append({
+            'id': row['id'],
+            'date': row['date'],
+            'origin': row['origin'],
+            'total_visitors': row['total_visitors'],
+            'male_adult': row['male_adult'],
+            'female_adult': row['female_adult'],
+            'male_child': row['male_child'],
+            'female_child': row['female_child']
+        })
+    
+    try:
+        if format == 'excel':
+            output = export_tourism_to_excel(data, current_user.username)
+            mimetype = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+            filename = f"tourism_{current_user.username}_{datetime.now().strftime('%Y%m%d')}.xlsx"
+        elif format == 'csv':
+            output = export_tourism_to_csv(data, current_user.username)
+            mimetype = 'text/csv'
+            filename = f"tourism_{current_user.username}_{datetime.now().strftime('%Y%m%d')}.csv"
+        elif format == 'pdf':
+            output = export_tourism_to_pdf(data, current_user.username)
+            mimetype = 'application/pdf'
+            filename = f"tourism_{current_user.username}_{datetime.now().strftime('%Y%m%d')}.pdf"
+        else:
+            flash('Format tidak valid', 'error')
+            return redirect(url_for('tourism_dashboard'))
+        
+        if output:
+            return send_file(
+                output,
+                as_attachment=True,
+                download_name=filename,
+                mimetype=mimetype
+            )
+        else:
+            flash('Gagal membuat file export', 'error')
+            return redirect(url_for('tourism_dashboard'))
+    except Exception as e:
+        flash(f'Error export: {str(e)}', 'error')
+        return redirect(url_for('tourism_dashboard'))
+
+@app.errorhandler(404)
+def not_found_error(error):
+    return render_template('404.html'), 404
+
+
 if __name__ == '__main__':
     init_db()
+    create_default_admin()
     print("=== Tourism Data Management System ===")
     print("Server running on: http://127.0.0.1:5000")
     print("Routes available:")
-    print("  /              - Homepage")
-    print("  /upload        - Upload CSV data")
-    print("  /upload-pdf    - Upload PDF data")
-    print("  /dashboard     - Analytics dashboard")
-    print("  /export-excel  - Export to Excel")
+    print("  /login         - Login page")
+    print("  /admin/*       - Admin routes")
+    print("  /hotel/*       - Hotel staff routes")
+    print("  /tourism/*     - Tourism staff routes")
     print("  /api/*         - Various API endpoints")
     app.run(debug=True, host='0.0.0.0', port=5000, )

@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% block title %}Tambah User - Admin Dashboard{% endblock %}
+
+{% block content %}
+<div class="container" style="padding: 50px 20px;">
+  <div class="dashboard-header">
+    <h1>➕ Tambah User Baru</h1>
+    <p>Buat akun untuk petugas hotel atau wisata</p>
+  </div>
+
+  <div class="upload-section" style="max-width: 600px; margin: 0 auto;">
+    <form method="POST" action="{{ url_for('admin_create_user') }}" class="upload-form">
+      <div class="form-group">
+        <label for="username">
+          <span class="label-icon">👤</span>
+          Username
+        </label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          required
+          placeholder="Masukkan username"
+          autocomplete="off"
+        />
+        <small style="color: var(--text-light); display: block; margin-top: 8px;">
+          Username digunakan untuk login
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="email">
+          <span class="label-icon">📧</span>
+          Email
+        </label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder="Masukkan email"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="password">
+          <span class="label-icon">🔒</span>
+          Password
+        </label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          placeholder="Masukkan password"
+          autocomplete="new-password"
+        />
+        <small style="color: var(--text-light); display: block; margin-top: 8px;">
+          Minimal 6 karakter
+        </small>
+      </div>
+
+      <div class="form-group">
+        <label for="role">
+          <span class="label-icon">🎭</span>
+          Role
+        </label>
+        <select id="role" name="role" required>
+          <option value="">-- Pilih Role --</option>
+          <option value="hotel">🏨 Petugas Hotel</option>
+          <option value="tourism">🌴 Petugas Wisata</option>
+        </select>
+        <small style="color: var(--text-light); display: block; margin-top: 8px;">
+          Role admin hanya bisa dibuat via coding
+        </small>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">
+        <span>💾</span>
+        Buat User
+      </button>
+    </form>
+
+    <div class="info-section" style="margin-top: 30px;">
+      <h3>ℹ️ Informasi</h3>
+      <p><strong>Petugas Hotel:</strong> Bisa input data hotel dan lihat dashboard hotel</p>
+      <p><strong>Petugas Wisata:</strong> Bisa input data wisata dan lihat dashboard wisata</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+      <a href="{{ url_for('admin_users') }}" class="btn btn-secondary">
+        <span>👥</span> Lihat Daftar User
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+.label-icon {
+  font-size: 1.2rem;
+}
+
+.btn-block {
+  width: 100%;
+  margin-top: 10px;
+}
+
+small {
+  font-size: 0.9rem;
+}
+
+select {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: var(--transition);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--secondary-blue);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  transform: translateY(-2px);
+}
+</style>
+{% endblock %}

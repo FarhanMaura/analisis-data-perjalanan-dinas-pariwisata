@@ -1,0 +1,260 @@
+{% extends "base.html" %}
+{% block title %}Login - Data Kunjungan Wisatawan Palembang{% endblock %}
+
+{% block content %}
+<div class="hero" style="padding: 100px 20px;">
+  <div class="container">
+    <div class="login-container">
+      <div class="login-card">
+        <div class="login-header">
+          <div class="login-icon">🔐</div>
+          <h1>Login</h1>
+          <p>Sistem Manajemen Data Pariwisata Palembang</p>
+        </div>
+
+        <div class="flash-messages">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="flash-message flash-{{ category }}">
+                  <i>
+                    {% if category == 'success' %}✅
+                    {% elif category == 'error' %}❌
+                    {% elif category == 'warning' %}⚠️
+                    {% else %}ℹ️{% endif %}
+                  </i>
+                  <span>{{ message }}</span>
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %}
+        </div>
+
+        <form method="POST" action="{{ url_for('login') }}" class="login-form">
+          <div class="form-group">
+            <label for="username">
+              <span class="label-icon">👤</span>
+              Username
+            </label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              required
+              placeholder="Masukkan username"
+              autocomplete="username"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">
+              <span class="label-icon">🔒</span>
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              placeholder="Masukkan password"
+              autocomplete="current-password"
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            <span>🚀</span>
+            Login
+          </button>
+        </form>
+
+        <div class="login-footer">
+          <p>© 2025 Dinas Pariwisata Kota Palembang</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.login-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(219, 234, 254, 0.9) 100%
+  );
+  padding: 50px 40px;
+  border-radius: 24px;
+  box-shadow: 0 30px 60px rgba(30, 58, 138, 0.2);
+  max-width: 450px;
+  width: 100%;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  backdrop-filter: blur(10px);
+  animation: slideUp 0.6s ease;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.login-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  animation: bounce 2s infinite;
+}
+
+.login-header h1 {
+  font-size: 2.5rem;
+  color: var(--primary-blue);
+  margin-bottom: 10px;
+}
+
+.login-header p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+.login-form {
+  margin-bottom: 30px;
+}
+
+.login-form .form-group {
+  margin-bottom: 25px;
+}
+
+.login-form label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: var(--text-dark);
+  font-size: 1.1rem;
+}
+
+.label-icon {
+  font-size: 1.2rem;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: var(--transition);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: var(--secondary-blue);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+  transform: translateY(-2px);
+}
+
+.btn-block {
+  width: 100%;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  padding: 18px;
+}
+
+.login-footer {
+  text-align: center;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  padding-top: 20px;
+  border-top: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.flash-messages {
+  margin-bottom: 25px;
+}
+
+.flash-message {
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  animation: slideDown 0.4s ease;
+}
+
+.flash-message i {
+  font-size: 1.5rem;
+  font-style: normal;
+}
+
+.flash-success {
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+  color: #065f46;
+  border: 1px solid #6ee7b7;
+}
+
+.flash-error {
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+.flash-warning {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  color: #92400e;
+  border: 1px solid #fcd34d;
+}
+
+.flash-info {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  color: #1e40af;
+  border: 1px solid #93c5fd;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .login-card {
+    padding: 40px 30px;
+    margin: 20px;
+  }
+
+  .login-header h1 {
+    font-size: 2rem;
+  }
+
+  .login-icon {
+    font-size: 3rem;
+  }
+}
+</style>
+{% endblock %}

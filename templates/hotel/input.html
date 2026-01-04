@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}Input Data Hotel - Data Kunjungan Wisatawan Palembang{% endblock %}
+
+{% block content %}
+<div class="container" style="padding: 50px 20px;">
+  <div class="dashboard-header">
+    <h1>📝 Input Data Harian</h1>
+    <p>{{ hotel_info.hotel_name }} - Total Kamar: {{ hotel_info.total_rooms }}</p>
+  </div>
+
+  <div class="upload-section" style="max-width: 600px; margin: 0 auto;">
+    <form method="POST" action="{{ url_for('hotel_input') }}" class="upload-form">
+      <div class="form-group">
+        <label for="date">
+          <span class="label-icon">📅</span>
+          Tanggal
+        </label>
+        <input
+          type="date"
+          id="date"
+          name="date"
+          required
+          value="{{ today }}"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="occupied_rooms">
+          <span class="label-icon">🛏️</span>
+          Jumlah Kamar Terisi
+        </label>
+        <input
+          type="number"
+          id="occupied_rooms"
+          name="occupied_rooms"
+          required
+          min="0"
+          max="{{ hotel_info.total_rooms }}"
+          placeholder="Masukkan jumlah kamar terisi"
+        />
+        <small style="color: var(--text-light); display: block; margin-top: 8px;">
+          Maksimal: {{ hotel_info.total_rooms }} kamar
+        </small>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">
+        <span>💾</span>
+        Simpan Data
+      </button>
+    </form>
+
+    <div class="info-section" style="margin-top: 30px;">
+      <h3>ℹ️ Informasi</h3>
+      <p>Jumlah tamu akan dihitung otomatis oleh sistem (1-4 orang per kamar).</p>
+      <p>Jika sudah input untuk tanggal yang sama, Anda akan diarahkan ke dashboard untuk edit.</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+      <a href="{{ url_for('hotel_dashboard') }}" class="btn btn-secondary">
+        <span>📊</span> Lihat Dashboard
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+.label-icon {
+  font-size: 1.2rem;
+}
+
+.btn-block {
+  width: 100%;
+  margin-top: 10px;
+}
+
+small {
+  font-size: 0.9rem;
+}
+</style>
+
+<script>
+// Set today's date as default
+document.addEventListener('DOMContentLoaded', function() {
+  const dateInput = document.getElementById('date');
+  if (!dateInput.value) {
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.value = today;
+  }
+});
+</script>
+{% endblock %}

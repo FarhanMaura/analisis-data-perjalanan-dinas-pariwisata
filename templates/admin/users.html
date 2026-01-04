@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% block title %}Kelola User - Admin Dashboard{% endblock %}
+
+{% block content %}
+<div class="container" style="padding: 50px 20px;">
+  <div class="dashboard-header">
+    <h1>👥 Kelola User</h1>
+    <p>Manajemen user sistem</p>
+  </div>
+
+  <div class="actions" style="margin: 30px 0; text-align: center;">
+    <a href="{{ url_for('admin_create_user') }}" class="btn btn-primary">
+      <span>➕</span> Tambah User Baru
+    </a>
+    <a href="{{ url_for('admin_home') }}" class="btn btn-secondary">
+      <span>🏠</span> Kembali ke Home
+    </a>
+  </div>
+
+  {% if users %}
+  <div class="upload-section">
+    <h2>📋 Daftar User</h2>
+    
+    <div style="overflow-x: auto;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Dibuat</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for user in users %}
+          <tr>
+            <td>{{ user.id }}</td>
+            <td><strong>{{ user.username }}</strong></td>
+            <td>{{ user.email or '-' }}</td>
+            <td>
+              <span class="role-badge role-{{ user.role }}">
+                {% if user.role == 'admin' %}👑 Admin
+                {% elif user.role == 'hotel' %}🏨 Hotel
+                {% elif user.role == 'tourism' %}🌴 Wisata
+                {% endif %}
+              </span>
+            </td>
+            <td>{{ user.created_at }}</td>
+            <td>
+              <a href="{{ url_for('admin_edit_user', user_id=user.id) }}" class="btn-edit" style="display: inline-block; padding: 8px 16px; background: linear-gradient(135deg, #3b82f6, #06b6d4); color: white; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.3s;">
+                ✏️ Edit
+              </a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="info-section" style="margin-top: 30px;">
+      <h3>ℹ️ Informasi</h3>
+      <p>Total user: {{ users|length }}</p>
+      <p>Admin hanya bisa dibuat melalui coding/database</p>
+    </div>
+  </div>
+  {% else %}
+  <div class="no-data">
+    <h2>👥 Belum Ada User</h2>
+    <p>Silakan tambah user baru</p>
+    <a href="{{ url_for('admin_create_user') }}" class="btn btn-primary">Tambah User Pertama</a>
+  </div>
+  {% endif %}
+</div>
+
+<style>
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.data-table thead {
+  background: var(--gradient-primary);
+  color: white;
+}
+
+.data-table th,
+.data-table td {
+  padding: 15px 20px;
+  text-align: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.data-table th {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.data-table tbody tr:hover {
+  background: var(--light-blue);
+  transition: var(--transition);
+}
+
+.role-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.role-admin {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  color: #92400e;
+}
+
+.role-hotel {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  color: #1e40af;
+}
+
+.role-tourism {
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+  color: #065f46;
+}
+
+.no-data {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(219, 234, 254, 0.9) 100%
+  );
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.no-data h2 {
+  font-size: 2.5rem;
+  color: var(--primary-blue);
+  margin-bottom: 20px;
+}
+
+.no-data p {
+  font-size: 1.3rem;
+  color: var(--text-light);
+  margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+  .data-table th,
+  .data-table td {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
+</style>
+{% endblock %}

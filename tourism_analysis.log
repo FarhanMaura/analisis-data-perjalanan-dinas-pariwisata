@@ -958,3 +958,1203 @@
 2025-12-10 15:56:08,648 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:56:08] "GET / HTTP/1.1" 200 -
 2025-12-10 15:56:08,698 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:56:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
 2025-12-10 15:56:08,700 - werkzeug - INFO - 127.0.0.1 - - [10/Dec/2025 15:56:08] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-18 23:01:15,744 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.3:5000
+2025-12-18 23:01:15,746 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-18 23:01:15,755 - werkzeug - INFO -  * Restarting with stat
+2025-12-18 23:01:24,431 - werkzeug - WARNING -  * Debugger is active!
+2025-12-18 23:01:24,459 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-18 23:02:27,912 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2025 23:02:27] "GET / HTTP/1.1" 200 -
+2025-12-18 23:02:28,116 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2025 23:02:28] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-18 23:02:28,132 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2025 23:02:28] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-18 23:02:28,792 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2025 23:02:28] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-18 23:07:31,510 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2025 23:07:31] "GET /dashboard HTTP/1.1" 200 -
+2025-12-18 23:07:31,817 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2025 23:07:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-18 23:07:31,818 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2025 23:07:31] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-18 23:18:49,386 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.3:5000
+2025-12-18 23:18:49,389 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-18 23:18:49,395 - werkzeug - INFO -  * Restarting with stat
+2025-12-18 23:19:08,270 - werkzeug - WARNING -  * Debugger is active!
+2025-12-18 23:19:08,337 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-18 23:19:09,468 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2025 23:19:09] "GET / HTTP/1.1" 200 -
+2025-12-18 23:19:09,753 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2025 23:19:09] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-18 23:19:09,757 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2025 23:19:09] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-18 23:19:10,916 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2025 23:19:10] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-18 23:19:27,840 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2025 23:19:27] "GET /dashboard HTTP/1.1" 200 -
+2025-12-18 23:19:27,959 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2025 23:19:27] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-18 23:19:27,959 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2025 23:19:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-18 23:24:09,516 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.3:5000
+2025-12-18 23:24:09,534 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-18 23:24:09,539 - werkzeug - INFO -  * Restarting with stat
+2025-12-18 23:24:23,281 - werkzeug - WARNING -  * Debugger is active!
+2025-12-18 23:24:23,307 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-18 23:24:24,000 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2025 23:24:24] "GET / HTTP/1.1" 200 -
+2025-12-18 23:24:24,264 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2025 23:24:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-18 23:24:24,264 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2025 23:24:24] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-18 23:24:44,530 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2025 23:24:44] "GET / HTTP/1.1" 200 -
+2025-12-18 23:24:44,615 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2025 23:24:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-18 23:24:44,617 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2025 23:24:44] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-18 23:24:46,641 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2025 23:24:46] "GET /upload HTTP/1.1" 200 -
+2025-12-18 23:24:46,715 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2025 23:24:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-18 23:24:46,718 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2025 23:24:46] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-18 23:25:25,241 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2025 23:25:25] "GET /dashboard HTTP/1.1" 200 -
+2025-12-18 23:25:25,357 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2025 23:25:25] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-18 23:25:25,357 - werkzeug - INFO - 127.0.0.1 - - [18/Dec/2025 23:25:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-20 06:46:10,260 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.3:5000
+2025-12-20 06:46:10,262 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-20 06:46:10,268 - werkzeug - INFO -  * Restarting with stat
+2025-12-20 06:46:15,856 - werkzeug - WARNING -  * Debugger is active!
+2025-12-20 06:46:15,885 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-20 06:46:22,826 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2025 06:46:22] "GET / HTTP/1.1" 200 -
+2025-12-20 06:46:22,916 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2025 06:46:22] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-20 06:46:22,926 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2025 06:46:22] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-20 06:46:23,197 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2025 06:46:23] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-20 10:09:16,223 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.3:5000
+2025-12-20 10:09:16,226 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-20 10:09:16,229 - werkzeug - INFO -  * Restarting with stat
+2025-12-20 10:09:19,184 - werkzeug - WARNING -  * Debugger is active!
+2025-12-20 10:09:19,194 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-20 10:09:26,749 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2025 10:09:26] "GET / HTTP/1.1" 200 -
+2025-12-20 10:09:26,825 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2025 10:09:26] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-20 10:09:26,826 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2025 10:09:26] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-20 10:11:57,277 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2025 10:11:57] "GET /upload HTTP/1.1" 200 -
+2025-12-20 10:11:57,322 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2025 10:11:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-20 10:11:57,328 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2025 10:11:57] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-20 10:14:53,175 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2025 10:14:53] "GET /upload-pdf HTTP/1.1" 200 -
+2025-12-20 10:14:53,226 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2025 10:14:53] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-20 10:14:53,229 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2025 10:14:53] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-20 10:16:27,226 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2025 10:16:27] "GET /dashboard HTTP/1.1" 200 -
+2025-12-20 10:16:27,274 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2025 10:16:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-20 10:16:27,276 - werkzeug - INFO - 127.0.0.1 - - [20/Dec/2025 10:16:27] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-27 20:18:52,967 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.3:5000
+2025-12-27 20:18:52,967 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-27 20:18:52,971 - werkzeug - INFO -  * Restarting with stat
+2025-12-27 20:18:56,866 - werkzeug - WARNING -  * Debugger is active!
+2025-12-27 20:18:56,879 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-27 20:18:57,544 - werkzeug - INFO - 127.0.0.1 - - [27/Dec/2025 20:18:57] "GET / HTTP/1.1" 200 -
+2025-12-27 20:18:57,593 - werkzeug - INFO - 127.0.0.1 - - [27/Dec/2025 20:18:57] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-27 20:18:57,665 - werkzeug - INFO - 127.0.0.1 - - [27/Dec/2025 20:18:57] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-27 20:18:57,919 - werkzeug - INFO - 127.0.0.1 - - [27/Dec/2025 20:18:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-27 20:19:22,874 - werkzeug - INFO - 127.0.0.1 - - [27/Dec/2025 20:19:22] "GET /upload HTTP/1.1" 200 -
+2025-12-27 20:19:22,941 - werkzeug - INFO - 127.0.0.1 - - [27/Dec/2025 20:19:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-27 20:19:22,959 - werkzeug - INFO - 127.0.0.1 - - [27/Dec/2025 20:19:22] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-27 20:19:30,413 - werkzeug - INFO - 127.0.0.1 - - [27/Dec/2025 20:19:30] "GET /dashboard HTTP/1.1" 200 -
+2025-12-27 20:19:30,468 - werkzeug - INFO - 127.0.0.1 - - [27/Dec/2025 20:19:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-27 20:19:30,474 - werkzeug - INFO - 127.0.0.1 - - [27/Dec/2025 20:19:30] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-27 20:19:48,029 - werkzeug - INFO - 127.0.0.1 - - [27/Dec/2025 20:19:48] "GET / HTTP/1.1" 200 -
+2025-12-27 20:19:48,077 - werkzeug - INFO - 127.0.0.1 - - [27/Dec/2025 20:19:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-27 20:19:48,083 - werkzeug - INFO - 127.0.0.1 - - [27/Dec/2025 20:19:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 10:59:54,107 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.3:5000
+2025-12-29 10:59:54,109 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-29 10:59:54,117 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 10:59:58,282 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 10:59:58,301 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 11:01:31,336 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.3:5000
+2025-12-29 11:01:31,336 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-29 11:01:31,338 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 11:01:34,264 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 11:01:34,270 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 11:01:42,516 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:01:42] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-29 11:01:42,558 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:01:42] "GET /login HTTP/1.1" 200 -
+2025-12-29 11:01:42,605 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:01:42] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-29 11:01:42,705 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:01:42] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-29 11:01:42,830 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:01:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-29 11:01:48,053 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:01:48] "[32mGET /upload HTTP/1.1[0m" 302 -
+2025-12-29 11:01:48,067 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:01:48] "GET /login?next=/upload HTTP/1.1" 200 -
+2025-12-29 11:01:48,120 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:01:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:01:48,123 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:01:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:01:51,460 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:01:51] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2025-12-29 11:01:51,479 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:01:51] "GET /login?next=/dashboard HTTP/1.1" 200 -
+2025-12-29 11:01:51,546 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:01:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:01:51,549 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:01:51] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:01:52,842 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:01:52] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-29 11:01:52,859 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:01:52] "GET /login HTTP/1.1" 200 -
+2025-12-29 11:01:52,909 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:01:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:01:52,912 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:01:52] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:02:22,692 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:02:22] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 11:02:22,702 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:02:22] "GET /login HTTP/1.1" 200 -
+2025-12-29 11:02:22,778 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:02:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:02:22,791 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:02:22] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:02:41,498 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:02:41] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 11:02:41,513 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:02:41] "GET /login HTTP/1.1" 200 -
+2025-12-29 11:02:41,586 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:02:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:02:41,592 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:02:41] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:02:47,991 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:02:47] "GET /login HTTP/1.1" 200 -
+2025-12-29 11:02:48,042 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:02:48] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-29 11:02:48,044 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:02:48] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-29 11:03:23,855 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:03:23] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 11:03:23,864 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:03:23] "GET /login HTTP/1.1" 200 -
+2025-12-29 11:03:23,927 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:03:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:03:23,932 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:03:23] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:04:19,292 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:04:19] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-29 11:04:19,302 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:04:19] "GET /login HTTP/1.1" 200 -
+2025-12-29 11:04:19,332 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:04:19] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-29 11:04:19,339 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:04:19] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-29 11:04:19,646 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:04:19] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-29 11:05:39,126 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:05:39] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 11:05:39,586 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:05:39] "[35m[1mGET /admin/home HTTP/1.1[0m" 500 -
+2025-12-29 11:05:40,071 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:05:40] "GET /admin/home?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-12-29 11:05:40,318 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:05:40] "GET /admin/home?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-12-29 11:05:40,387 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:05:40] "GET /admin/home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-12-29 11:05:40,682 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:05:40] "[36mGET /admin/home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 11:05:51,126 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:05:51] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 11:05:51,282 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:05:51] "[35m[1mGET /admin/home HTTP/1.1[0m" 500 -
+2025-12-29 11:05:51,452 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:05:51] "GET /admin/home?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-12-29 11:05:51,456 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:05:51] "GET /admin/home?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-12-29 11:05:51,792 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:05:51] "GET /admin/home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-12-29 11:05:51,813 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:05:51] "[36mGET /admin/home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 11:05:59,748 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:05:59] "GET /admin/home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-12-29 11:06:20,210 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:06:20] "[32mGET /login HTTP/1.1[0m" 302 -
+2025-12-29 11:06:20,361 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:06:20] "[35m[1mGET /admin/home HTTP/1.1[0m" 500 -
+2025-12-29 11:06:20,477 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:06:20] "[36mGET /admin/home?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:06:20,479 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:06:20] "[36mGET /admin/home?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-12-29 11:06:20,501 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:06:20] "[36mGET /admin/home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 11:06:42,693 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:06:42] "[32mGET /login HTTP/1.1[0m" 302 -
+2025-12-29 11:06:42,773 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:06:42] "[35m[1mGET /admin/home HTTP/1.1[0m" 500 -
+2025-12-29 11:06:42,826 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:06:42] "[36mGET /admin/home?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:06:42,828 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:06:42] "[36mGET /admin/home?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-12-29 11:06:42,842 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:06:42] "[36mGET /admin/home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 11:06:48,024 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:06:48] "[35m[1mGET /admin/home HTTP/1.1[0m" 500 -
+2025-12-29 11:06:48,077 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:06:48] "GET /admin/home?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-12-29 11:06:48,079 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:06:48] "GET /admin/home?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-12-29 11:06:48,123 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:06:48] "GET /admin/home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-12-29 11:06:48,170 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:06:48] "[36mGET /admin/home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 11:07:01,410 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:07:01] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-29 11:07:01,429 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:07:01] "GET /login HTTP/1.1" 200 -
+2025-12-29 11:07:01,504 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:07:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:07:01,506 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:07:01] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:07:26,637 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:07:26] "[35m[1mGET /admin/home HTTP/1.1[0m" 500 -
+2025-12-29 11:07:26,732 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:07:26] "GET /admin/home?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-12-29 11:07:26,746 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:07:26] "GET /admin/home?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-12-29 11:07:26,940 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:07:26] "GET /admin/home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-12-29 11:07:26,992 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:07:26] "[36mGET /admin/home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 11:08:37,115 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:08:37] "GET /login HTTP/1.1" 200 -
+2025-12-29 11:08:37,170 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:08:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:08:37,180 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:08:37] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:09:09,256 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:09:09] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 11:09:09,286 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:09:09] "GET /login HTTP/1.1" 200 -
+2025-12-29 11:09:09,378 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:09:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:09:09,379 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:09:09] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:09:24,096 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:09:24] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 11:09:24,239 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:09:24] "[35m[1mGET /admin/home HTTP/1.1[0m" 500 -
+2025-12-29 11:09:24,343 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:09:24] "[36mGET /admin/home?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:09:24,350 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:09:24] "[36mGET /admin/home?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-12-29 11:09:24,411 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:09:24] "[36mGET /admin/home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 11:09:47,520 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:09:47] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 11:09:47,567 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:09:47] "[35m[1mGET /admin/home HTTP/1.1[0m" 500 -
+2025-12-29 11:09:47,621 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:09:47] "[36mGET /admin/home?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:09:47,623 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:09:47] "[36mGET /admin/home?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-12-29 11:09:47,640 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:09:47] "[36mGET /admin/home?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 11:12:26,791 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:12:26] "GET /admin/home HTTP/1.1" 200 -
+2025-12-29 11:12:26,821 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:12:26] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-29 11:12:26,825 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:12:26] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-29 11:12:26,902 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:12:26] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-29 11:12:40,917 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:12:40] "GET /upload HTTP/1.1" 200 -
+2025-12-29 11:12:40,958 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:12:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:12:40,960 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:12:40] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:12:46,562 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:12:46] "GET /dashboard HTTP/1.1" 200 -
+2025-12-29 11:12:46,591 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:12:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:12:46,602 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:12:46] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:12:50,690 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:12:50] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-29 11:12:50,709 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:12:50] "GET /admin/home HTTP/1.1" 200 -
+2025-12-29 11:12:50,755 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:12:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:12:50,760 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:12:50] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:14:11,904 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-12-29 11:14:11,940 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-12-29 11:14:14,937 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 11:14:14,988 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 11:14:28,705 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 11:14:28,705 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 11:14:28,730 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 11:14:28,730 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 11:17:03,803 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:17:03] "GET /admin/home HTTP/1.1" 200 -
+2025-12-29 11:17:03,865 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:17:03] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-29 11:17:03,873 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:17:03] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-29 11:17:03,900 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:17:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-29 11:17:12,287 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:17:12] "GET /admin/users HTTP/1.1" 200 -
+2025-12-29 11:17:12,348 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:17:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:17:12,357 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:17:12] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:17:18,195 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:17:18] "GET /admin/users/create HTTP/1.1" 200 -
+2025-12-29 11:17:18,232 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:17:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:17:18,243 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:17:18] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:18:01,131 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:18:01] "[32mPOST /admin/users/create HTTP/1.1[0m" 302 -
+2025-12-29 11:18:01,169 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:18:01] "GET /admin/users HTTP/1.1" 200 -
+2025-12-29 11:18:01,241 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:18:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:18:01,255 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:18:01] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:18:08,462 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:18:08] "GET /admin/home HTTP/1.1" 200 -
+2025-12-29 11:18:08,512 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:18:08] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:18:08,524 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:18:08] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:18:18,689 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:18:18] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-29 11:18:18,706 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:18:18] "GET /login HTTP/1.1" 200 -
+2025-12-29 11:18:18,752 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:18:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:18:18,761 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:18:18] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:18:31,886 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:18:31] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 11:18:31,917 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:18:31] "GET /hotel/home HTTP/1.1" 200 -
+2025-12-29 11:18:31,975 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:18:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:18:31,979 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:18:31] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:18:35,653 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:18:35] "[32mGET /hotel/input HTTP/1.1[0m" 302 -
+2025-12-29 11:18:35,674 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:18:35] "GET /hotel/setup HTTP/1.1" 200 -
+2025-12-29 11:18:35,728 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:18:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:18:35,733 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:18:35] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:18:51,843 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:18:51] "[32mPOST /hotel/setup HTTP/1.1[0m" 302 -
+2025-12-29 11:18:51,867 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:18:51] "GET /hotel/home HTTP/1.1" 200 -
+2025-12-29 11:18:51,928 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:18:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:18:51,940 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:18:51] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:18:55,536 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:18:55] "GET /hotel/input HTTP/1.1" 200 -
+2025-12-29 11:18:55,577 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:18:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:18:55,587 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:18:55] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:19:07,595 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:19:07] "[32mPOST /hotel/input HTTP/1.1[0m" 302 -
+2025-12-29 11:19:07,637 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:19:07] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 11:19:07,710 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:19:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:19:07,713 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:19:07] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:57:52,295 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:57:52] "GET /hotel/home HTTP/1.1" 200 -
+2025-12-29 11:57:52,352 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:57:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:57:52,354 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:57:52] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:57:55,090 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:57:55] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-29 11:57:55,098 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:57:55] "GET /login HTTP/1.1" 200 -
+2025-12-29 11:57:55,143 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:57:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:57:55,154 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:57:55] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:58:06,937 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:58:06] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 11:58:06,956 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:58:06] "GET /admin/home HTTP/1.1" 200 -
+2025-12-29 11:58:07,007 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:58:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:58:07,010 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:58:07] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:58:24,369 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:58:24] "GET /admin/users HTTP/1.1" 200 -
+2025-12-29 11:58:24,424 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:58:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:58:24,427 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:58:24] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:58:50,040 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:58:50] "GET /admin/users/create HTTP/1.1" 200 -
+2025-12-29 11:58:50,080 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:58:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:58:50,089 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:58:50] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:59:27,336 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:59:27] "[32mPOST /admin/users/create HTTP/1.1[0m" 302 -
+2025-12-29 11:59:27,365 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:59:27] "GET /admin/users HTTP/1.1" 200 -
+2025-12-29 11:59:27,444 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:59:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:59:27,453 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:59:27] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:59:32,692 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:59:32] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-29 11:59:32,710 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:59:32] "GET /admin/home HTTP/1.1" 200 -
+2025-12-29 11:59:32,761 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:59:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:59:32,771 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:59:32] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 11:59:41,369 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:59:41] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-29 11:59:41,376 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:59:41] "GET /login HTTP/1.1" 200 -
+2025-12-29 11:59:41,422 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:59:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 11:59:41,429 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 11:59:41] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 12:00:02,332 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:00:02] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 12:00:02,390 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:00:02] "GET /tourism/home HTTP/1.1" 200 -
+2025-12-29 12:00:02,449 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:00:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 12:00:02,451 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:00:02] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 12:00:06,411 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:00:06] "GET /tourism/input HTTP/1.1" 200 -
+2025-12-29 12:00:06,442 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:00:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 12:00:06,451 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:00:06] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 12:01:18,549 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:01:18] "[32mPOST /tourism/input HTTP/1.1[0m" 302 -
+2025-12-29 12:01:18,622 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:01:18] "GET /tourism/dashboard HTTP/1.1" 200 -
+2025-12-29 12:01:18,702 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:01:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 12:01:18,715 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:01:18] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 12:01:39,357 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:01:39] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-29 12:01:39,371 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:01:39] "GET /tourism/home HTTP/1.1" 200 -
+2025-12-29 12:01:39,417 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:01:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 12:01:39,419 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:01:39] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 12:09:31,976 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:09:31] "GET /tourism/dashboard HTTP/1.1" 200 -
+2025-12-29 12:09:32,021 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:09:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 12:09:32,036 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:09:32] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 12:18:40,773 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:18:40] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-29 12:18:40,794 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:18:40] "GET /tourism/home HTTP/1.1" 200 -
+2025-12-29 12:18:40,843 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:18:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 12:18:40,855 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:18:40] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 12:18:42,769 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:18:42] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-29 12:18:42,778 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:18:42] "GET /login HTTP/1.1" 200 -
+2025-12-29 12:18:42,817 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:18:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 12:18:42,824 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:18:42] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 12:18:51,872 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:18:51] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 12:18:51,892 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:18:51] "GET /hotel/home HTTP/1.1" 200 -
+2025-12-29 12:18:51,957 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:18:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 12:18:51,966 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:18:51] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 12:18:55,026 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:18:55] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 12:18:55,066 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:18:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 12:18:55,073 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:18:55] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 12:30:39,690 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:30:39] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-29 12:30:39,709 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:30:39] "GET /hotel/home HTTP/1.1" 200 -
+2025-12-29 12:30:39,768 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:30:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 12:30:39,772 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:30:39] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 12:30:42,261 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:30:42] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-29 12:30:42,275 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:30:42] "GET /login HTTP/1.1" 200 -
+2025-12-29 12:30:42,319 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:30:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 12:30:42,331 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:30:42] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 12:31:23,203 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:31:23] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 12:31:23,217 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:31:23] "GET /tourism/home HTTP/1.1" 200 -
+2025-12-29 12:31:23,274 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:31:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 12:31:23,276 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:31:23] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 12:31:32,557 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:31:32] "GET /tourism/dashboard HTTP/1.1" 200 -
+2025-12-29 12:31:32,592 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:31:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 12:31:32,605 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:31:32] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 12:31:35,076 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:31:35] "GET /tourism/home HTTP/1.1" 200 -
+2025-12-29 12:31:35,130 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:31:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 12:31:35,140 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:31:35] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 12:31:36,792 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:31:36] "GET /tourism/input HTTP/1.1" 200 -
+2025-12-29 12:31:36,836 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:31:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 12:31:36,843 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:31:36] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 12:32:22,273 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:32:22] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2025-12-29 12:32:22,284 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:32:22] "GET /tourism/home HTTP/1.1" 200 -
+2025-12-29 12:32:22,327 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:32:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 12:32:22,334 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:32:22] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 12:32:30,483 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:32:30] "GET /tourism/dashboard HTTP/1.1" 200 -
+2025-12-29 12:32:30,532 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:32:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 12:32:30,535 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:32:30] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 12:32:37,573 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:32:37] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-29 12:32:37,583 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:32:37] "GET /tourism/home HTTP/1.1" 200 -
+2025-12-29 12:32:37,625 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:32:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 12:32:37,631 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:32:37] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 12:32:39,243 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:32:39] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-29 12:32:39,261 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:32:39] "GET /login HTTP/1.1" 200 -
+2025-12-29 12:32:39,314 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:32:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 12:32:39,318 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:32:39] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 12:32:47,687 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:32:47] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 12:32:47,704 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:32:47] "GET /hotel/home HTTP/1.1" 200 -
+2025-12-29 12:32:47,778 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:32:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 12:32:47,884 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:32:47] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 12:32:49,574 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:32:49] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 12:32:49,623 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:32:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 12:32:49,638 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:32:49] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 12:35:45,094 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:35:45] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-29 12:35:45,123 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:35:45] "GET /hotel/home HTTP/1.1" 200 -
+2025-12-29 12:35:45,191 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:35:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 12:35:45,191 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:35:45] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 12:36:23,206 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:36:23] "GET /hotel/input HTTP/1.1" 200 -
+2025-12-29 12:36:23,244 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:36:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 12:36:23,249 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 12:36:23] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 13:29:23,790 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 13:29:23] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 13:29:23,843 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 13:29:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 13:29:23,846 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 13:29:23] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 13:29:28,691 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 13:29:28] "GET /hotel/home HTTP/1.1" 200 -
+2025-12-29 13:29:28,737 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 13:29:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 13:29:28,738 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 13:29:28] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 14:32:15,918 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:32:15] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-29 14:32:15,941 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:32:15] "GET /login HTTP/1.1" 200 -
+2025-12-29 14:32:16,019 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:32:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 14:32:16,021 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:32:16] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 14:32:28,439 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:32:28] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 14:32:28,458 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:32:28] "GET /tourism/home HTTP/1.1" 200 -
+2025-12-29 14:32:28,533 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:32:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 14:32:28,535 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:32:28] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 14:32:31,457 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:32:31] "GET /tourism/dashboard HTTP/1.1" 200 -
+2025-12-29 14:32:31,503 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:32:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 14:32:31,511 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:32:31] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 14:32:34,096 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:32:34] "GET /tourism/input HTTP/1.1" 200 -
+2025-12-29 14:32:34,146 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:32:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 14:32:34,147 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:32:34] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 14:32:56,394 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:32:56] "[32mPOST /tourism/input HTTP/1.1[0m" 302 -
+2025-12-29 14:32:56,412 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:32:56] "GET /tourism/input HTTP/1.1" 200 -
+2025-12-29 14:32:56,475 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:32:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 14:32:56,484 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:32:56] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 14:32:59,792 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:32:59] "GET /tourism/dashboard HTTP/1.1" 200 -
+2025-12-29 14:32:59,853 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:32:59] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 14:32:59,855 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:32:59] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 14:33:07,223 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:33:07] "GET /tourism/input HTTP/1.1" 200 -
+2025-12-29 14:33:07,272 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:33:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 14:33:07,278 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:33:07] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 14:33:42,847 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:33:42] "[32mPOST /tourism/input HTTP/1.1[0m" 302 -
+2025-12-29 14:33:42,860 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:33:42] "GET /tourism/dashboard HTTP/1.1" 200 -
+2025-12-29 14:33:42,944 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:33:42] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 14:33:42,945 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 14:33:42] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:15:00,666 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-12-29 17:15:00,690 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-12-29 17:15:05,789 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 17:15:05,801 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 17:15:57,673 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 17:15:57,714 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 17:15:57,714 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 17:20:05,317 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:20:05] "[32mGET /tourism/dashboard HTTP/1.1[0m" 302 -
+2025-12-29 17:20:05,552 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:20:05] "GET /login?next=/tourism/dashboard HTTP/1.1" 200 -
+2025-12-29 17:20:05,651 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:20:05] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-29 17:20:05,652 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:20:05] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-29 17:20:05,815 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:20:05] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-29 17:20:15,563 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:20:15] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 17:20:15,682 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:20:15] "GET /hotel/home HTTP/1.1" 200 -
+2025-12-29 17:20:15,757 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:20:15] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:20:15,766 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:20:15] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:20:20,997 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:20:20] "GET /hotel/input HTTP/1.1" 200 -
+2025-12-29 17:20:21,033 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:20:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:20:21,041 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:20:21] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:20:23,715 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:20:23] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:20:23,750 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:20:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:20:23,758 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:20:23] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:22:11,246 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:22:11] "GET /hotel/export/pdf HTTP/1.1" 200 -
+2025-12-29 17:22:24,136 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:22:24] "GET /hotel/export/excel HTTP/1.1" 200 -
+2025-12-29 17:23:47,122 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-12-29 17:23:47,118 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-12-29 17:23:50,013 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 17:23:50,015 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 17:23:59,680 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 17:23:59,726 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 17:23:59,727 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 17:23:59,741 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 17:24:31,975 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-12-29 17:24:31,985 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-12-29 17:24:34,517 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 17:24:34,535 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 17:24:44,789 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 17:24:44,795 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 17:24:44,802 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 17:24:44,804 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 17:24:48,783 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-12-29 17:24:48,829 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-12-29 17:24:49,793 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 17:24:56,856 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 17:24:56,870 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 17:24:56,872 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 17:24:56,883 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 17:25:07,350 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:07] "[32mGET /hotel/export/pdf HTTP/1.1[0m" 302 -
+2025-12-29 17:25:07,423 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:07] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:25:07,475 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:25:07,478 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:07] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:25:09,633 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:09] "[32mGET /hotel/export/pdf HTTP/1.1[0m" 302 -
+2025-12-29 17:25:09,650 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:09] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:25:09,703 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:25:09,707 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:09] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:25:10,802 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:10] "[32mGET /hotel/export/pdf HTTP/1.1[0m" 302 -
+2025-12-29 17:25:10,818 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:10] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:25:10,871 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:25:10,872 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:10] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:25:24,085 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:24] "[32mGET /hotel/export/pdf HTTP/1.1[0m" 302 -
+2025-12-29 17:25:24,100 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:24] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:25:24,143 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:25:24,146 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:24] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:25:30,484 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:30] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-29 17:25:30,521 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:30] "GET /login HTTP/1.1" 200 -
+2025-12-29 17:25:30,619 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:30] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-29 17:25:30,622 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:30] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-29 17:25:44,552 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:44] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 17:25:44,661 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:44] "GET /hotel/home HTTP/1.1" 200 -
+2025-12-29 17:25:44,809 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:44] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:25:44,812 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:44] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:25:46,895 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:46] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:25:46,974 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:25:46,982 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:46] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:25:48,217 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:48] "[32mGET /hotel/export/pdf HTTP/1.1[0m" 302 -
+2025-12-29 17:25:48,280 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:48] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:25:48,402 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:25:48,416 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:25:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:26:45,937 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:26:45] "[32mGET /login HTTP/1.1[0m" 302 -
+2025-12-29 17:26:45,948 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:26:45] "GET /hotel/home HTTP/1.1" 200 -
+2025-12-29 17:26:45,981 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:26:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:26:45,983 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:26:45] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:27:03,176 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:27:03] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:27:03,244 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:27:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:27:03,268 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:27:03] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:27:28,908 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:27:28] "[32mGET /hotel/export/pdf HTTP/1.1[0m" 302 -
+2025-12-29 17:27:28,946 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:27:28] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:27:29,072 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:27:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:27:29,076 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:27:29] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:28:00,919 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:28:00] "[32mGET /hotel/export/csv HTTP/1.1[0m" 302 -
+2025-12-29 17:28:00,949 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:28:00] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:28:01,044 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:28:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:28:01,045 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:28:01] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:28:12,599 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:28:12] "GET /hotel/home HTTP/1.1" 200 -
+2025-12-29 17:28:12,682 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:28:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:28:12,686 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:28:12] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:28:26,320 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:28:26] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-29 17:28:26,350 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:28:26] "GET /login HTTP/1.1" 200 -
+2025-12-29 17:28:26,487 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:28:26] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:28:26,488 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:28:26] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:29:55,792 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:29:55] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 17:29:55,904 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:29:55] "GET /admin/home HTTP/1.1" 200 -
+2025-12-29 17:29:56,049 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:29:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:29:56,056 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:29:56] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:30:10,345 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:30:10] "GET /admin/users HTTP/1.1" 200 -
+2025-12-29 17:30:10,423 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:30:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:30:10,424 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:30:10] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:30:28,234 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:30:28] "GET /admin/users/create HTTP/1.1" 200 -
+2025-12-29 17:30:28,328 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:30:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:30:28,336 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:30:28] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:31:35,346 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:31:35] "GET /upload HTTP/1.1" 200 -
+2025-12-29 17:31:35,401 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:31:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:31:35,412 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:31:35] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:31:37,169 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:31:37] "GET /admin/users HTTP/1.1" 200 -
+2025-12-29 17:31:37,217 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:31:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:31:37,221 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:31:37] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:31:47,438 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:31:47] "GET /admin/home HTTP/1.1" 200 -
+2025-12-29 17:31:47,478 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:31:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:31:47,480 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:31:47] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:32:02,420 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:32:02] "GET /dashboard HTTP/1.1" 200 -
+2025-12-29 17:32:02,465 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:32:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:32:02,474 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:32:02] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:32:56,316 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:32:56] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-29 17:32:56,333 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:32:56] "GET /login HTTP/1.1" 200 -
+2025-12-29 17:32:56,396 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:32:56] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:32:56,398 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:32:56] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:33:07,480 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:33:07] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 17:33:07,499 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:33:07] "GET /hotel/home HTTP/1.1" 200 -
+2025-12-29 17:33:07,584 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:33:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:33:07,587 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:33:07] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:33:13,627 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:33:13] "GET /hotel/input HTTP/1.1" 200 -
+2025-12-29 17:33:13,668 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:33:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:33:13,671 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:33:13] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:33:17,174 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:33:17] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:33:17,216 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:33:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:33:17,218 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:33:17] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:33:18,371 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:33:18] "[32mGET /hotel/export/pdf HTTP/1.1[0m" 302 -
+2025-12-29 17:33:18,390 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:33:18] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:33:18,446 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:33:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:33:18,448 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:33:18] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:36:59,571 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\export_utils.py', reloading
+2025-12-29 17:36:59,650 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\export_utils.py', reloading
+2025-12-29 17:37:02,719 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 17:37:02,723 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 17:37:16,856 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 17:37:16,856 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 17:37:16,892 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 17:37:16,892 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 17:37:20,169 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\export_utils.py', reloading
+2025-12-29 17:37:20,190 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\export_utils.py', reloading
+2025-12-29 17:37:21,368 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 17:37:21,396 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 17:37:30,609 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 17:37:30,622 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 17:37:30,629 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 17:37:30,650 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 17:37:33,902 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\export_utils.py', reloading
+2025-12-29 17:37:33,937 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\export_utils.py', reloading
+2025-12-29 17:37:35,209 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 17:37:35,281 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 17:37:44,970 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 17:37:44,989 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 17:37:44,993 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 17:37:45,019 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 17:38:10,350 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:10] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:38:10,395 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:10] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-29 17:38:10,397 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:10] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-29 17:38:10,431 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:10] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-29 17:38:12,452 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:12] "[32mGET /hotel/export/pdf HTTP/1.1[0m" 302 -
+2025-12-29 17:38:12,478 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:12] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:38:12,538 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:38:12,543 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:12] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:38:13,802 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:13] "[32mGET /hotel/export/pdf HTTP/1.1[0m" 302 -
+2025-12-29 17:38:13,819 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:13] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:38:13,875 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:38:13,879 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:13] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:38:17,063 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:17] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:38:17,111 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:17] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-29 17:38:17,117 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:17] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-29 17:38:17,156 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-29 17:38:17,318 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:17] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:38:17,370 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:17] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-29 17:38:17,374 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:17] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-29 17:38:17,394 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-29 17:38:18,261 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:18] "[32mGET /hotel/export/pdf HTTP/1.1[0m" 302 -
+2025-12-29 17:38:18,273 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:18] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:38:18,327 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:38:18,329 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:18] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:38:19,932 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:19] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-29 17:38:19,950 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:19] "GET /login HTTP/1.1" 200 -
+2025-12-29 17:38:20,001 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:38:20,006 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:20] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:38:23,297 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:23] "GET /login HTTP/1.1" 200 -
+2025-12-29 17:38:23,335 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:23] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-29 17:38:23,342 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:23] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-29 17:38:23,359 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:23] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-29 17:38:33,082 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:33] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 17:38:33,105 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:33] "GET /hotel/home HTTP/1.1" 200 -
+2025-12-29 17:38:33,165 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:38:33,170 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:33] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:38:34,821 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:34] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:38:34,863 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:34] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:38:34,870 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:34] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:38:36,065 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:36] "[32mGET /hotel/export/pdf HTTP/1.1[0m" 302 -
+2025-12-29 17:38:36,079 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:36] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:38:36,133 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:38:36,134 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:36] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:38:39,127 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:39] "[32mGET /hotel/export/pdf HTTP/1.1[0m" 302 -
+2025-12-29 17:38:39,146 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:39] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:38:39,195 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:39] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:38:39,196 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:38:39] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:40:06,961 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:40:06] "[32mGET /hotel/export/excel HTTP/1.1[0m" 302 -
+2025-12-29 17:40:07,007 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:40:07] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:40:07,137 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:40:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:40:07,141 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:40:07] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:40:30,440 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:40:30] "[32mGET /hotel/export/excel HTTP/1.1[0m" 302 -
+2025-12-29 17:40:30,487 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:40:30] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:41:17,328 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:41:17] "[32mGET /hotel/export/excel HTTP/1.1[0m" 302 -
+2025-12-29 17:41:17,346 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:41:17] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:41:41,813 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:41:41] "[32mGET /hotel/export/pdf HTTP/1.1[0m" 302 -
+2025-12-29 17:41:41,847 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:41:41] "[32mGET /hotel/export/csv HTTP/1.1[0m" 302 -
+2025-12-29 17:41:41,881 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:41:41] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:41:41,910 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:41:41] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:42:33,196 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:42:33] "[32mGET /tourism/export/excel HTTP/1.1[0m" 302 -
+2025-12-29 17:42:33,228 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:42:33] "GET /hotel/home HTTP/1.1" 200 -
+2025-12-29 17:42:51,956 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:42:51] "[32mGET /hotel/export/excel HTTP/1.1[0m" 302 -
+2025-12-29 17:42:52,087 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:42:52] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:43:06,315 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:43:06] "[32mGET /hotel/export/excel HTTP/1.1[0m" 302 -
+2025-12-29 17:43:06,337 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:43:06] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:43:06,418 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:43:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:43:06,459 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:43:06] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:43:22,378 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:43:22] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-29 17:43:22,466 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:43:22] "GET /login HTTP/1.1" 200 -
+2025-12-29 17:43:22,666 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:43:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:43:22,677 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:43:22] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:48:12,788 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:48:12] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-29 17:48:12,823 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:48:12] "GET /login HTTP/1.1" 200 -
+2025-12-29 17:48:12,898 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:48:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:48:12,899 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:48:12] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:48:13,362 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:48:13] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-29 17:48:19,722 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.3:5000
+2025-12-29 17:48:19,723 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-29 17:48:19,731 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 17:48:37,953 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:48:37] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 17:48:38,219 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:48:38] "GET /hotel/home HTTP/1.1" 200 -
+2025-12-29 17:48:38,571 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:48:38] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:48:38,609 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:48:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:48:48,134 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 17:48:48,175 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 17:49:22,406 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:49:22] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:49:22,493 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:49:22] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:49:22,502 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:49:22] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:49:58,533 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:49:58] "[32mGET /hotel/export/excel HTTP/1.1[0m" 302 -
+2025-12-29 17:49:58,562 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:49:58] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:49:58,684 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:49:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:49:58,686 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:49:58] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:50:16,927 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:50:16] "[32mGET /hotel/export/csv HTTP/1.1[0m" 302 -
+2025-12-29 17:50:16,982 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:50:16] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:50:17,081 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:50:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:50:17,089 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:50:17] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:50:32,649 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:50:32] "[32mGET /hotel/export/pdf HTTP/1.1[0m" 302 -
+2025-12-29 17:50:32,679 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:50:32] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:50:32,750 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:50:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:50:32,755 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:50:32] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:51:14,740 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:51:14] "[32mGET /hotel/export/excel HTTP/1.1[0m" 302 -
+2025-12-29 17:51:14,753 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:51:14] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:51:20,173 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:51:20] "[32mGET /hotel/export/pdf HTTP/1.1[0m" 302 -
+2025-12-29 17:51:20,299 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:51:20] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:51:20,441 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:51:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:51:20,450 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:51:20] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:52:03,693 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-12-29 17:52:03,810 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-12-29 17:52:03,980 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-12-29 17:52:06,833 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 17:52:06,843 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 17:52:06,867 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 17:52:19,194 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 17:52:19,194 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 17:52:19,208 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 17:52:19,220 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 17:52:19,224 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 17:52:19,235 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 17:52:19,756 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:52:19] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:52:19,983 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:52:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:52:19,995 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:52:19] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:52:53,484 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:52:53] "GET /hotel/export/excel HTTP/1.1" 200 -
+2025-12-29 17:53:14,063 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:53:14] "GET /hotel/export/excel HTTP/1.1" 200 -
+2025-12-29 17:53:29,865 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:53:29] "GET /hotel/export/csv HTTP/1.1" 200 -
+2025-12-29 17:53:38,693 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:53:38] "GET /hotel/export/pdf HTTP/1.1" 200 -
+2025-12-29 17:53:46,712 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:53:46] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:53:46,752 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:53:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:53:46,763 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:53:46] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:53:59,615 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:53:59] "GET /hotel/export/excel HTTP/1.1" 200 -
+2025-12-29 17:54:31,353 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:54:31] "GET /hotel/export/excel HTTP/1.1" 200 -
+2025-12-29 17:54:56,123 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:54:56] "GET /hotel/export/csv HTTP/1.1" 200 -
+2025-12-29 17:55:31,997 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:55:31] "GET /hotel/export/pdf HTTP/1.1" 200 -
+2025-12-29 17:56:33,311 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:56:33] "GET /hotel/export/pdf HTTP/1.1" 200 -
+2025-12-29 17:57:49,835 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:57:49] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-29 17:57:49,915 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:57:49] "GET /hotel/home HTTP/1.1" 200 -
+2025-12-29 17:57:49,983 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:57:49] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-29 17:57:49,983 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:57:49] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-29 17:57:52,740 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:57:52] "GET /hotel/home HTTP/1.1" 200 -
+2025-12-29 17:57:52,792 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:57:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:57:52,802 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:57:52] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:57:55,737 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:57:55] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 17:57:55,800 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:57:55] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:57:55,802 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:57:55] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:57:57,266 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:57:57] "GET /hotel/export/pdf HTTP/1.1" 200 -
+2025-12-29 17:59:25,787 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:59:25] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-29 17:59:25,874 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:59:25] "GET /login HTTP/1.1" 200 -
+2025-12-29 17:59:25,970 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:59:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:59:25,974 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:59:25] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:59:35,209 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:59:35] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 17:59:35,257 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:59:35] "GET /login HTTP/1.1" 200 -
+2025-12-29 17:59:35,428 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:59:35] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 17:59:35,447 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:59:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:59:43,303 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:59:43] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 17:59:43,449 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:59:43] "GET /admin/home HTTP/1.1" 200 -
+2025-12-29 17:59:43,576 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:59:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 17:59:43,584 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 17:59:43] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:00:41,655 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:00:41] "GET /hotel/dashboard HTTP/1.1" 200 -
+2025-12-29 18:00:41,697 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:00:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:00:41,712 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:00:41] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:01:05,879 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:01:05] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-29 18:01:05,933 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:01:05] "GET /login HTTP/1.1" 200 -
+2025-12-29 18:01:06,117 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:01:06] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:01:06,118 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:01:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:02:31,409 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:02:31] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 18:02:31,461 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:02:31] "GET /admin/home HTTP/1.1" 200 -
+2025-12-29 18:02:31,592 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:02:31] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:02:31,594 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:02:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:02:48,174 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:02:48] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-29 18:02:48,190 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:02:48] "GET /login HTTP/1.1" 200 -
+2025-12-29 18:02:48,242 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:02:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:02:48,255 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:02:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:03:08,745 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:03:08] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 18:03:09,024 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:03:09] "GET /tourism/home HTTP/1.1" 200 -
+2025-12-29 18:03:09,206 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:03:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:03:09,208 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:03:09] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:04:53,003 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:04:53] "[32mGET /admin/home HTTP/1.1[0m" 302 -
+2025-12-29 18:04:53,037 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:04:53] "GET /tourism/home HTTP/1.1" 200 -
+2025-12-29 18:04:53,172 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:04:53] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-29 18:04:53,174 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:04:53] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-29 18:04:53,343 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:04:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-29 18:04:59,664 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:04:59] "GET /tourism/home HTTP/1.1" 200 -
+2025-12-29 18:04:59,708 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:04:59] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-29 18:04:59,712 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:04:59] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-29 18:04:59,749 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:04:59] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-29 18:05:01,578 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:05:01] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-29 18:05:01,598 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:05:01] "GET /login HTTP/1.1" 200 -
+2025-12-29 18:05:01,650 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:05:01] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:05:01,656 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:05:01] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:05:14,021 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:05:14] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 18:05:14,047 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:05:14] "GET /admin/home HTTP/1.1" 200 -
+2025-12-29 18:05:14,104 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:05:14] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:05:14,113 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:05:14] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:07:15,232 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-12-29 18:07:15,289 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-12-29 18:07:15,294 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-12-29 18:07:20,132 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 18:07:20,133 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 18:07:20,133 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 18:07:31,033 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 18:07:31,035 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 18:07:31,087 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 18:07:31,087 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 18:09:06,603 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:09:06] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-29 18:09:06,663 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:09:06] "GET /login HTTP/1.1" 200 -
+2025-12-29 18:09:06,722 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:09:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:09:06,724 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:09:06] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:10:51,717 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:10:51] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 18:10:51,833 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:10:51] "GET /admin/home HTTP/1.1" 200 -
+2025-12-29 18:10:52,033 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:10:52] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:10:52,049 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:10:52] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:11:17,081 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:11:17] "GET /admin/hotel-data HTTP/1.1" 200 -
+2025-12-29 18:11:17,191 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:11:17] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:11:17,197 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:11:17] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:11:25,407 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:11:25] "GET /admin/home HTTP/1.1" 200 -
+2025-12-29 18:11:25,454 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:11:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:11:25,461 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:11:25] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:12:18,415 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:12:18] "GET /admin/tourism-data HTTP/1.1" 200 -
+2025-12-29 18:12:18,509 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:12:18] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:12:18,544 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:12:18] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:12:27,223 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:12:27] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-29 18:12:27,232 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:12:27] "GET /login HTTP/1.1" 200 -
+2025-12-29 18:12:27,278 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:12:27] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:12:27,292 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:12:27] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:12:45,367 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:12:45] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 18:12:45,497 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:12:45] "GET /hotel/home HTTP/1.1" 200 -
+2025-12-29 18:12:45,701 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:12:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:12:45,702 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:12:45] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:12:54,362 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:12:54] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-29 18:12:54,375 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:12:54] "GET /login HTTP/1.1" 200 -
+2025-12-29 18:12:54,482 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:12:54] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:12:54,489 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:12:54] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:13:02,183 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:13:02] "GET /admin/home HTTP/1.1" 200 -
+2025-12-29 18:13:02,487 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:13:02] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:13:02,519 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:13:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:13:09,275 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:13:09] "GET /admin/hotel-data HTTP/1.1" 200 -
+2025-12-29 18:13:09,428 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:13:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:13:09,448 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:13:09] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:13:21,437 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:13:21] "GET /admin/home HTTP/1.1" 200 -
+2025-12-29 18:13:21,537 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:13:21] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:13:21,539 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:13:21] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:13:23,860 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:13:23] "GET /admin/tourism-data HTTP/1.1" 200 -
+2025-12-29 18:13:23,958 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:13:23] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:13:23,959 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:13:23] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:13:28,679 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:13:28] "GET /admin/home HTTP/1.1" 200 -
+2025-12-29 18:13:28,768 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:13:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:13:28,769 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:13:28] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:13:37,893 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:13:37] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 18:13:38,063 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:13:38] "GET /tourism/home HTTP/1.1" 200 -
+2025-12-29 18:13:38,400 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:13:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:13:38,431 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:13:38] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:13:49,153 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:13:49] "GET /admin/hotel-data HTTP/1.1" 200 -
+2025-12-29 18:13:49,235 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:13:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:13:49,236 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:13:49] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:17:23,952 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:17:23] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-29 18:17:23,986 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:17:23] "GET /login HTTP/1.1" 200 -
+2025-12-29 18:17:24,129 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:17:24] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:17:24,131 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:17:24] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:17:33,315 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:17:33] "GET /login HTTP/1.1" 200 -
+2025-12-29 18:17:33,355 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:17:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:17:33,358 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:17:33] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:17:38,138 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:17:38] "[32mGET /upload HTTP/1.1[0m" 302 -
+2025-12-29 18:17:38,159 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:17:38] "GET /login?next=/upload HTTP/1.1" 200 -
+2025-12-29 18:17:38,203 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:17:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:17:38,210 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:17:38] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:17:40,798 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:17:40] "[32mGET /dashboard HTTP/1.1[0m" 302 -
+2025-12-29 18:17:40,812 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:17:40] "GET /login?next=/dashboard HTTP/1.1" 200 -
+2025-12-29 18:17:40,849 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:17:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:17:40,857 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:17:40] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:17:50,886 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:17:50] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 18:17:50,916 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:17:50] "GET /admin/home HTTP/1.1" 200 -
+2025-12-29 18:17:50,972 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:17:50] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:17:50,975 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:17:50] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:17:58,799 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:17:58] "GET /admin/hotel-data HTTP/1.1" 200 -
+2025-12-29 18:17:58,862 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:17:58] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:17:58,865 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:17:58] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:19:11,094 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:19:11] "GET /admin/users HTTP/1.1" 200 -
+2025-12-29 18:19:11,128 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:19:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:19:11,132 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:19:11] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:23:27,302 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\models.py', reloading
+2025-12-29 18:23:27,288 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\models.py', reloading
+2025-12-29 18:23:27,628 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\models.py', reloading
+2025-12-29 18:23:35,887 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 18:24:03,594 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 18:24:03,642 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 18:24:14,172 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-12-29 18:24:15,944 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 18:24:31,693 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 18:24:31,704 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 18:25:50,898 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:25:50] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-29 18:25:50,947 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:25:50] "GET /login HTTP/1.1" 200 -
+2025-12-29 18:25:51,023 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:25:51] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:25:51,033 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:25:51] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:29:12,974 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:29:12] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 18:29:13,149 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:29:13] "GET /admin/home HTTP/1.1" 200 -
+2025-12-29 18:29:13,355 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:29:13] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:29:13,379 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:29:13] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:29:19,779 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:29:19] "GET /admin/users HTTP/1.1" 200 -
+2025-12-29 18:29:19,819 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:29:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:29:19,830 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:29:19] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:29:44,956 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:29:44] "GET /admin/users/edit/2 HTTP/1.1" 200 -
+2025-12-29 18:29:45,174 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:29:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:29:45,182 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:29:45] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:30:05,179 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:30:05] "GET /admin/hotel-data HTTP/1.1" 200 -
+2025-12-29 18:30:05,317 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:30:05] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:30:05,356 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:30:05] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:30:17,959 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.3:5000
+2025-12-29 18:30:17,964 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-29 18:30:17,986 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 18:30:29,720 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:30:29] "GET /admin/tourism-data HTTP/1.1" 200 -
+2025-12-29 18:30:29,831 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:30:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:30:29,919 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:30:29] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:30:46,454 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 18:30:46,490 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 18:32:09,743 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:09] "GET /admin/hotel-data HTTP/1.1" 200 -
+2025-12-29 18:32:09,945 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:32:09,947 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:09] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:32:14,479 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:14] "GET /admin/hotel-data HTTP/1.1" 200 -
+2025-12-29 18:32:14,547 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:14] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-29 18:32:14,548 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:14] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-29 18:32:16,842 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:16] "GET /admin/users HTTP/1.1" 200 -
+2025-12-29 18:32:16,918 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:32:16,927 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:16] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:32:20,853 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:20] "GET /admin/users/edit/1 HTTP/1.1" 200 -
+2025-12-29 18:32:20,926 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:32:20,933 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:20] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:32:25,594 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:25] "GET /admin/users HTTP/1.1" 200 -
+2025-12-29 18:32:25,703 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:25] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:32:25,707 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:25] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:32:31,584 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:31] "GET /dashboard HTTP/1.1" 200 -
+2025-12-29 18:32:31,587 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:31] "GET /dashboard HTTP/1.1" 200 -
+2025-12-29 18:32:31,708 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:32:31,709 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:31] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:32:35,830 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:35] "GET /upload HTTP/1.1" 200 -
+2025-12-29 18:32:35,917 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:32:35,922 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:35] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:32:38,800 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:38] "GET /admin/users HTTP/1.1" 200 -
+2025-12-29 18:32:38,904 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:38] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:32:38,910 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:38] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:32:41,687 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:41] "GET /admin/home HTTP/1.1" 200 -
+2025-12-29 18:32:41,805 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:32:41,805 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:41] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:32:45,889 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:45] "GET /admin/hotel-data HTTP/1.1" 200 -
+2025-12-29 18:32:45,963 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:32:45,971 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:45] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:32:50,364 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:50] "[35m[1mGET /admin/hotel-data/export/pdf HTTP/1.1[0m" 500 -
+2025-12-29 18:32:50,572 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:50] "GET /admin/hotel-data/export/pdf?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-12-29 18:32:50,633 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:50] "GET /admin/hotel-data/export/pdf?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-12-29 18:32:50,738 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:50] "GET /admin/hotel-data/export/pdf?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-12-29 18:32:50,774 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:32:50] "[36mGET /admin/hotel-data/export/pdf?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 18:33:57,039 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:33:57] "GET /admin/hotel-data HTTP/1.1" 200 -
+2025-12-29 18:33:57,078 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:33:57] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:33:57,091 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:33:57] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:34:08,831 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:34:08] "[35m[1mGET /admin/hotel-data/export/pdf HTTP/1.1[0m" 500 -
+2025-12-29 18:34:08,939 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:34:08] "GET /admin/hotel-data/export/pdf?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-12-29 18:34:08,942 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:34:08] "GET /admin/hotel-data/export/pdf?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-12-29 18:34:09,145 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:34:09] "GET /admin/hotel-data/export/pdf?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-12-29 18:34:09,192 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:34:09] "[36mGET /admin/hotel-data/export/pdf?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 18:34:09,927 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:34:09] "GET /admin/hotel-data/export/pdf?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-12-29 18:34:15,942 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:34:15] "GET /admin/hotel-data HTTP/1.1" 200 -
+2025-12-29 18:34:16,019 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:34:16] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:34:16,070 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:34:16] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:34:28,695 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:34:28] "[35m[1mGET /admin/hotel-data/export/excel HTTP/1.1[0m" 500 -
+2025-12-29 18:34:28,811 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:34:28] "GET /admin/hotel-data/export/excel?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-12-29 18:34:28,828 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:34:28] "GET /admin/hotel-data/export/excel?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-12-29 18:34:28,954 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:34:28] "GET /admin/hotel-data/export/excel?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-12-29 18:34:29,558 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:34:29] "[36mGET /admin/hotel-data/export/excel?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 18:34:29,840 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:34:29] "GET /admin/hotel-data/export/excel?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-12-29 18:34:36,604 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:34:36] "GET /admin/hotel-data HTTP/1.1" 200 -
+2025-12-29 18:34:36,683 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:34:36] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:34:36,715 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:34:36] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:34:48,482 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:34:48] "[35m[1mGET /admin/hotel-data/export/csv HTTP/1.1[0m" 500 -
+2025-12-29 18:34:48,596 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:34:48] "GET /admin/hotel-data/export/csv?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-12-29 18:34:48,611 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:34:48] "GET /admin/hotel-data/export/csv?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-12-29 18:34:48,629 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:34:48] "GET /admin/hotel-data/export/csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-12-29 18:34:48,940 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:34:48] "[36mGET /admin/hotel-data/export/csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 18:34:49,624 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:34:49] "GET /admin/hotel-data/export/csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-12-29 18:35:27,382 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:35:27] "GET /admin/users HTTP/1.1" 200 -
+2025-12-29 18:35:27,582 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:35:27] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-29 18:35:27,728 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:35:27] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-29 18:35:27,917 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:35:27] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-29 18:35:35,981 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-12-29 18:35:36,101 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-12-29 18:35:41,432 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 18:35:41,512 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 18:36:06,781 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 18:36:06,784 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 18:36:06,860 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 18:36:07,636 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:36:07] "GET /admin/hotel-data HTTP/1.1" 200 -
+2025-12-29 18:36:07,677 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:36:07] "[35m[1mGET /admin/hotel-data/export/pdf HTTP/1.1[0m" 500 -
+2025-12-29 18:36:07,742 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:36:07] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-29 18:36:07,744 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:36:07] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-29 18:36:49,817 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-12-29 18:36:50,844 - werkzeug - INFO -  * Detected change in 'D:\\websitebgojik\\app.py', reloading
+2025-12-29 18:36:52,034 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 18:36:52,753 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 18:37:17,277 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 18:37:17,303 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 18:37:17,462 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 18:37:17,485 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 18:37:17,902 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:37:17] "GET /admin/hotel-data HTTP/1.1" 200 -
+2025-12-29 18:37:18,009 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:37:18] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-29 18:37:18,023 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:37:18] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-29 18:37:22,092 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:37:22] "GET /admin/hotel-data/export/pdf HTTP/1.1" 200 -
+2025-12-29 18:37:33,002 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:37:33] "GET /admin/hotel-data HTTP/1.1" 200 -
+2025-12-29 18:37:33,056 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:37:33] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:37:33,063 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:37:33] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:37:46,441 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:37:46] "GET /admin/hotel-data/export/pdf HTTP/1.1" 200 -
+2025-12-29 18:38:49,340 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:38:49] "GET /admin/hotel-data/export/excel HTTP/1.1" 200 -
+2025-12-29 18:39:01,932 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:39:01] "GET /admin/hotel-data/export/csv HTTP/1.1" 200 -
+2025-12-29 18:39:10,210 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:39:10] "GET /admin/tourism-data HTTP/1.1" 200 -
+2025-12-29 18:39:10,367 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:39:10] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:39:10,395 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:39:10] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:39:21,908 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:39:21] "[35m[1mGET /admin/tourism-data/export/excel HTTP/1.1[0m" 500 -
+2025-12-29 18:39:22,027 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:39:22] "GET /admin/tourism-data/export/excel?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-12-29 18:39:22,032 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:39:22] "GET /admin/tourism-data/export/excel?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-12-29 18:39:22,171 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:39:22] "GET /admin/tourism-data/export/excel?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-12-29 18:39:22,303 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:39:22] "[36mGET /admin/tourism-data/export/excel?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 18:39:23,040 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:39:23] "GET /admin/tourism-data/export/excel?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-12-29 18:40:39,996 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:40:39] "GET /admin/tourism-data HTTP/1.1" 200 -
+2025-12-29 18:40:40,108 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:40:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:40:40,127 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:40:40] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:40:52,603 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:40:52] "[35m[1mGET /admin/tourism-data/export/csv HTTP/1.1[0m" 500 -
+2025-12-29 18:40:52,697 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:40:52] "GET /admin/tourism-data/export/csv?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-12-29 18:40:52,718 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:40:52] "GET /admin/tourism-data/export/csv?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-12-29 18:40:52,908 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:40:52] "GET /admin/tourism-data/export/csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-12-29 18:40:53,065 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:40:53] "[36mGET /admin/tourism-data/export/csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 18:40:53,683 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:40:53] "GET /admin/tourism-data/export/csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-12-29 18:40:57,281 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:40:57] "GET /admin/hotel-data/export/csv HTTP/1.1" 200 -
+2025-12-29 18:41:01,698 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:41:01] "GET /admin/hotel-data/export/excel HTTP/1.1" 200 -
+2025-12-29 18:41:02,550 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:41:02] "GET /admin/tourism-data HTTP/1.1" 200 -
+2025-12-29 18:41:02,675 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:41:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:41:02,683 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:41:02] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:41:21,277 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:41:21] "[35m[1mGET /admin/tourism-data/export/pdf HTTP/1.1[0m" 500 -
+2025-12-29 18:41:21,385 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:41:21] "GET /admin/tourism-data/export/pdf?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-12-29 18:41:21,401 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:41:21] "GET /admin/tourism-data/export/pdf?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-12-29 18:41:21,588 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:41:21] "GET /admin/tourism-data/export/pdf?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-12-29 18:41:21,838 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:41:21] "GET /admin/tourism-data/export/pdf?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-12-29 18:41:21,941 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:41:21] "[36mGET /admin/tourism-data/export/pdf?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 18:41:30,121 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:41:30] "GET /admin/tourism-data HTTP/1.1" 200 -
+2025-12-29 18:41:30,182 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:41:30] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:41:30,195 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:41:30] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:41:40,510 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:41:40] "GET /admin/hotel-data HTTP/1.1" 200 -
+2025-12-29 18:41:40,605 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:41:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:41:40,616 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:41:40] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:41:48,585 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:41:48] "GET /admin/tourism-data HTTP/1.1" 200 -
+2025-12-29 18:41:48,726 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:41:48] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:41:48,732 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:41:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:42:01,595 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:42:01] "[35m[1mGET /admin/tourism-data/export/pdf HTTP/1.1[0m" 500 -
+2025-12-29 18:42:01,725 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:42:01] "[36mGET /admin/tourism-data/export/pdf?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:42:01,757 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:42:01] "[36mGET /admin/tourism-data/export/pdf?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-12-29 18:42:01,927 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:42:01] "[36mGET /admin/tourism-data/export/pdf?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 18:42:11,413 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:42:11] "GET /admin/hotel-data HTTP/1.1" 200 -
+2025-12-29 18:42:11,499 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:42:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:42:11,504 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:42:11] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:42:20,663 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:42:20] "GET /admin/tourism-data HTTP/1.1" 200 -
+2025-12-29 18:42:20,778 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:42:20] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:42:20,803 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:42:20] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:42:36,900 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:42:36] "[35m[1mGET /admin/tourism-data/export/csv HTTP/1.1[0m" 500 -
+2025-12-29 18:42:37,031 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:42:37] "[36mGET /admin/tourism-data/export/csv?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:42:37,033 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:42:37] "[36mGET /admin/tourism-data/export/csv?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-12-29 18:42:37,259 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:42:37] "[36mGET /admin/tourism-data/export/csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 18:42:46,722 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:42:46] "GET /admin/tourism-data HTTP/1.1" 200 -
+2025-12-29 18:42:46,818 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:42:46] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:42:46,849 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:42:46] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:43:01,500 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:01] "[35m[1mGET /admin/tourism-data/export/pdf HTTP/1.1[0m" 500 -
+2025-12-29 18:43:01,615 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:01] "[36mGET /admin/tourism-data/export/pdf?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:43:01,641 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:01] "[36mGET /admin/tourism-data/export/pdf?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-12-29 18:43:01,851 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:01] "[36mGET /admin/tourism-data/export/pdf?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 18:43:06,842 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:06] "GET /admin/home HTTP/1.1" 200 -
+2025-12-29 18:43:06,952 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:06] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:43:07,000 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:07] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:43:09,703 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:09] "GET /admin/tourism-data HTTP/1.1" 200 -
+2025-12-29 18:43:09,777 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:09] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:43:09,786 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:09] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:43:11,753 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:11] "GET /admin/hotel-data HTTP/1.1" 200 -
+2025-12-29 18:43:11,852 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:11] "[35m[1mGET /admin/tourism-data/export/pdf HTTP/1.1[0m" 500 -
+2025-12-29 18:43:12,018 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:12] "GET /admin/tourism-data/export/pdf?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-12-29 18:43:12,045 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:12] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:43:12,051 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:12] "GET /admin/tourism-data/export/pdf?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-12-29 18:43:12,069 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:12] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:43:12,142 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:12] "GET /admin/tourism-data/export/pdf?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-12-29 18:43:12,179 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:12] "[36mGET /admin/tourism-data/export/pdf?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 18:43:16,334 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:16] "[35m[1mGET /admin/tourism-data/export/csv HTTP/1.1[0m" 500 -
+2025-12-29 18:43:16,499 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:16] "GET /admin/tourism-data/export/csv?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-12-29 18:43:16,506 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:16] "GET /admin/tourism-data/export/csv?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-12-29 18:43:16,658 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:16] "GET /admin/tourism-data/export/csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-12-29 18:43:16,711 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:16] "[36mGET /admin/tourism-data/export/csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 18:43:19,667 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:19] "[35m[1mGET /admin/tourism-data/export/excel HTTP/1.1[0m" 500 -
+2025-12-29 18:43:19,859 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:19] "GET /admin/tourism-data/export/excel?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-12-29 18:43:19,896 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:19] "GET /admin/tourism-data/export/excel?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-12-29 18:43:20,026 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:20] "GET /admin/tourism-data/export/excel?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-12-29 18:43:20,100 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:20] "[36mGET /admin/tourism-data/export/excel?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 18:43:29,508 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:29] "GET /admin/hotel-data/export/csv HTTP/1.1" 200 -
+2025-12-29 18:43:40,146 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:40] "GET /admin/tourism-data HTTP/1.1" 200 -
+2025-12-29 18:43:40,212 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:40] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:43:40,249 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:43:40] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:44:28,754 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:44:28] "GET /admin/tourism-data HTTP/1.1" 200 -
+2025-12-29 18:44:28,789 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:44:28] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:44:28,801 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:44:28] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:44:41,428 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:44:41] "[35m[1mGET /admin/tourism-data/export/excel HTTP/1.1[0m" 500 -
+2025-12-29 18:44:41,584 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:44:41] "[36mGET /admin/tourism-data/export/excel?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:44:41,590 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:44:41] "[36mGET /admin/tourism-data/export/excel?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-12-29 18:44:41,739 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:44:41] "[36mGET /admin/tourism-data/export/excel?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 18:46:12,903 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.3:5000
+2025-12-29 18:46:12,904 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-29 18:46:12,907 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 18:46:15,732 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 18:46:15,741 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 18:46:22,162 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:46:22] "GET /admin/tourism-data HTTP/1.1" 200 -
+2025-12-29 18:46:22,255 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:46:22] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-29 18:46:22,261 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:46:22] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-29 18:46:29,325 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:46:29] "[35m[1mGET /admin/tourism-data/export/excel HTTP/1.1[0m" 500 -
+2025-12-29 18:46:29,373 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:46:29] "[36mGET /admin/tourism-data/export/excel?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:46:29,377 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:46:29] "[36mGET /admin/tourism-data/export/excel?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-12-29 18:46:29,389 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:46:29] "[36mGET /admin/tourism-data/export/excel?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 18:46:29,407 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:46:29] "[36mGET /admin/tourism-data/export/excel?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 18:46:32,731 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:46:32] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-12-29 18:46:32,793 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:46:32] "GET /login HTTP/1.1" 200 -
+2025-12-29 18:46:32,836 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:46:32] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:46:32,838 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:46:32] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:46:45,478 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:46:45] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 18:46:45,504 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:46:45] "GET /admin/home HTTP/1.1" 200 -
+2025-12-29 18:46:45,578 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:46:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:46:45,587 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:46:45] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:46:49,412 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:46:49] "GET /admin/tourism-data HTTP/1.1" 200 -
+2025-12-29 18:46:49,473 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:46:49] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:46:49,480 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:46:49] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:46:51,167 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:46:51] "[35m[1mGET /admin/tourism-data/export/csv HTTP/1.1[0m" 500 -
+2025-12-29 18:46:51,206 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:46:51] "[36mGET /admin/tourism-data/export/csv?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:46:51,208 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:46:51] "[36mGET /admin/tourism-data/export/csv?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-12-29 18:46:51,217 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:46:51] "[36mGET /admin/tourism-data/export/csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 18:46:51,229 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:46:51] "[36mGET /admin/tourism-data/export/csv?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 18:47:11,889 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:47:11] "GET /admin/hotel-data HTTP/1.1" 200 -
+2025-12-29 18:47:11,957 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:47:11] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:47:11,960 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:47:11] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:47:14,359 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:47:14] "GET /admin/hotel-data/export/pdf HTTP/1.1" 200 -
+2025-12-29 18:48:21,743 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.3:5000
+2025-12-29 18:48:21,744 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-29 18:48:21,745 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 18:48:24,833 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 18:48:24,847 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 18:48:30,980 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:48:30] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-29 18:48:30,998 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:48:30] "GET /admin/home HTTP/1.1" 200 -
+2025-12-29 18:48:31,055 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:48:31] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:48:31,060 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:48:31] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:48:37,339 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:48:37] "GET /admin/tourism-data HTTP/1.1" 200 -
+2025-12-29 18:48:37,372 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:48:37] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:48:37,376 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:48:37] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:48:38,826 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:48:38] "[35m[1mGET /admin/tourism-data/export/pdf HTTP/1.1[0m" 500 -
+2025-12-29 18:48:38,859 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:48:38] "[36mGET /admin/tourism-data/export/pdf?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:48:38,861 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:48:38] "[36mGET /admin/tourism-data/export/pdf?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-12-29 18:48:38,872 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:48:38] "[36mGET /admin/tourism-data/export/pdf?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 18:48:38,913 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:48:38] "[36mGET /admin/tourism-data/export/pdf?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 18:48:44,773 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:48:44] "[35m[1mGET /admin/tourism-data/export/excel HTTP/1.1[0m" 500 -
+2025-12-29 18:48:44,839 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:48:44] "GET /admin/tourism-data/export/excel?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-12-29 18:48:44,842 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:48:44] "GET /admin/tourism-data/export/excel?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-12-29 18:48:44,864 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:48:44] "GET /admin/tourism-data/export/excel?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-12-29 18:48:44,889 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:48:44] "GET /admin/tourism-data/export/excel?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-12-29 18:48:49,105 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:48:49] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-29 18:48:49,114 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:48:49] "GET /login HTTP/1.1" 200 -
+2025-12-29 18:48:49,270 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:48:49] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-29 18:48:49,275 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:48:49] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-29 18:48:49,438 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:48:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-12-29 18:49:02,812 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:49:02] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-12-29 18:49:02,836 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:49:02] "GET /admin/home HTTP/1.1" 200 -
+2025-12-29 18:49:02,913 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:49:02] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:49:02,914 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:49:02] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:49:07,231 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:49:07] "GET /admin/tourism-data HTTP/1.1" 200 -
+2025-12-29 18:49:07,275 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:49:07] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:49:07,278 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:49:07] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:49:09,374 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:49:09] "[35m[1mGET /admin/tourism-data/export/pdf HTTP/1.1[0m" 500 -
+2025-12-29 18:49:09,402 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:49:09] "GET /admin/tourism-data/export/pdf?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-12-29 18:49:09,406 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:49:09] "GET /admin/tourism-data/export/pdf?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-12-29 18:49:09,416 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:49:09] "GET /admin/tourism-data/export/pdf?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-12-29 18:49:09,442 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:49:09] "[36mGET /admin/tourism-data/export/pdf?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 18:49:45,486 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:49:45] "GET /admin/tourism-data HTTP/1.1" 200 -
+2025-12-29 18:49:45,517 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:49:45] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:49:45,530 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:49:45] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:49:59,533 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:49:59] "[35m[1mGET /admin/tourism-data/export/excel HTTP/1.1[0m" 500 -
+2025-12-29 18:49:59,663 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:49:59] "[36mGET /admin/tourism-data/export/excel?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:49:59,682 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:49:59] "[36mGET /admin/tourism-data/export/excel?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2025-12-29 18:49:59,768 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:49:59] "[36mGET /admin/tourism-data/export/excel?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 18:53:16,472 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:53:16] "[36mGET /admin/tourism-data/export/excel?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-12-29 18:56:11,722 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.3:5000
+2025-12-29 18:56:11,727 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-12-29 18:56:11,733 - werkzeug - INFO -  * Restarting with stat
+2025-12-29 18:56:24,145 - werkzeug - WARNING -  * Debugger is active!
+2025-12-29 18:56:24,161 - werkzeug - INFO -  * Debugger PIN: 960-587-738
+2025-12-29 18:56:24,512 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:56:24] "[32mGET / HTTP/1.1[0m" 302 -
+2025-12-29 18:56:24,600 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:56:24] "GET /admin/home HTTP/1.1" 200 -
+2025-12-29 18:56:24,707 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:56:24] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-12-29 18:56:24,734 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:56:24] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-12-29 18:56:29,016 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:56:29] "GET /admin/tourism-data HTTP/1.1" 200 -
+2025-12-29 18:56:29,159 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:56:29] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:56:29,191 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:56:29] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:56:30,799 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:56:30] "GET /admin/tourism-data/export/pdf HTTP/1.1" 200 -
+2025-12-29 18:56:41,382 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:56:41] "GET /admin/home HTTP/1.1" 200 -
+2025-12-29 18:56:41,444 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:56:41] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:56:41,448 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:56:41] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:56:47,118 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:56:47] "GET /admin/hotel-data HTTP/1.1" 200 -
+2025-12-29 18:56:47,202 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:56:47] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-12-29 18:56:47,206 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:56:47] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-12-29 18:56:48,732 - werkzeug - INFO - 127.0.0.1 - - [29/Dec/2025 18:56:48] "GET /admin/hotel-data/export/pdf HTTP/1.1" 200 -

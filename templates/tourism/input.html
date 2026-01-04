@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{% block title %}Input Data Wisata - Data Kunjungan Wisatawan Palembang{% endblock %}
+
+{% block content %}
+<div class="container" style="padding: 50px 20px;">
+  <div class="dashboard-header">
+    <h1>📝 Input Data Pengunjung Wisata</h1>
+    <p>Input data pengunjung harian</p>
+  </div>
+
+  <div class="upload-section" style="max-width: 700px; margin: 0 auto;">
+    <form method="POST" action="{{ url_for('tourism_input') }}" class="upload-form">
+      <div class="form-group">
+        <label for="date">
+          <span class="label-icon">📅</span>
+          Tanggal
+        </label>
+        <input type="date" id="date" name="date" required />
+      </div>
+
+      <div class="form-group">
+        <label for="origin">
+          <span class="label-icon">📍</span>
+          Asal Pengunjung
+        </label>
+        <input
+          type="text"
+          id="origin"
+          name="origin"
+          required
+          placeholder="Contoh: Jakarta, Bandung, dll"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="total_visitors">
+          <span class="label-icon">👥</span>
+          Total Pengunjung
+        </label>
+        <input
+          type="number"
+          id="total_visitors"
+          name="total_visitors"
+          required
+          min="0"
+          placeholder="Total pengunjung"
+        />
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <div class="form-group">
+          <label for="male">
+            <span class="label-icon">👨</span>
+            Laki-laki
+          </label>
+          <input
+            type="number"
+            id="male"
+            name="male"
+            required
+            min="0"
+            placeholder="Jumlah laki-laki"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="female">
+            <span class="label-icon">👩</span>
+            Perempuan
+          </label>
+          <input
+            type="number"
+            id="female"
+            name="female"
+            required
+            min="0"
+            placeholder="Jumlah perempuan"
+          />
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+        <div class="form-group">
+          <label for="male_child">
+            <span class="label-icon">👦</span>
+            Anak Laki-laki (Opsional)
+          </label>
+          <input
+            type="number"
+            id="male_child"
+            name="male_child"
+            min="0"
+            placeholder="Kosongkan untuk otomatis"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="female_child">
+            <span class="label-icon">👧</span>
+            Anak Perempuan (Opsional)
+          </label>
+          <input
+            type="number"
+            id="female_child"
+            name="female_child"
+            min="0"
+            placeholder="Kosongkan untuk otomatis"
+          />
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block">
+        <span>💾</span>
+        Simpan Data
+      </button>
+    </form>
+
+    <div class="info-section" style="margin-top: 30px;">
+      <h3>ℹ️ Informasi</h3>
+      <p>Jika field anak laki-laki dan perempuan dikosongkan, sistem akan menghitung otomatis (10-20% dari dewasa).</p>
+      <p>Jika sudah input untuk tanggal yang sama, Anda akan diarahkan ke dashboard untuk edit.</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+      <a href="{{ url_for('tourism_dashboard') }}" class="btn btn-secondary">
+        <span>📊</span> Lihat Dashboard
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+.label-icon {
+  font-size: 1.2rem;
+}
+
+.btn-block {
+  width: 100%;
+  margin-top: 10px;
+}
+</style>
+
+<script>
+// Set today's date as default
+document.addEventListener('DOMContentLoaded', function() {
+  const dateInput = document.getElementById('date');
+  const today = new Date().toISOString().split('T')[0];
+  dateInput.value = today;
+});
+</script>
+{% endblock %}

@@ -1,0 +1,277 @@
+{% extends "base.html" %}
+{% block title %}Dashboard Wisata - Data Kunjungan Wisatawan Palembang{% endblock %}
+
+{% block content %}
+<div class="container" style="padding: 50px 20px;">
+  <div class="dashboard-header">
+    <h1>📊 Dashboard Wisata</h1>
+    <p>Data Pengunjung Wisata</p>
+  </div>
+
+  <div class="actions" style="margin: 30px 0; text-align: center;">
+    <a href="{{ url_for('tourism_input') }}" class="btn btn-primary">
+      <span>📝</span> Input Data Baru
+    </a>
+    {% if data %}
+    <a href="{{ url_for('tourism_export', format='excel') }}" class="btn btn-success">
+      <span>📊</span> Export Excel
+    </a>
+    <a href="{{ url_for('tourism_export', format='csv') }}" class="btn btn-success">
+      <span>📄</span> Export CSV
+    </a>
+    <a href="{{ url_for('tourism_export', format='pdf') }}" class="btn btn-success">
+      <span>📕</span> Export PDF
+    </a>
+    {% endif %}
+    <a href="{{ url_for('tourism_home') }}" class="btn btn-secondary">
+      <span>🏠</span> Kembali ke Home
+    </a>
+  </div>
+
+  {% if data %}
+  <div class="upload-section">
+    <h2>📈 Data Pengunjung Wisata</h2>
+    
+    <div style="overflow-x: auto;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Tanggal</th>
+            <th>Asal</th>
+            <th>Total</th>
+            <th>L Dewasa</th>
+            <th>P Dewasa</th>
+            <th>L Anak</th>
+            <th>P Anak</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% set totals = namespace(
+            total=0,
+            male_adult=0,
+            female_adult=0,
+            male_child=0,
+            female_child=0
+          ) %}
+          {% for item in data %}
+          <tr class="data-row-{{ item.id }}">
+            <td>{{ item.date }}</td>
+            <td class="editable">{{ item.origin }}</td>
+            <td class="editable">{{ item.total_visitors }}</td>
+            <td class="editable">{{ item.male_adult }}</td>
+            <td class="editable">{{ item.female_adult }}</td>
+            <td class="editable">{{ item.male_child }}</td>
+            <td class="editable">{{ item.female_child }}</td>
+            <td>
+              <button onclick="toggleEdit({{ item.id }})" class="btn-edit" id="edit-btn-{{ item.id }}">
+                ✏️ Edit
+              </button>
+            </td>
+          </tr>
+          {% set totals.total = totals.total + item.total_visitors %}
+          {% set totals.male_adult = totals.male_adult + item.male_adult %}
+          {% set totals.female_adult = totals.female_adult + item.female_adult %}
+          {% set totals.male_child = totals.male_child + item.male_child %}
+          {% set totals.female_child = totals.female_child + item.female_child %}
+          {% endfor %}
+          <tr class="total-row">
+            <td colspan="2"><strong>TOTAL</strong></td>
+            <td><strong>{{ totals.total }}</strong></td>
+            <td><strong>{{ totals.male_adult }}</strong></td>
+            <td><strong>{{ totals.female_adult }}</strong></td>
+            <td><strong>{{ totals.male_child }}</strong></td>
+            <td><strong>{{ totals.female_child }}</strong></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="info-section" style="margin-top: 30px;">
+      <h3>ℹ️ Statistik</h3>
+      <p>Total data: {{ data|length }} hari</p>
+      <p>Total pengunjung: {{ totals.total }} orang</p>
+      <p>Dewasa: {{ totals.male_adult + totals.female_adult }} orang (L: {{ totals.male_adult }}, P: {{ totals.female_adult }})</p>
+      <p>Anak-anak: {{ totals.male_child + totals.female_child }} orang (L: {{ totals.male_child }}, P: {{ totals.female_child }})</p>
+    </div>
+  </div>
+  {% else %}
+  <div class="no-data">
+    <h2>📊 Belum Ada Data</h2>
+    <p>Silakan input data pengunjung terlebih dahulu</p>
+    <a href="{{ url_for('tourism_input') }}" class="btn btn-primary">Input Data Pertama</a>
+  </div>
+  {% endif %}
+</div>
+
+<style>
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.data-table thead {
+  background: var(--gradient-primary);
+  color: white;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.95rem;
+}
+
+.data-table th {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.data-table tbody tr:hover {
+  background: var(--light-blue);
+  transition: var(--transition);
+}
+
+.total-row {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe) !important;
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
+.total-row td {
+  border-bottom: none;
+}
+
+.btn-edit {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-edit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+}
+
+.no-data {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(219, 234, 254, 0.9) 100%
+  );
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.no-data h2 {
+  font-size: 2.5rem;
+  color: var(--primary-blue);
+  margin-bottom: 20px;
+}
+
+.no-data p {
+  font-size: 1.3rem;
+  color: var(--text-light);
+  margin-bottom: 30px;
+}
+
+.editable input {
+  width: 90%;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  .data-table th,
+  .data-table td {
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+  
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .actions .btn {
+    flex: 1 1 auto;
+    min-width: 120px;
+  }
+}
+</style>
+
+<script>
+const originalData = {};
+
+{% for item in data %}
+originalData[{{ item.id }}] = {
+  origin: "{{ item.origin }}",
+  total_visitors: {{ item.total_visitors }},
+  male_adult: {{ item.male_adult }},
+  female_adult: {{ item.female_adult }},
+  male_child: {{ item.male_child }},
+  female_child: {{ item.female_child }}
+};
+{% endfor %}
+
+function toggleEdit(id) {
+  const row = document.querySelector(`.data-row-${id}`);
+  const btn = document.getElementById(`edit-btn-${id}`);
+  const cells = row.querySelectorAll('.editable');
+  
+  if (btn.textContent.includes('Edit')) {
+    // Switch to edit mode
+    cells[0].innerHTML = `<input type="text" value="${originalData[id].origin}" id="origin-${id}">`;
+    cells[1].innerHTML = `<input type="number" value="${originalData[id].total_visitors}" id="total-${id}" min="0">`;
+    cells[2].innerHTML = `<input type="number" value="${originalData[id].male_adult}" id="male_adult-${id}" min="0">`;
+    cells[3].innerHTML = `<input type="number" value="${originalData[id].female_adult}" id="female_adult-${id}" min="0">`;
+    cells[4].innerHTML = `<input type="number" value="${originalData[id].male_child}" id="male_child-${id}" min="0">`;
+    cells[5].innerHTML = `<input type="number" value="${originalData[id].female_child}" id="female_child-${id}" min="0">`;
+    btn.innerHTML = '💾 Simpan';
+    btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+  } else {
+    // Save changes
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = `/tourism/edit/${id}`;
+    
+    const fields = ['origin', 'total_visitors', 'male_adult', 'female_adult', 'male_child', 'female_child'];
+    fields.forEach(field => {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = field;
+      input.value = document.getElementById(`${field.replace('_', '_')}-${id}`).value;
+      form.appendChild(input);
+    });
+    
+    document.body.appendChild(form);
+    form.submit();
+  }
+}
+</script>
+{% endblock %}
